@@ -133,7 +133,7 @@
         <!--管理-->
         <scene sceneID="9mm-0m-YOl">
             <objects>
-                <viewController id="D4o-nJ-E0d" sceneMemberID="viewController">
+                <viewController id="D4o-nJ-E0d" customClass="ManageMenuViewController" customModule="car_manager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Co-k1-rl1"/>
                         <viewControllerLayoutGuide type="bottom" id="hQI-5P-qy1"/>
