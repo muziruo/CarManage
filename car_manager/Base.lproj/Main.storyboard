@@ -92,7 +92,7 @@
         <!--查询-->
         <scene sceneID="Ub4-C3-PGR">
             <objects>
-                <viewController id="8l6-dO-Z10" sceneMemberID="viewController">
+                <viewController id="8l6-dO-Z10" customClass="SearchMenuViewController" customModule="car_manager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PtU-uN-iNe"/>
                         <viewControllerLayoutGuide type="bottom" id="nt6-jE-LOg"/>
@@ -100,7 +100,29 @@
                     <view key="view" contentMode="scaleToFill" id="kfv-lg-oiE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jHM-5r-Q71">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="mnQ-6h-oAe">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mnQ-6h-oAe" id="ORp-cy-vAK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jHM-5r-Q71" firstAttribute="leading" secondItem="kfv-lg-oiE" secondAttribute="leading" id="2I8-7Q-OxW"/>
+                            <constraint firstAttribute="trailing" secondItem="jHM-5r-Q71" secondAttribute="trailing" id="49L-99-tqe"/>
+                            <constraint firstItem="jHM-5r-Q71" firstAttribute="top" secondItem="PtU-uN-iNe" secondAttribute="bottom" id="N9H-zB-4lk"/>
+                            <constraint firstItem="nt6-jE-LOg" firstAttribute="top" secondItem="jHM-5r-Q71" secondAttribute="bottom" id="axb-gz-ejs"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="查询" id="g7W-24-v7m"/>
                 </viewController>
