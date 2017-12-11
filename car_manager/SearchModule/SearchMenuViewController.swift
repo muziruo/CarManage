@@ -10,6 +10,8 @@ import UIKit
 
 class SearchMenuViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSource{
 
+    let functionmenu:[String] = ["车辆信息查询","人员信息查询"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,7 +32,9 @@ class SearchMenuViewController: UIViewController ,UITableViewDelegate ,UITableVi
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "menucell", for: indexPath) as! MenuTableViewCell
+        cell.textLabel?.text = functionmenu[indexPath.row]
+        return cell
     }
     /*
     // MARK: - Navigation

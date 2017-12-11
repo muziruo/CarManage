@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入账号" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ye4-62-jgS">
-                                <rect key="frame" x="76" y="193" width="223" height="40"/>
+                                <rect key="frame" x="76" y="248" width="223" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0lF-07-R3D"/>
                                 </constraints>
@@ -32,7 +32,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qno-FT-LyM">
-                                <rect key="frame" x="76" y="268" width="223" height="40"/>
+                                <rect key="frame" x="76" y="323" width="223" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="C5R-P7-b6i"/>
                                 </constraints>
@@ -41,7 +41,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3YR-qx-nlN">
-                                <rect key="frame" x="76" y="477" width="223" height="40"/>
+                                <rect key="frame" x="76" y="527" width="223" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="rvV-gt-GON"/>
                                 </constraints>
@@ -56,7 +56,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="武汉理工大学车辆管理系统" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X61-pg-25c">
-                                <rect key="frame" x="100" y="45" width="175" height="67.5"/>
+                                <rect key="frame" x="100" y="100" width="175" height="67.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -69,13 +69,13 @@
                             <constraint firstItem="X61-pg-25c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FDG-K5-u09"/>
                             <constraint firstItem="Ye4-62-jgS" firstAttribute="top" secondItem="X61-pg-25c" secondAttribute="bottom" constant="80" id="P46-jy-CNd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3YR-qx-nlN" secondAttribute="trailing" constant="60" id="QEa-sl-GWF"/>
-                            <constraint firstItem="X61-pg-25c" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="Rd0-at-2hz"/>
+                            <constraint firstItem="X61-pg-25c" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="Rd0-at-2hz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Qno-FT-LyM" secondAttribute="trailing" constant="60" id="Tld-3J-0t5"/>
                             <constraint firstItem="3YR-qx-nlN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="60" id="UWe-yi-JR6"/>
                             <constraint firstItem="Ye4-62-jgS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="60" id="ay6-tD-RHG"/>
                             <constraint firstItem="Qno-FT-LyM" firstAttribute="top" secondItem="Ye4-62-jgS" secondAttribute="bottom" constant="35" id="c39-bZ-bJD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ye4-62-jgS" secondAttribute="trailing" constant="60" id="dG7-zF-Zcu"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3YR-qx-nlN" secondAttribute="bottom" constant="150" id="jfw-fQ-ywL"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3YR-qx-nlN" secondAttribute="bottom" constant="100" id="jfw-fQ-ywL"/>
                         </constraints>
                     </view>
                     <connections>
@@ -102,10 +102,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jHM-5r-Q71">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="mnQ-6h-oAe">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="menucell" id="mnQ-6h-oAe" customClass="MenuTableViewCell" customModule="car_manager" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mnQ-6h-oAe" id="ORp-cy-vAK">
@@ -114,13 +114,17 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8l6-dO-Z10" id="0Yb-Ic-BU3"/>
+                                    <outlet property="delegate" destination="8l6-dO-Z10" id="kdm-Kc-o2S"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jHM-5r-Q71" firstAttribute="leading" secondItem="kfv-lg-oiE" secondAttribute="leading" id="2I8-7Q-OxW"/>
                             <constraint firstAttribute="trailing" secondItem="jHM-5r-Q71" secondAttribute="trailing" id="49L-99-tqe"/>
-                            <constraint firstItem="jHM-5r-Q71" firstAttribute="top" secondItem="PtU-uN-iNe" secondAttribute="bottom" id="N9H-zB-4lk"/>
+                            <constraint firstItem="jHM-5r-Q71" firstAttribute="top" secondItem="PtU-uN-iNe" secondAttribute="bottom" constant="-64" id="N9H-zB-4lk"/>
                             <constraint firstItem="nt6-jE-LOg" firstAttribute="top" secondItem="jHM-5r-Q71" secondAttribute="bottom" id="axb-gz-ejs"/>
                         </constraints>
                     </view>
