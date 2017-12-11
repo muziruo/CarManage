@@ -82,7 +82,7 @@
                         <outlet property="LoginButton" destination="3YR-qx-nlN" id="sYH-tU-24C"/>
                         <outlet property="UserName" destination="Ye4-62-jgS" id="2Ff-Nd-gsz"/>
                         <outlet property="UserPassword" destination="Qno-FT-LyM" id="nwn-uS-0Mi"/>
-                        <segue destination="yA6-kU-Cif" kind="show" identifier="LoginSuccess" id="qlP-eQ-vQL"/>
+                        <segue destination="yA6-kU-Cif" kind="showDetail" identifier="LoginSuccess" action="showViewController:sender:" id="qlP-eQ-vQL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

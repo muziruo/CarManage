@@ -7,6 +7,7 @@
 //  登录页面
 
 import UIKit
+import SVProgressHUD
 
 class LoginViewController: UIViewController ,UITextFieldDelegate{
 
@@ -25,9 +26,11 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
             notice.addAction(noticeactivity)
             self.present(notice, animated: true, completion: nil)
         }else{
+            SVProgressHUD.show()
             /*
              登录操作
             */
+            SVProgressHUD.dismiss()
             performSegue(withIdentifier: "LoginSuccess", sender: nil)
         }
     }

@@ -7,95 +7,187 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1DC0F6B34BC234DF3B722CB1F92FFAD4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		2C7FFC98C883EBD162FB3CD6BEF98C36 /* Pods-car_manager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AFDFC069CBFFCA1FD2B079C729F5EA4E /* Pods-car_manager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		39D23398B80D75D86FAF0DC384A23416 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE506ECE97701EBA44FDBFF401C1A04 /* SwiftyJSON.swift */; };
-		62378C12B9014947F4E43EF9C25A04E9 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 05CA09B061E193906653AC21FD3A94F1 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7437EE9C6A49B83D6EDCBD898FAAA379 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B9BBA8F5B33E56C38F5546432F66B7 /* SwiftyJSON-dummy.m */; };
-		AFAEE6867BE48FF714F9C44E611458B7 /* Pods-car_manager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 03867823EA606D715FCD365FB34165B7 /* Pods-car_manager-dummy.m */; };
-		B7FBBAC4D768DC386CE4D5FA2D402C9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		011E71B98D0A61EB041604C65D501BB8 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CBA6E7EEAAF9B05F6B04E9D10690C498 /* SVProgressHUD.bundle */; };
+		105E0270AD346CC99005E4E28C347246 /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F8163E0CFCEE771C336921C99C61B5B /* SVProgressAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		15C1E4D3EDA5F33796732913875619D2 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A330D97262B7D50A7A70C34413952451 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A216B7A408E944446636706ECCE4961 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E06D761AB62B1386CA90EDA02445D0 /* SwiftyJSON.swift */; };
+		32F036FFDEC31CC122C5F0DBDF86D4E0 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A010174D5F907BD86F5F369375F21B57 /* SwiftyJSON-dummy.m */; };
+		444FF7A99B55714A1D23C86BEDC78CED /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = CE26D40AC022DD04D13DABF9D8944E20 /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		461FEF0C65DA3BD9F7A0A9820C411EBB /* SVProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FF09F5BC882ECB7ED3BBD7790F988262 /* SVProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5995372D1C31387DBE5527DE95F7EC3E /* SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BFC9466B44B10AC80636A166CF31B59 /* SVProgressHUD-dummy.m */; };
+		603C010BA674EAD02A231C4C4DA9B953 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4E44C8FF5842D4C1F08BCF9242E78F /* SVRadialGradientLayer.m */; };
+		673B2C98F33C9612B36FB70F5ADF5A8C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2770B482BFE91273C8560623F1422C /* QuartzCore.framework */; };
+		6AD78628F708533F6698DF21B932DC22 /* Pods-car_manager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 03867823EA606D715FCD365FB34165B7 /* Pods-car_manager-dummy.m */; };
+		6E2E726E6B6AF73079EBD3CBED4F478F /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = B74C972A7473935F18FD828ABF05F870 /* SVIndefiniteAnimatedView.m */; };
+		72170682CC55A036C6D617E624F96446 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F9A0E952988935C32EDDB1429D7133 /* Foundation.framework */; };
+		77794002451BF79E18F88389E61CA6AC /* Pods-car_manager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AFDFC069CBFFCA1FD2B079C729F5EA4E /* Pods-car_manager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9007535A7B1CFDA18274C1CFAF4886C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F9A0E952988935C32EDDB1429D7133 /* Foundation.framework */; };
+		A435B0A7EDB70520D1D94A5E741E8204 /* SVRadialGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BCE7B0A7AB5F197D28DEBBBF9B9A794 /* SVRadialGradientLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B0611E3B1993C81DB416C4C3F5C3DF08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F9A0E952988935C32EDDB1429D7133 /* Foundation.framework */; };
+		D5E9537D1E9DE3A9236B853B47304973 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0A2A43AF1D40F1E3C8D731541B44D6 /* SVProgressHUD.m */; };
+		EC641A5A2F5F84E6BDB0D4F7873645EF /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E530C2724BB924C7305D7129E4FB4279 /* SVProgressAnimatedView.m */; };
+		F717CDD27791A904B8FE1489CE0ED3B2 /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EBC15F265A9E6216240A1FE4F715399 /* SVIndefiniteAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		93007F36670C04C3C19285517956F33A /* PBXContainerItemProxy */ = {
+		23A64DA19D9FDE7588A13698BD68FE0A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 419831F845414B49D34879EBEC9F48BF;
+			remoteGlobalIDString = 2499C55BD0F5AE602D23196102109817;
+			remoteInfo = SVProgressHUD;
+		};
+		9A3C6B2B11CD296F0F3CA4A4DE9CE898 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6465BBBC2CD940414B9A7B232C7BB807;
 			remoteInfo = SwiftyJSON;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		03867823EA606D715FCD365FB34165B7 /* Pods-car_manager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-car_manager-dummy.m"; sourceTree = "<group>"; };
-		05CA09B061E193906653AC21FD3A94F1 /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
 		08922EDE97D79C250E63B85C47AA6AAC /* Pods-car_manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-car_manager.debug.xcconfig"; sourceTree = "<group>"; };
 		16D4A7B1E24747E001D231DCCCFEC461 /* Pods-car_manager-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-car_manager-resources.sh"; sourceTree = "<group>"; };
-		2E7F7C62EE34D2D271E6E1234A2002B2 /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
-		2EF9E50F5AE53887E191357C29279D39 /* Pods_car_manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_car_manager.framework; path = "Pods-car_manager.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		32B9BBA8F5B33E56C38F5546432F66B7 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
+		2BC85A1CD983E3ACE469BB303842AE76 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		306C6FBA52C793B2CA4E332B7C4340A6 /* SVProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.xcconfig; sourceTree = "<group>"; };
+		38119270DFE6CDE4450104208C90ECFC /* SVProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SVProgressHUD.modulemap; sourceTree = "<group>"; };
 		43BF932E6F7FB789E460C8D7111D9686 /* Pods-car_manager-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-car_manager-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4BFC9466B44B10AC80636A166CF31B59 /* SVProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		54F9A0E952988935C32EDDB1429D7133 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		558C330F8DC63D12D680155284E8C39A /* SVProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SVProgressHUD.framework; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC31C575A8A2666BB2E89CB56FB71FA /* Pods-car_manager-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-car_manager-acknowledgements.plist"; sourceTree = "<group>"; };
-		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5BCE7B0A7AB5F197D28DEBBBF9B9A794 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVRadialGradientLayer.h; path = SVProgressHUD/SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		5D0A2A43AF1D40F1E3C8D731541B44D6 /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
+		6828AADE289C2AB88554EEF268120090 /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
+		7F8163E0CFCEE771C336921C99C61B5B /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressAnimatedView.h; path = SVProgressHUD/SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		8595A8EE433999D0F653A2F49F1BA421 /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		8EBC15F265A9E6216240A1FE4F715399 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		94E7FBDD7E9526E7B5A4E2982934E2D8 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98E747EB8815933505D94F5535A5532F /* Pods-car_manager-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-car_manager-frameworks.sh"; sourceTree = "<group>"; };
+		A010174D5F907BD86F5F369375F21B57 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
+		A330D97262B7D50A7A70C34413952451 /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
 		AFDFC069CBFFCA1FD2B079C729F5EA4E /* Pods-car_manager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-car_manager-umbrella.h"; sourceTree = "<group>"; };
-		BBF610E40BDF6E542FA21FF7E5491205 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
-		BDE506ECE97701EBA44FDBFF401C1A04 /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
-		C4A9A658C966F6BB111BEDBDEA1F874A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D032A29E584B77AE187E586922267CF5 /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
+		B74C972A7473935F18FD828ABF05F870 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		BD73A25C3A707E3DD6DFCE49600C4877 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
+		C0E06D761AB62B1386CA90EDA02445D0 /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
+		CBA6E7EEAAF9B05F6B04E9D10690C498 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
+		CE26D40AC022DD04D13DABF9D8944E20 /* SVProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
+		D784DA33B6AD8B265DF8581FB991135A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBDFEA4CE4950840761EC6F6776DF27A /* Pods-car_manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-car_manager.release.xcconfig"; sourceTree = "<group>"; };
 		DFFCFD96BBCD461163CAB2209D8FE30A /* Pods-car_manager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-car_manager.modulemap"; sourceTree = "<group>"; };
+		E2F90E93FF0AF5D9DD412D7D582BFB85 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E530C2724BB924C7305D7129E4FB4279 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressAnimatedView.m; path = SVProgressHUD/SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		EB4E44C8FF5842D4C1F08BCF9242E78F /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVRadialGradientLayer.m; path = SVProgressHUD/SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		EE144A6CD671FE3A01FE2C1BAA0FF934 /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
 		EFACBF720A2D0EC8F2EAB5D25C045602 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAC0BE7C7FF468E6129A5AB8A356B5BC /* Pods_car_manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_car_manager.framework; path = "Pods-car_manager.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC2770B482BFE91273C8560623F1422C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		FF09F5BC882ECB7ED3BBD7790F988262 /* SVProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1CCE3A56D12ACC5C0336B4F2A5C88E91 /* Frameworks */ = {
+		2BBA183AED4E8CABAB169CA196AA122E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7FBBAC4D768DC386CE4D5FA2D402C9E /* Foundation.framework in Frameworks */,
+				B0611E3B1993C81DB416C4C3F5C3DF08 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AD0FDDAF6DD5E0F629090D2EC6403B36 /* Frameworks */ = {
+		95720B5FE03D270E11DEB68B1BCBDBB3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DC0F6B34BC234DF3B722CB1F92FFAD4 /* Foundation.framework in Frameworks */,
+				72170682CC55A036C6D617E624F96446 /* Foundation.framework in Frameworks */,
+				673B2C98F33C9612B36FB70F5ADF5A8C /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A88AB8334F385903126257FB576E1FF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9007535A7B1CFDA18274C1CFAF4886C8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4607007E182FFB210DC4095E687E5F21 /* Products */ = {
+		0223A260C7ACCC88D58A68A70AFF640B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2EF9E50F5AE53887E191357C29279D39 /* Pods_car_manager.framework */,
-				94E7FBDD7E9526E7B5A4E2982934E2D8 /* SwiftyJSON.framework */,
+				FAC0BE7C7FF468E6129A5AB8A356B5BC /* Pods_car_manager.framework */,
+				558C330F8DC63D12D680155284E8C39A /* SVProgressHUD.framework */,
+				2BC85A1CD983E3ACE469BB303842AE76 /* SwiftyJSON.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		70A8E4D3C62B6C203D238581DA091C21 /* SwiftyJSON */ = {
+		08034BF72FE30B44BE461F5E5F55CA35 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				BDE506ECE97701EBA44FDBFF401C1A04 /* SwiftyJSON.swift */,
-				8EC39E1DC11846207722B71AAFE40F98 /* Support Files */,
+				E2F90E93FF0AF5D9DD412D7D582BFB85 /* Info.plist */,
+				38119270DFE6CDE4450104208C90ECFC /* SVProgressHUD.modulemap */,
+				306C6FBA52C793B2CA4E332B7C4340A6 /* SVProgressHUD.xcconfig */,
+				4BFC9466B44B10AC80636A166CF31B59 /* SVProgressHUD-dummy.m */,
+				8595A8EE433999D0F653A2F49F1BA421 /* SVProgressHUD-prefix.pch */,
+				FF09F5BC882ECB7ED3BBD7790F988262 /* SVProgressHUD-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SVProgressHUD";
+			sourceTree = "<group>";
+		};
+		0F3309567651C5240A795C33CEA83B9A /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				C0E06D761AB62B1386CA90EDA02445D0 /* SwiftyJSON.swift */,
+				77A9C33EEB75ADFF4ED13777E5C0E610 /* Support Files */,
 			);
 			name = SwiftyJSON;
 			path = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		20044DA0C309195D22D53918C93F40D3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A4BC44C4482ED10F6CB951F7B8095CBE /* SVProgressHUD */,
+				0F3309567651C5240A795C33CEA83B9A /* SwiftyJSON */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				978007DCB56F415BE390E0F949D4D4E5 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		77A9C33EEB75ADFF4ED13777E5C0E610 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D784DA33B6AD8B265DF8581FB991135A /* Info.plist */,
+				EE144A6CD671FE3A01FE2C1BAA0FF934 /* SwiftyJSON.modulemap */,
+				6828AADE289C2AB88554EEF268120090 /* SwiftyJSON.xcconfig */,
+				A010174D5F907BD86F5F369375F21B57 /* SwiftyJSON-dummy.m */,
+				BD73A25C3A707E3DD6DFCE49600C4877 /* SwiftyJSON-prefix.pch */,
+				A330D97262B7D50A7A70C34413952451 /* SwiftyJSON-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyJSON";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				BD1E3C710F12F4B4C092FC8E2AD22110 /* Pods */,
-				4607007E182FFB210DC4095E687E5F21 /* Products */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				20044DA0C309195D22D53918C93F40D3 /* Pods */,
+				0223A260C7ACCC88D58A68A70AFF640B /* Products */,
 				82DEA91C8D23FC8894EF9EA058517643 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -108,42 +200,39 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		8EC39E1DC11846207722B71AAFE40F98 /* Support Files */ = {
+		978007DCB56F415BE390E0F949D4D4E5 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				C4A9A658C966F6BB111BEDBDEA1F874A /* Info.plist */,
-				D032A29E584B77AE187E586922267CF5 /* SwiftyJSON.modulemap */,
-				2E7F7C62EE34D2D271E6E1234A2002B2 /* SwiftyJSON.xcconfig */,
-				32B9BBA8F5B33E56C38F5546432F66B7 /* SwiftyJSON-dummy.m */,
-				BBF610E40BDF6E542FA21FF7E5491205 /* SwiftyJSON-prefix.pch */,
-				05CA09B061E193906653AC21FD3A94F1 /* SwiftyJSON-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftyJSON";
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BD1E3C710F12F4B4C092FC8E2AD22110 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				70A8E4D3C62B6C203D238581DA091C21 /* SwiftyJSON */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+				54F9A0E952988935C32EDDB1429D7133 /* Foundation.framework */,
+				FC2770B482BFE91273C8560623F1422C /* QuartzCore.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		A4BC44C4482ED10F6CB951F7B8095CBE /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				8EBC15F265A9E6216240A1FE4F715399 /* SVIndefiniteAnimatedView.h */,
+				B74C972A7473935F18FD828ABF05F870 /* SVIndefiniteAnimatedView.m */,
+				7F8163E0CFCEE771C336921C99C61B5B /* SVProgressAnimatedView.h */,
+				E530C2724BB924C7305D7129E4FB4279 /* SVProgressAnimatedView.m */,
+				CE26D40AC022DD04D13DABF9D8944E20 /* SVProgressHUD.h */,
+				5D0A2A43AF1D40F1E3C8D731541B44D6 /* SVProgressHUD.m */,
+				5BCE7B0A7AB5F197D28DEBBBF9B9A794 /* SVRadialGradientLayer.h */,
+				EB4E44C8FF5842D4C1F08BCF9242E78F /* SVRadialGradientLayer.m */,
+				B58CFDE784E24889740B73ECAF510CE5 /* Resources */,
+				08034BF72FE30B44BE461F5E5F55CA35 /* Support Files */,
+			);
+			name = SVProgressHUD;
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		B58CFDE784E24889740B73ECAF510CE5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CBA6E7EEAAF9B05F6B04E9D10690C498 /* SVProgressHUD.bundle */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		E034C26D11B3D20300474DA9E30756AA /* Pods-car_manager */ = {
@@ -167,50 +256,62 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		40548267BDB194271A24BAE81F2BD4F0 /* Headers */ = {
+		04BC831DA7AD464D94F4723116950458 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C7FFC98C883EBD162FB3CD6BEF98C36 /* Pods-car_manager-umbrella.h in Headers */,
+				77794002451BF79E18F88389E61CA6AC /* Pods-car_manager-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7DE16673379B9D876D260EF974F16705 /* Headers */ = {
+		56C5D7C01BA7B399BC0633F058CD6402 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62378C12B9014947F4E43EF9C25A04E9 /* SwiftyJSON-umbrella.h in Headers */,
+				15C1E4D3EDA5F33796732913875619D2 /* SwiftyJSON-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A891376DFA46A0833A4D85B2F3C6EE5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F717CDD27791A904B8FE1489CE0ED3B2 /* SVIndefiniteAnimatedView.h in Headers */,
+				105E0270AD346CC99005E4E28C347246 /* SVProgressAnimatedView.h in Headers */,
+				461FEF0C65DA3BD9F7A0A9820C411EBB /* SVProgressHUD-umbrella.h in Headers */,
+				444FF7A99B55714A1D23C86BEDC78CED /* SVProgressHUD.h in Headers */,
+				A435B0A7EDB70520D1D94A5E741E8204 /* SVRadialGradientLayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1E7BD7ACA3AB3F11D73E5A3A3FF8B88E /* Pods-car_manager */ = {
+		2499C55BD0F5AE602D23196102109817 /* SVProgressHUD */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2DD45488FF5DA6012AAA4A983D3C72E9 /* Build configuration list for PBXNativeTarget "Pods-car_manager" */;
+			buildConfigurationList = 286A760DEE388FBFA92DCDDF18C756B2 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */;
 			buildPhases = (
-				5BE808F123171E9DA484F58207712DEC /* Sources */,
-				1CCE3A56D12ACC5C0336B4F2A5C88E91 /* Frameworks */,
-				40548267BDB194271A24BAE81F2BD4F0 /* Headers */,
+				F2435A63D360D3E17A322A1E29640662 /* Sources */,
+				95720B5FE03D270E11DEB68B1BCBDBB3 /* Frameworks */,
+				7A891376DFA46A0833A4D85B2F3C6EE5 /* Headers */,
+				D7FC2CAD830BEDF07D231741B9B8C033 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4B733C2E30FB92AAA3BC1DE121DBDC05 /* PBXTargetDependency */,
 			);
-			name = "Pods-car_manager";
-			productName = "Pods-car_manager";
-			productReference = 2EF9E50F5AE53887E191357C29279D39 /* Pods_car_manager.framework */;
+			name = SVProgressHUD;
+			productName = SVProgressHUD;
+			productReference = 558C330F8DC63D12D680155284E8C39A /* SVProgressHUD.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		419831F845414B49D34879EBEC9F48BF /* SwiftyJSON */ = {
+		6465BBBC2CD940414B9A7B232C7BB807 /* SwiftyJSON */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5662049B8CC526DCE54F042C86FA7134 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */;
+			buildConfigurationList = A6B68FB2379F799810E7AAE181A23302 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */;
 			buildPhases = (
-				B6062076AC0B836AA1B2B41AEEA0E2D6 /* Sources */,
-				AD0FDDAF6DD5E0F629090D2EC6403B36 /* Frameworks */,
-				7DE16673379B9D876D260EF974F16705 /* Headers */,
+				4C7E0CA3DDBB53362C1862D96744A330 /* Sources */,
+				A88AB8334F385903126257FB576E1FF8 /* Frameworks */,
+				56C5D7C01BA7B399BC0633F058CD6402 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -218,7 +319,26 @@
 			);
 			name = SwiftyJSON;
 			productName = SwiftyJSON;
-			productReference = 94E7FBDD7E9526E7B5A4E2982934E2D8 /* SwiftyJSON.framework */;
+			productReference = 2BC85A1CD983E3ACE469BB303842AE76 /* SwiftyJSON.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		66E3F491F8830391F743CE006E78A279 /* Pods-car_manager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1E18AD9F6EE3F2BBE330A7CBC7F04A4 /* Build configuration list for PBXNativeTarget "Pods-car_manager" */;
+			buildPhases = (
+				CC70695FA9C09715C28D6F09BBEF68AF /* Sources */,
+				2BBA183AED4E8CABAB169CA196AA122E /* Frameworks */,
+				04BC831DA7AD464D94F4723116950458 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				920D31B652B128396115BEE45C3B5388 /* PBXTargetDependency */,
+				55ABC66A91D80CB7237056084C303D71 /* PBXTargetDependency */,
+			);
+			name = "Pods-car_manager";
+			productName = "Pods-car_manager";
+			productReference = FAC0BE7C7FF468E6129A5AB8A356B5BC /* Pods_car_manager.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -238,49 +358,79 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 4607007E182FFB210DC4095E687E5F21 /* Products */;
+			productRefGroup = 0223A260C7ACCC88D58A68A70AFF640B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1E7BD7ACA3AB3F11D73E5A3A3FF8B88E /* Pods-car_manager */,
-				419831F845414B49D34879EBEC9F48BF /* SwiftyJSON */,
+				66E3F491F8830391F743CE006E78A279 /* Pods-car_manager */,
+				2499C55BD0F5AE602D23196102109817 /* SVProgressHUD */,
+				6465BBBC2CD940414B9A7B232C7BB807 /* SwiftyJSON */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXSourcesBuildPhase section */
-		5BE808F123171E9DA484F58207712DEC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+/* Begin PBXResourcesBuildPhase section */
+		D7FC2CAD830BEDF07D231741B9B8C033 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFAEE6867BE48FF714F9C44E611458B7 /* Pods-car_manager-dummy.m in Sources */,
+				011E71B98D0A61EB041604C65D501BB8 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B6062076AC0B836AA1B2B41AEEA0E2D6 /* Sources */ = {
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C7E0CA3DDBB53362C1862D96744A330 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7437EE9C6A49B83D6EDCBD898FAAA379 /* SwiftyJSON-dummy.m in Sources */,
-				39D23398B80D75D86FAF0DC384A23416 /* SwiftyJSON.swift in Sources */,
+				32F036FFDEC31CC122C5F0DBDF86D4E0 /* SwiftyJSON-dummy.m in Sources */,
+				2A216B7A408E944446636706ECCE4961 /* SwiftyJSON.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC70695FA9C09715C28D6F09BBEF68AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AD78628F708533F6698DF21B932DC22 /* Pods-car_manager-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2435A63D360D3E17A322A1E29640662 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E2E726E6B6AF73079EBD3CBED4F478F /* SVIndefiniteAnimatedView.m in Sources */,
+				EC641A5A2F5F84E6BDB0D4F7873645EF /* SVProgressAnimatedView.m in Sources */,
+				5995372D1C31387DBE5527DE95F7EC3E /* SVProgressHUD-dummy.m in Sources */,
+				D5E9537D1E9DE3A9236B853B47304973 /* SVProgressHUD.m in Sources */,
+				603C010BA674EAD02A231C4C4DA9B953 /* SVRadialGradientLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4B733C2E30FB92AAA3BC1DE121DBDC05 /* PBXTargetDependency */ = {
+		55ABC66A91D80CB7237056084C303D71 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftyJSON;
-			target = 419831F845414B49D34879EBEC9F48BF /* SwiftyJSON */;
-			targetProxy = 93007F36670C04C3C19285517956F33A /* PBXContainerItemProxy */;
+			target = 6465BBBC2CD940414B9A7B232C7BB807 /* SwiftyJSON */;
+			targetProxy = 9A3C6B2B11CD296F0F3CA4A4DE9CE898 /* PBXContainerItemProxy */;
+		};
+		920D31B652B128396115BEE45C3B5388 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SVProgressHUD;
+			target = 2499C55BD0F5AE602D23196102109817 /* SVProgressHUD */;
+			targetProxy = 23A64DA19D9FDE7588A13698BD68FE0A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		58EECF27819B6B49163D2124E350AFEF /* Release */ = {
+		0579C23AB2923E095EAAB1A9B1E1DEA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBDFEA4CE4950840761EC6F6776DF27A /* Pods-car_manager.release.xcconfig */;
+			baseConfigurationReference = 6828AADE289C2AB88554EEF268120090 /* SwiftyJSON.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -291,20 +441,49 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-car_manager/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-car_manager/Pods-car_manager.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_car_manager;
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				PRODUCT_NAME = SwiftyJSON;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0D8DD9A287BB5D5D01AE2E0CE3C380F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6828AADE289C2AB88554EEF268120090 /* SwiftyJSON.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -367,9 +546,9 @@
 			};
 			name = Release;
 		};
-		A37382818E40388FA05FBADFA0786AEB /* Debug */ = {
+		9718953D384560072F32AC6503D73DC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E7F7C62EE34D2D271E6E1234A2002B2 /* SwiftyJSON.xcconfig */;
+			baseConfigurationReference = 08922EDE97D79C250E63B85C47AA6AAC /* Pods-car_manager.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -380,18 +559,21 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-car_manager/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
-				PRODUCT_NAME = SwiftyJSON;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-car_manager/Pods-car_manager.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_car_manager;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -458,9 +640,9 @@
 			};
 			name = Debug;
 		};
-		D901C97A5FE2A5089D67CCEC04C1CFC4 /* Debug */ = {
+		D646FAFD04D72D0A40E59949A2638681 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 08922EDE97D79C250E63B85C47AA6AAC /* Pods-car_manager.debug.xcconfig */;
+			baseConfigurationReference = DBDFEA4CE4950840761EC6F6776DF27A /* Pods-car_manager.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -484,17 +666,17 @@
 				PRODUCT_NAME = Pods_car_manager;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		DE7B2510F39364FB24262BF6A98CBDC7 /* Release */ = {
+		F8A3B15343FB2C8409A6C7968E3C0FC0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E7F7C62EE34D2D271E6E1234A2002B2 /* SwiftyJSON.xcconfig */;
+			baseConfigurationReference = 306C6FBA52C793B2CA4E332B7C4340A6 /* SVProgressHUD.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -505,17 +687,16 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SVProgressHUD/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
-				PRODUCT_NAME = SwiftyJSON;
+				MODULEMAP_FILE = "Target Support Files/SVProgressHUD/SVProgressHUD.modulemap";
+				PRODUCT_NAME = SVProgressHUD;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -524,9 +705,48 @@
 			};
 			name = Release;
 		};
+		FF0BB55568331D064564C12427A541BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 306C6FBA52C793B2CA4E332B7C4340A6 /* SVProgressHUD.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SVProgressHUD/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SVProgressHUD/SVProgressHUD.modulemap";
+				PRODUCT_NAME = SVProgressHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		286A760DEE388FBFA92DCDDF18C756B2 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF0BB55568331D064564C12427A541BC /* Debug */,
+				F8A3B15343FB2C8409A6C7968E3C0FC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -536,20 +756,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2DD45488FF5DA6012AAA4A983D3C72E9 /* Build configuration list for PBXNativeTarget "Pods-car_manager" */ = {
+		A6B68FB2379F799810E7AAE181A23302 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D901C97A5FE2A5089D67CCEC04C1CFC4 /* Debug */,
-				58EECF27819B6B49163D2124E350AFEF /* Release */,
+				0579C23AB2923E095EAAB1A9B1E1DEA7 /* Debug */,
+				0D8DD9A287BB5D5D01AE2E0CE3C380F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5662049B8CC526DCE54F042C86FA7134 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
+		B1E18AD9F6EE3F2BBE330A7CBC7F04A4 /* Build configuration list for PBXNativeTarget "Pods-car_manager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A37382818E40388FA05FBADFA0786AEB /* Debug */,
-				DE7B2510F39364FB24262BF6A98CBDC7 /* Release */,
+				9718953D384560072F32AC6503D73DC6 /* Debug */,
+				D646FAFD04D72D0A40E59949A2638681 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
