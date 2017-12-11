@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入账号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ye4-62-jgS">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入账号" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ye4-62-jgS">
                                 <rect key="frame" x="76" y="193" width="223" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0lF-07-R3D"/>
@@ -31,26 +31,29 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qno-FT-LyM">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qno-FT-LyM">
                                 <rect key="frame" x="76" y="268" width="223" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="C5R-P7-b6i"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3YR-qx-nlN">
-                                <rect key="frame" x="76" y="467" width="223" height="50"/>
+                                <rect key="frame" x="76" y="477" width="223" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="rvV-gt-GON"/>
+                                    <constraint firstAttribute="height" constant="40" id="rvV-gt-GON"/>
                                 </constraints>
                                 <state key="normal" title="登陆"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
+                                        <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="LoginActivity:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x7H-Um-9CH"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="武汉理工大学车辆管理系统" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X61-pg-25c">
                                 <rect key="frame" x="100" y="45" width="175" height="67.5"/>
@@ -200,11 +203,11 @@
             </objects>
             <point key="canvasLocation" x="824.79999999999995" y="-617.54122938530736"/>
         </scene>
-        <!--Item-->
+        <!--我的-->
         <scene sceneID="glu-lI-glh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wlO-rP-CQy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="muB-xh-Tut"/>
+                    <tabBarItem key="tabBarItem" title="我的" id="muB-xh-Tut"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4OU-b8-OEm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

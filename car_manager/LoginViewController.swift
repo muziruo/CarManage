@@ -8,15 +8,35 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController ,UITextFieldDelegate{
 
     @IBOutlet weak var UserPassword: UITextField!
     @IBOutlet weak var UserName: UITextField!
     @IBOutlet weak var LoginButton: UIButton!
     
+    //登录操作
+    @IBAction func LoginActivity(_ sender: UIButton) {
+        let nameinput:String = UserName.text!
+        let passwordinput:String = UserPassword.text!
+        
+        if nameinput == "" || passwordinput == "" {
+            let notice = UIAlertController(title: "警告", message: "账号或密码不能为空!", preferredStyle: .alert)
+            let noticeactivity = UIAlertAction(title: "确定", style: .default, handler: nil)
+            notice.addAction(noticeactivity)
+            self.present(notice, animated: true, completion: nil)
+        }else{
+            /*
+             登录操作
+            */
+            performSegue(withIdentifier: "LoginSuccess", sender: nil)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        LoginButton.layer.borderColor = UIColor.blue.cgColor
+        LoginButton.layer.borderWidth = 1.5
         // Do any additional setup after loading the view.
     }
 
@@ -25,6 +45,10 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //点击输入框外部隐藏键盘
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 
     /*
     // MARK: - Navigation
