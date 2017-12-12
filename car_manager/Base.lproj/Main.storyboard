@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -129,10 +130,57 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="查询" id="g7W-24-v7m"/>
+                    <connections>
+                        <segue destination="rOa-Rk-pVF" kind="show" id="yDL-JJ-mTE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHG-BV-WdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1764" y="886.50674662668678"/>
+        </scene>
+        <!--Person Search View Controller-->
+        <scene sceneID="1hx-2u-7mj">
+            <objects>
+                <viewController id="rOa-Rk-pVF" customClass="PersonSearchViewController" customModule="car_manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L7E-2A-juT"/>
+                        <viewControllerLayoutGuide type="bottom" id="1HW-Nl-ChL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vD5-8j-dFa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfy-Aa-yYi">
+                                <rect key="frame" x="16" y="74" width="343" height="40"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TqX-G6-NQS">
+                                        <rect key="frame" x="0.0" y="0.0" width="228.5" height="40"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFS-0D-QQF">
+                                        <rect key="frame" x="228.5" y="0.0" width="114.5" height="40"/>
+                                        <state key="normal" title="查询"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="TqX-G6-NQS" firstAttribute="width" secondItem="LFS-0D-QQF" secondAttribute="width" multiplier="2" id="B8r-Jj-BiN"/>
+                                    <constraint firstAttribute="height" constant="40" id="pQP-HH-Gm8"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="gfy-Aa-yYi" secondAttribute="trailing" id="1Uy-6V-6dQ"/>
+                            <constraint firstItem="gfy-Aa-yYi" firstAttribute="top" secondItem="L7E-2A-juT" secondAttribute="bottom" constant="10" id="WIv-Rk-Ghv"/>
+                            <constraint firstItem="gfy-Aa-yYi" firstAttribute="leading" secondItem="vD5-8j-dFa" secondAttribute="leadingMargin" id="brI-sn-AO2"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mcp-7v-T8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2701.5999999999999" y="886.50674662668678"/>
         </scene>
         <!--管理-->
         <scene sceneID="9mm-0m-YOl">
