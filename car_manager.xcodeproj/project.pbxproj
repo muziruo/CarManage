@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		32E92D741FDFCBA50016B181 /* ManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E92D731FDFCBA50016B181 /* ManageViewController.swift */; };
+		3251B6621FE364CB00D4AD82 /* AddUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3251B6611FE364CB00D4AD82 /* AddUserTableViewCell.swift */; };
 		32E92D791FDFCCA10016B181 /* ViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E92D781FDFCCA10016B181 /* ViewHelper.swift */; };
-		32E92D7B1FDFD7000016B181 /* ManageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E92D7A1FDFD7000016B181 /* ManageViewCell.swift */; };
 		79DAE9294A0D3E071F33C5AA /* Pods_car_manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57052502F3F8DEE40D16237 /* Pods_car_manager.framework */; };
 		EE6BB6AA1FDAC2FA0035C030 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6A91FDAC2FA0035C030 /* LoginViewController.swift */; };
 		EE6BB6CC1FDC2B7C0035C030 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = EE6BB6CB1FDC2B7C0035C030 /* Podfile */; };
@@ -24,9 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		32E92D731FDFCBA50016B181 /* ManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageViewController.swift; sourceTree = "<group>"; };
+		3251B6611FE364CB00D4AD82 /* AddUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserTableViewCell.swift; sourceTree = "<group>"; };
 		32E92D781FDFCCA10016B181 /* ViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHelper.swift; sourceTree = "<group>"; };
-		32E92D7A1FDFD7000016B181 /* ManageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageViewCell.swift; sourceTree = "<group>"; };
 		B57052502F3F8DEE40D16237 /* Pods_car_manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_car_manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C653B98A830237A3609CE4BA /* Pods-car_manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-car_manager.release.xcconfig"; path = "Pods/Target Support Files/Pods-car_manager/Pods-car_manager.release.xcconfig"; sourceTree = "<group>"; };
 		D0C0585E5882544F0D1B8AF6 /* Pods-car_manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-car_manager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-car_manager/Pods-car_manager.debug.xcconfig"; sourceTree = "<group>"; };
@@ -69,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				32E92D781FDFCCA10016B181 /* ViewHelper.swift */,
-				32E92D7A1FDFD7000016B181 /* ManageViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -95,7 +92,7 @@
 		EE6BB6D61FDEAC670035C030 /* ManageModule */ = {
 			isa = PBXGroup;
 			children = (
-				32E92D731FDFCBA50016B181 /* ManageViewController.swift */,
+				3251B6611FE364CB00D4AD82 /* AddUserTableViewCell.swift */,
 			);
 			path = ManageModule;
 			sourceTree = "<group>";
@@ -288,15 +285,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3251B6621FE364CB00D4AD82 /* AddUserTableViewCell.swift in Sources */,
 				EE6BB6DA1FDEAD0F0035C030 /* User.swift in Sources */,
 				EE6BB6DE1FDEADBF0035C030 /* MenuTableViewCell.swift in Sources */,
 				EE6BB6E01FDFD5070035C030 /* PersonSearchViewController.swift in Sources */,
 				EE6BB6AA1FDAC2FA0035C030 /* LoginViewController.swift in Sources */,
-				32E92D7B1FDFD7000016B181 /* ManageViewCell.swift in Sources */,
 				EE7DEDEF1FDA72350062928E /* AppDelegate.swift in Sources */,
 				EE6BB6D51FDEAA510035C030 /* SearchMenuViewController.swift in Sources */,
 				32E92D791FDFCCA10016B181 /* ViewHelper.swift in Sources */,
-				32E92D741FDFCBA50016B181 /* ManageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

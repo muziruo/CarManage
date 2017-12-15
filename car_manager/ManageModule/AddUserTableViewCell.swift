@@ -1,16 +1,17 @@
 //
-//  ManageViewCell.swift
+//  addUserTableViewCell.swift
 //  car_manager
 //
-//  Created by 沐阳 on 2017/12/12.
+//  Created by 沐阳 on 2017/12/15.
 //  Copyright © 2017年 李祎喆. All rights reserved.
 //
 
 import UIKit
 
-class ManageViewCell: UITableViewCell {
+class AddUserTableViewCell: UITableViewCell {
     
-    @IBOutlet var functionNameLabel: UILabel!
+    @IBOutlet var label: UILabel!
+    @IBOutlet var valueField: UITextField!
 
     override func awakeFromNib() {
         super.awakeFromNib()
