@@ -202,25 +202,6 @@
             </objects>
             <point key="canvasLocation" x="2701.5999999999999" y="886.50674662668678"/>
         </scene>
-        <!--管理-->
-        <scene sceneID="9mm-0m-YOl">
-            <objects>
-                <viewController id="D4o-nJ-E0d" customClass="ManageMenuViewController" customModule="car_manager" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="9Co-k1-rl1"/>
-                        <viewControllerLayoutGuide type="bottom" id="hQI-5P-qy1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="oIJ-PJ-De7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="管理" id="fE1-HL-XuP"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zaJ-mG-yYh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1764" y="-617.54122938530736"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="okk-Bv-1lK">
             <objects>
@@ -306,7 +287,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="3jh-3F-fbr" customClass="ManageViewCell" customModule="car_manager" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="3jh-3F-fbr" customClass="ManageViewCell" customModule="car_manager" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="3jh-3F-fbr" id="eNR-9X-Dl0">
