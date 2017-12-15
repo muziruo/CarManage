@@ -196,7 +196,7 @@
 				TargetAttributes = {
 					EE7DEDEA1FDA72350062928E = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = K2VC334V4X;
+						DevelopmentTeam = 6TJKYE5XV9;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
@@ -302,7 +302,6 @@
 				EE6BB6DE1FDEADBF0035C030 /* MenuTableViewCell.swift in Sources */,
 				EE6BB6AA1FDAC2FA0035C030 /* LoginViewController.swift in Sources */,
 				EE6BB6EA1FE36F6C0035C030 /* Info.swift in Sources */,
-				32E92D7B1FDFD7000016B181 /* ManageViewCell.swift in Sources */,
 				EE7DEDEF1FDA72350062928E /* AppDelegate.swift in Sources */,
 				EE6BB6D51FDEAA510035C030 /* SearchMenuViewController.swift in Sources */,
 				EE6BB6E41FE362EA0035C030 /* CarSearchTableViewController.swift in Sources */,
@@ -310,7 +309,6 @@
 				EE6BB6E21FE3584A0035C030 /* PersonSearchTableViewController.swift in Sources */,
 				32E92D791FDFCCA10016B181 /* ViewHelper.swift in Sources */,
 				EE6BB6E91FE36F6C0035C030 /* CarInfo.swift in Sources */,
-				32E92D741FDFCBA50016B181 /* ManageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,7 +448,7 @@
 			baseConfigurationReference = D0C0585E5882544F0D1B8AF6 /* Pods-car_manager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = K2VC334V4X;
+				DEVELOPMENT_TEAM = 6TJKYE5XV9;
 				INFOPLIST_FILE = car_manager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "lqzy.car-manager";
@@ -464,7 +462,7 @@
 			baseConfigurationReference = C653B98A830237A3609CE4BA /* Pods-car_manager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = K2VC334V4X;
+				DEVELOPMENT_TEAM = 6TJKYE5XV9;
 				INFOPLIST_FILE = car_manager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "lqzy.car-manager";
