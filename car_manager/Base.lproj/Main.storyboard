@@ -777,25 +777,110 @@
                                                     <real key="value" value="20"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="MSr-XS-mpC" firstAttribute="leading" secondItem="eNR-9X-Dl0" secondAttribute="leadingMargin" id="46O-WG-Rem"/>
-                                        <constraint firstItem="MSr-XS-mpC" firstAttribute="top" secondItem="eNR-9X-Dl0" secondAttribute="topMargin" id="OLA-Z7-ClF"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="MSr-XS-mpC" secondAttribute="trailing" id="b2k-aV-WGb"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="MSr-XS-mpC" secondAttribute="bottom" id="z7h-jJ-oqe"/>
-                                    </constraints>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="20"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="functionNameLabel" destination="MSr-XS-mpC" id="rqD-PZ-Ctw"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Yax-Aa-t2n" customClass="ManageViewCell" customModule="car_manager" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="160" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yax-Aa-t2n" id="LtG-pW-2cB">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加单位" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1TO-Zu-WAi" customClass="ArcView" customModule="car_manager" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="11" width="343" height="58"/>
+                                                    <color key="backgroundColor" red="0.56148728150000005" green="1" blue="0.7610674382" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="1TO-Zu-WAi" secondAttribute="bottom" id="2n3-Wp-Rcw"/>
+                                                <constraint firstItem="1TO-Zu-WAi" firstAttribute="top" secondItem="LtG-pW-2cB" secondAttribute="topMargin" id="VIT-tT-4Oy"/>
+                                                <constraint firstItem="1TO-Zu-WAi" firstAttribute="leading" secondItem="LtG-pW-2cB" secondAttribute="leadingMargin" id="cXT-FN-ecb"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="1TO-Zu-WAi" secondAttribute="trailing" id="q6E-ak-dGQ"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hyW-Nb-GYj" customClass="ManageViewCell" customModule="car_manager" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="240" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hyW-Nb-GYj" id="QDx-tS-mna">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="删除用户" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgV-97-pXI" customClass="ArcView" customModule="car_manager" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="11" width="343" height="58"/>
+                                                    <color key="backgroundColor" red="0.56148728150000005" green="1" blue="0.7610674382" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="SgV-97-pXI" firstAttribute="top" secondItem="QDx-tS-mna" secondAttribute="topMargin" id="B08-cp-qx0"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="SgV-97-pXI" secondAttribute="bottom" id="Nx7-Fl-gau"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="SgV-97-pXI" secondAttribute="trailing" id="Os3-4t-Jnf"/>
+                                                <constraint firstItem="SgV-97-pXI" firstAttribute="leading" secondItem="QDx-tS-mna" secondAttribute="leadingMargin" id="quD-gz-0om"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Qqr-fy-P9V" customClass="ManageViewCell" customModule="car_manager" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="320" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qqr-fy-P9V" id="ogb-MU-40d">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="删除教职工" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ln5-yA-anr" customClass="ArcView" customModule="car_manager" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="11" width="343" height="58"/>
+                                                    <color key="backgroundColor" red="0.56148728150000005" green="1" blue="0.7610674382" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ln5-yA-anr" secondAttribute="trailing" id="3o8-jT-TS2"/>
+                                                <constraint firstItem="ln5-yA-anr" firstAttribute="leading" secondItem="ogb-MU-40d" secondAttribute="leadingMargin" id="8bY-YU-1An"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ln5-yA-anr" secondAttribute="bottom" id="HrT-GO-Atf"/>
+                                                <constraint firstItem="ln5-yA-anr" firstAttribute="top" secondItem="ogb-MU-40d" secondAttribute="topMargin" id="utE-YA-bed"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="wxW-B2-wzQ" id="520-ET-F3r"/>
                             <outlet property="delegate" destination="wxW-B2-wzQ" id="ceI-1U-qOu"/>
@@ -803,7 +888,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="管理" id="Itt-uK-pDf"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="O5i-7d-UBv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1764" y="-618"/>
         </scene>
@@ -825,6 +909,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZPJ-NZ-qKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1764" y="134.48275862068968"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="jtN-Kz-tU5">
+            <objects>
+                <tableViewController id="moV-kI-oWb" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="51H-8a-nHv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="btN-os-dZK">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="btN-os-dZK" id="YIN-aI-dTc">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="moV-kI-oWb" id="IkB-Wz-lyw"/>
+                            <outlet property="delegate" destination="moV-kI-oWb" id="ErD-16-JDA"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LYk-CM-bbI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="0hE-Bh-Yu2">
+            <objects>
+                <tableViewController id="HrR-Ky-UIX" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="r8N-dp-MSn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="xuK-5w-90k">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xuK-5w-90k" id="xmo-1U-xTV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="HrR-Ky-UIX" id="eVe-lS-h0l"/>
+                            <outlet property="delegate" destination="HrR-Ky-UIX" id="vpH-0j-lMc"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Avm-u0-G0l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
 </document>
