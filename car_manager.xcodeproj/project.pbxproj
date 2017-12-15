@@ -16,7 +16,11 @@
 		EE6BB6D51FDEAA510035C030 /* SearchMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6D41FDEAA510035C030 /* SearchMenuViewController.swift */; };
 		EE6BB6DA1FDEAD0F0035C030 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6D91FDEAD0F0035C030 /* User.swift */; };
 		EE6BB6DE1FDEADBF0035C030 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6DD1FDEADBF0035C030 /* MenuTableViewCell.swift */; };
-		EE6BB6E01FDFD5070035C030 /* PersonSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6DF1FDFD5070035C030 /* PersonSearchViewController.swift */; };
+		EE6BB6E21FE3584A0035C030 /* PersonSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6E11FE3584A0035C030 /* PersonSearchTableViewController.swift */; };
+		EE6BB6E41FE362EA0035C030 /* CarSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6E31FE362EA0035C030 /* CarSearchTableViewController.swift */; };
+		EE6BB6E81FE36F6C0035C030 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6E51FE36F6C0035C030 /* Car.swift */; };
+		EE6BB6E91FE36F6C0035C030 /* CarInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6E61FE36F6C0035C030 /* CarInfo.swift */; };
+		EE6BB6EA1FE36F6C0035C030 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6E71FE36F6C0035C030 /* Info.swift */; };
 		EE7DEDEF1FDA72350062928E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7DEDEE1FDA72350062928E /* AppDelegate.swift */; };
 		EE7DEDF41FDA72350062928E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE7DEDF21FDA72350062928E /* Main.storyboard */; };
 		EE7DEDF61FDA72350062928E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE7DEDF51FDA72350062928E /* Assets.xcassets */; };
@@ -35,7 +39,11 @@
 		EE6BB6D41FDEAA510035C030 /* SearchMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchMenuViewController.swift; sourceTree = "<group>"; };
 		EE6BB6D91FDEAD0F0035C030 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EE6BB6DD1FDEADBF0035C030 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
-		EE6BB6DF1FDFD5070035C030 /* PersonSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSearchViewController.swift; sourceTree = "<group>"; };
+		EE6BB6E11FE3584A0035C030 /* PersonSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSearchTableViewController.swift; sourceTree = "<group>"; };
+		EE6BB6E31FE362EA0035C030 /* CarSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarSearchTableViewController.swift; sourceTree = "<group>"; };
+		EE6BB6E51FE36F6C0035C030 /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		EE6BB6E61FE36F6C0035C030 /* CarInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarInfo.swift; sourceTree = "<group>"; };
+		EE6BB6E71FE36F6C0035C030 /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		EE7DEDEB1FDA72350062928E /* car_manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = car_manager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE7DEDEE1FDA72350062928E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE7DEDF31FDA72350062928E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -86,7 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				EE6BB6D41FDEAA510035C030 /* SearchMenuViewController.swift */,
-				EE6BB6DF1FDFD5070035C030 /* PersonSearchViewController.swift */,
+				EE6BB6E11FE3584A0035C030 /* PersonSearchTableViewController.swift */,
+				EE6BB6E31FE362EA0035C030 /* CarSearchTableViewController.swift */,
 				EE6BB6DD1FDEADBF0035C030 /* MenuTableViewCell.swift */,
 			);
 			path = SearchModule;
@@ -110,6 +119,9 @@
 		EE6BB6D81FDEAD0F0035C030 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EE6BB6E51FE36F6C0035C030 /* Car.swift */,
+				EE6BB6E61FE36F6C0035C030 /* CarInfo.swift */,
+				EE6BB6E71FE36F6C0035C030 /* Info.swift */,
 				EE6BB6D91FDEAD0F0035C030 /* User.swift */,
 			);
 			path = Models;
@@ -290,12 +302,16 @@
 			files = (
 				EE6BB6DA1FDEAD0F0035C030 /* User.swift in Sources */,
 				EE6BB6DE1FDEADBF0035C030 /* MenuTableViewCell.swift in Sources */,
-				EE6BB6E01FDFD5070035C030 /* PersonSearchViewController.swift in Sources */,
 				EE6BB6AA1FDAC2FA0035C030 /* LoginViewController.swift in Sources */,
+				EE6BB6EA1FE36F6C0035C030 /* Info.swift in Sources */,
 				32E92D7B1FDFD7000016B181 /* ManageViewCell.swift in Sources */,
 				EE7DEDEF1FDA72350062928E /* AppDelegate.swift in Sources */,
 				EE6BB6D51FDEAA510035C030 /* SearchMenuViewController.swift in Sources */,
+				EE6BB6E41FE362EA0035C030 /* CarSearchTableViewController.swift in Sources */,
+				EE6BB6E81FE36F6C0035C030 /* Car.swift in Sources */,
+				EE6BB6E21FE3584A0035C030 /* PersonSearchTableViewController.swift in Sources */,
 				32E92D791FDFCCA10016B181 /* ViewHelper.swift in Sources */,
+				EE6BB6E91FE36F6C0035C030 /* CarInfo.swift in Sources */,
 				32E92D741FDFCBA50016B181 /* ManageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

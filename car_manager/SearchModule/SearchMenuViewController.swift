@@ -45,7 +45,7 @@ class SearchMenuViewController: UIViewController ,UITableViewDelegate ,UITableVi
         case 0:
             performSegue(withIdentifier: "GoToPersonSearch", sender: nil)
         case 1:
-            performSegue(withIdentifier: "GoToCarManage", sender: nil)
+            performSegue(withIdentifier: "GoToCarSearch", sender: nil)
         default:
             print("进入车辆管理系统")
         }

@@ -19,8 +19,13 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
     
     //登录操作
     @IBAction func LoginActivity(_ sender: UIButton) {
+        //调试用，正式版请删除
+        let nameinput:String = "20170001"
+        let passwordinput:String = "342188"
+        /*
         let nameinput:String = UserName.text!
         let passwordinput:String = UserPassword.text!
+        */
         
         if nameinput == "" || passwordinput == "" {
             let notice = UIAlertController(title: "警告", message: "账号或密码不能为空!", preferredStyle: .alert)
