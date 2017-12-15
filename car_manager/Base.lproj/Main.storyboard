@@ -131,12 +131,32 @@
                     </view>
                     <navigationItem key="navigationItem" title="查询" id="g7W-24-v7m"/>
                     <connections>
-                        <segue destination="rOa-Rk-pVF" kind="show" id="yDL-JJ-mTE"/>
+                        <outlet property="SearchTableView" destination="jHM-5r-Q71" id="Wca-PI-Gaj"/>
+                        <segue destination="rOa-Rk-pVF" kind="show" identifier="GoToPersonSearch" id="yDL-JJ-mTE"/>
+                        <segue destination="aJt-np-RN1" kind="show" identifier="GoToCarManage" id="GnJ-Ud-IdZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHG-BV-WdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1764" y="886.50674662668678"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8tu-mB-abS">
+            <objects>
+                <viewController id="aJt-np-RN1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EuF-Xn-afi"/>
+                        <viewControllerLayoutGuide type="bottom" id="3cK-kI-q0f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hzv-OS-XkL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IsO-RY-IUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1764" y="1675"/>
         </scene>
         <!--Person Search View Controller-->
         <scene sceneID="1hx-2u-7mj">
@@ -151,7 +171,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfy-Aa-yYi">
-                                <rect key="frame" x="16" y="74" width="343" height="40"/>
+                                <rect key="frame" x="16" y="79" width="343" height="40"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TqX-G6-NQS">
                                         <rect key="frame" x="0.0" y="0.0" width="228.5" height="40"/>
@@ -173,7 +193,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="gfy-Aa-yYi" secondAttribute="trailing" id="1Uy-6V-6dQ"/>
-                            <constraint firstItem="gfy-Aa-yYi" firstAttribute="top" secondItem="L7E-2A-juT" secondAttribute="bottom" constant="10" id="WIv-Rk-Ghv"/>
+                            <constraint firstItem="gfy-Aa-yYi" firstAttribute="top" secondItem="L7E-2A-juT" secondAttribute="bottom" constant="15" id="WIv-Rk-Ghv"/>
                             <constraint firstItem="gfy-Aa-yYi" firstAttribute="leading" secondItem="vD5-8j-dFa" secondAttribute="leadingMargin" id="brI-sn-AO2"/>
                         </constraints>
                     </view>
