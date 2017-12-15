@@ -8,6 +8,8 @@
 
 import UIKit
 import SVProgressHUD
+import SwiftyJSON
+import Alamofire
 
 class LoginViewController: UIViewController ,UITextFieldDelegate{
 
@@ -27,11 +29,25 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
             self.present(notice, animated: true, completion: nil)
         }else{
             SVProgressHUD.show()
-            /*
-             登录操作
-            */
-            SVProgressHUD.dismiss()
-            performSegue(withIdentifier: "LoginSuccess", sender: nil)
+            
+            //进行网络请求，检查密码和账号的正确性
+            let url = URL(string: "https://car.wuruoye.com/user/login_user")!
+            let parameters = ["id":nameinput,"password":passwordinput]
+            Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
+                let jsondata = JSON.init(data: responsedata.data!)
+                let issuccess = jsondata.dictionaryObject?["result"] as! Bool
+                if issuccess {
+                    SVProgressHUD.dismiss()
+                    self.performSegue(withIdentifier: "LoginSuccess", sender: nil)
+                }else{
+                    SVProgressHUD.dismiss()
+                    let jsonstr = jsondata.dictionaryObject?["info"] as! String
+                    let notice = UIAlertController(title: "提示", message: jsonstr, preferredStyle: .alert)
+                    let noticeactivity = UIAlertAction(title: "确定", style: .default, handler: nil)
+                    notice.addAction(noticeactivity)
+                    self.present(notice, animated: true, completion: nil)
+                }
+            })
         }
     }
     
@@ -40,7 +56,6 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
 
         LoginButton.layer.borderColor = UIColor.blue.cgColor
         LoginButton.layer.borderWidth = 1.5
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

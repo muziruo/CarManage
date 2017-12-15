@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -129,6 +130,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="查询" id="g7W-24-v7m"/>
+                    <connections>
+                        <segue destination="rOa-Rk-pVF" kind="show" id="yDL-JJ-mTE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHG-BV-WdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

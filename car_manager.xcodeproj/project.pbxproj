@@ -16,6 +16,7 @@
 		EE6BB6D51FDEAA510035C030 /* SearchMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6D41FDEAA510035C030 /* SearchMenuViewController.swift */; };
 		EE6BB6DA1FDEAD0F0035C030 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6D91FDEAD0F0035C030 /* User.swift */; };
 		EE6BB6DE1FDEADBF0035C030 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6DD1FDEADBF0035C030 /* MenuTableViewCell.swift */; };
+		EE6BB6E01FDFD5070035C030 /* PersonSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6DF1FDFD5070035C030 /* PersonSearchViewController.swift */; };
 		EE7DEDEF1FDA72350062928E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7DEDEE1FDA72350062928E /* AppDelegate.swift */; };
 		EE7DEDF41FDA72350062928E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE7DEDF21FDA72350062928E /* Main.storyboard */; };
 		EE7DEDF61FDA72350062928E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE7DEDF51FDA72350062928E /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		EE6BB6D41FDEAA510035C030 /* SearchMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchMenuViewController.swift; sourceTree = "<group>"; };
 		EE6BB6D91FDEAD0F0035C030 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EE6BB6DD1FDEADBF0035C030 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		EE6BB6DF1FDFD5070035C030 /* PersonSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonSearchViewController.swift; sourceTree = "<group>"; };
 		EE7DEDEB1FDA72350062928E /* car_manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = car_manager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE7DEDEE1FDA72350062928E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE7DEDF31FDA72350062928E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				EE6BB6D41FDEAA510035C030 /* SearchMenuViewController.swift */,
+				EE6BB6DF1FDFD5070035C030 /* PersonSearchViewController.swift */,
 				EE6BB6DD1FDEADBF0035C030 /* MenuTableViewCell.swift */,
 			);
 			path = SearchModule;
@@ -248,11 +251,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-car_manager/Pods-car_manager-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -285,6 +290,7 @@
 			files = (
 				EE6BB6DA1FDEAD0F0035C030 /* User.swift in Sources */,
 				EE6BB6DE1FDEADBF0035C030 /* MenuTableViewCell.swift in Sources */,
+				EE6BB6E01FDFD5070035C030 /* PersonSearchViewController.swift in Sources */,
 				EE6BB6AA1FDAC2FA0035C030 /* LoginViewController.swift in Sources */,
 				32E92D7B1FDFD7000016B181 /* ManageViewCell.swift in Sources */,
 				EE7DEDEF1FDA72350062928E /* AppDelegate.swift in Sources */,
