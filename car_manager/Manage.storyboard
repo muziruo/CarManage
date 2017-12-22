@@ -57,6 +57,60 @@
             </objects>
             <point key="canvasLocation" x="1764" y="-774.06296851574223"/>
         </scene>
+        <!--添加用户-->
+        <scene sceneID="dOk-hk-jSO">
+            <objects>
+                <tableViewController storyboardIdentifier="addUserController" id="gdx-QR-GGZ" customClass="AddUserTableViewController" customModule="car_manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="U8W-7w-UnP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="addUserCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="65" id="8Jf-C1-rlg" customClass="AddUserTableViewCell" customModule="car_manager" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Jf-C1-rlg" id="Sy9-tj-csl">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ivk-z7-FHe">
+                                            <rect key="frame" x="16" y="0.0" width="52" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cw0-1E-F6E">
+                                            <rect key="frame" x="16" y="27" width="343" height="30"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="cw0-1E-F6E" firstAttribute="leading" secondItem="Sy9-tj-csl" secondAttribute="leadingMargin" id="HZs-Kp-up5"/>
+                                        <constraint firstItem="cw0-1E-F6E" firstAttribute="top" secondItem="Ivk-z7-FHe" secondAttribute="bottom" constant="6" id="MbX-md-hez"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="cw0-1E-F6E" secondAttribute="trailing" id="YYx-uQ-3GC"/>
+                                        <constraint firstItem="Ivk-z7-FHe" firstAttribute="leading" secondItem="Sy9-tj-csl" secondAttribute="leadingMargin" id="bMe-Bj-ZPv"/>
+                                        <constraint firstItem="Ivk-z7-FHe" firstAttribute="top" secondItem="Sy9-tj-csl" secondAttribute="top" id="d75-oP-KKE"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textfield" destination="cw0-1E-F6E" id="Gnw-5F-6HM"/>
+                                    <outlet property="titleLable" destination="Ivk-z7-FHe" id="TWB-fO-osk"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gdx-QR-GGZ" id="deB-R4-13g"/>
+                            <outlet property="delegate" destination="gdx-QR-GGZ" id="vn3-UI-2rj"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="添加用户" id="gui-ly-QF9"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cGu-PL-m7Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2641" y="-774"/>
+        </scene>
         <!--管理-->
         <scene sceneID="UkZ-5V-TIF">
             <objects>
