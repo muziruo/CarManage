@@ -19,38 +19,103 @@ class CarSearchTableViewController: UITableViewController {
     @IBOutlet weak var CarKind: UILabel!
     @IBOutlet weak var PassDocumentInfo: UILabel!
     @IBOutlet weak var PassInfo: UILabel!
-    @IBOutlet weak var UpholdInfo: UILabel!
-    @IBOutlet weak var AddInfo: UILabel!
     @IBOutlet weak var BreakInfo: UILabel!
     
     var GetCarInfo:CarInfo!
+    var IsOrder:Bool = false
     
     //查询操作
     @IBAction func SearchActivity(_ sender: UIButton) {
         SVProgressHUD.show()
         
         let userinput:String = InputNum.text!
+        
         if userinput == "" {
+            SVProgressHUD.dismiss()
             let notice = UIAlertController(title: "警告", message: "查询编号不能为空!", preferredStyle: .alert)
             let noticeaction = UIAlertAction(title: "好的", style: .default, handler: nil)
             notice.addAction(noticeaction)
             self.present(notice, animated: true, completion: nil)
         }else{
-            /*
             let url:URL = URL(string: "https://car.wuruoye.com/car/query_car_detail")!
             let prameters = ["id":userinput]
             Alamofire.request(url, method: .get, parameters: prameters, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
-            
+                let jsondata = JSON.init(responsedata.value!)
+                let success = jsondata.dictionaryObject?["result"] as! Bool
+                if success {
+                    let cardata = CarInfo.init(fromDictionary: jsondata.dictionaryObject!)
+                    self.GetCarInfo = cardata
+                    self.IsOrder = true
+                    self.CarNum.text = cardata.info.car.id
+                    switch cardata.info.car.type {
+                    case 1:
+                        //学校公车会有所有的信息
+                        self.CarKind.text = "学校公车"
+                    
+                        /*
+                        if cardata.info.fillUp.count == 0 {
+                            self.AddInfo.text = "暂无加油记录"
+                        }else{
+                            let addstring:String = cardata.info.fillUp[0] as! String
+                            self.AddInfo.text = addstring
+                        }
+                        if cardata.info.upkeep.count == 0 {
+                            self.UpholdInfo.text = "暂无维护记录"
+                        }else{
+                            let upholdstring = cardata.info.upkeep[0] as! String
+                            self.UpholdInfo.text = upholdstring
+                        }
+                        */
+                        break
+                    case 2:
+                        //教职工车不收录维护和加油信息
+                        self.CarKind.text = "教职工车"
+                        break
+                    case 3:
+                        //社会车辆不收录维护和加油信息
+                        self.CarKind.text = "社会车辆"
+                        break
+                    default:
+                        self.CarKind.text = "未知"
+                    }
+                    
+                    //以下两项是所有车辆都会有，也都应该收录的信息
+                    if cardata.info.inOutNote.count == 0 {
+                        self.PassInfo.text = "暂无进出记录"
+                    }else{
+                        let passstring:String = cardata.info.inOutNote[0] as! String
+                        self.PassInfo.text = passstring
+                    }
+                    if cardata.info.ticket.count == 0 {
+                        self.PassDocumentInfo.text = "该车辆没有通行证"
+                    }else{
+                        let passdocumentstring = cardata.info.ticket[0] as! String
+                        self.PassDocumentInfo.text = passdocumentstring
+                    }
+                    SVProgressHUD.dismiss()
+                    
+                }else{
+                    //未查询到信息
+                    SVProgressHUD.dismiss()
+                    let errordata = jsondata.dictionaryObject?["info"] as! String
+                    let notice = UIAlertController(title: "提示", message: errordata, preferredStyle: .alert)
+                    let noticeactivity = UIAlertAction(title: "确定", style: .default, handler: nil)
+                    notice.addAction(noticeactivity)
+                    self.present(notice, animated: true, completion: nil)
+                }
             })
-            */
         }
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        
+        self.navigationItem.title = "车辆查询系统"
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -67,7 +132,7 @@ class CarSearchTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 7
+        return 5
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,6 +142,74 @@ class CarSearchTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 2:
+            if IsOrder {
+                performSegue(withIdentifier: "LookForDetail", sender: nil)
+            }else{
+                let notice = UIAlertController(title: "提示", message: "没有查询信息，请先进行查询", preferredStyle: .alert)
+                let noticeactivity = UIAlertAction(title: "确定", style: .default, handler: nil)
+                notice.addAction(noticeactivity)
+                self.present(notice, animated: true, completion: nil)
+            }
+            break
+        case 3:
+            if IsOrder {
+                performSegue(withIdentifier: "LookForDetail", sender: nil)
+            }else{
+                let notice = UIAlertController(title: "提示", message: "没有查询信息，请先进行查询", preferredStyle: .alert)
+                let noticeactivity = UIAlertAction(title: "确定", style: .default, handler: nil)
+                notice.addAction(noticeactivity)
+                self.present(notice, animated: true, completion: nil)
+            }
+            break
+        case 4:
+            if IsOrder {
+                performSegue(withIdentifier: "LookForDetail", sender: nil)
+            }else{
+                let notice = UIAlertController(title: "提示", message: "没有查询信息，请先进行查询", preferredStyle: .alert)
+                let noticeactivity = UIAlertAction(title: "确定", style: .default, handler: nil)
+                notice.addAction(noticeactivity)
+                self.present(notice, animated: true, completion: nil)
+            }
+            break
+        default: break
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "LookForDetail" {
+            switch (tableView.indexPathForSelectedRow?.section)! {
+            case 2:
+                let dest = segue.destination as! CarDetailTableViewController
+                if let temp = GetCarInfo.info.ticket {
+                    dest.GetInfo = temp
+                }else{
+                    dest.GetInfo = []
+                }
+                dest.InfoKind = 0
+            case 3:
+                let dest = segue.destination as! CarDetailTableViewController
+                if let temp = GetCarInfo.info.inOutNote {
+                    dest.GetInfo = temp
+                }else{
+                    dest.GetInfo = []
+                }
+                dest.InfoKind = 1
+            case 4:
+                let dest = segue.destination as! CarDetailTableViewController
+                if let temp = GetCarInfo.info.inOutNote {
+                    dest.GetInfo = temp
+                }else{
+                    dest.GetInfo = []
+                }
+                dest.InfoKind = 1
+            default: break
+            }
+        }
     }
     
     /*
@@ -124,14 +257,6 @@ class CarSearchTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
 }

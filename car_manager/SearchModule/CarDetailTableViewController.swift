@@ -1,44 +1,27 @@
 //
-//  PersonSearchTableViewController.swift
+//  CarDetailTableViewController.swift
 //  car_manager
 //
-//  Created by 李祎喆 on 2017/12/15.
+//  Created by 李祎喆 on 2017/12/18.
 //  Copyright © 2017年 李祎喆. All rights reserved.
 //
 
 import UIKit
 
-class PersonSearchTableViewController: UITableViewController {
+class CarDetailTableViewController: UITableViewController {
 
-    @IBOutlet weak var PersonName: UILabel!
-    @IBOutlet weak var PersonNum: UILabel!
-    @IBOutlet weak var PersonCompany: UILabel!
-    @IBOutlet weak var Info: UILabel!
-    @IBOutlet weak var InputNum: UITextField!
-    
-    //进行查询操作
-    @IBAction func SearchActivity(_ sender: UIButton) {
-        let userinput = InputNum.text
-        
-        if userinput == "" {
-            let notice = UIAlertController(title: "提示", message: "输入不能为空", preferredStyle: .alert)
-            let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
-            notice.addAction(noticeaction)
-            self.present(notice, animated: true, completion: nil)
-        }else{
-            
-        }
-    }
+    var GetInfo:[AnyObject]!
+    var InfoKind:Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        tableView.tableFooterView = UIView(frame: .zero)
         
-        PersonNum.text = "无"
-        PersonName.text = "无"
-        PersonCompany.text = "无"
-        Info.text = "无"
+        let emptynotice:UILabel = UILabel()
+        emptynotice.text = "无任何数据"
+        emptynotice.center = tableView.center
+        tableView.addSubview(emptynotice)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -55,7 +38,17 @@ class PersonSearchTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 3
+        return 0
+        /*
+        switch InfoKind {
+        case 0:
+            return 3
+        case 1:
+            return GetInfo.count
+        default:
+            return 0
+        }
+        */
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,14 +57,13 @@ class PersonSearchTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 10
+        return 5
     }
+
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        cell.textLabel?.text = GetInfo[indexPath.row] as? String
         return cell
     }
     */
