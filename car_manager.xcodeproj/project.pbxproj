@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3251B6621FE364CB00D4AD82 /* AddUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3251B6611FE364CB00D4AD82 /* AddUserTableViewCell.swift */; };
+		3249ED011FE3C76A00A7E745 /* Manage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3249ED001FE3C76A00A7E745 /* Manage.storyboard */; };
+		3249ED031FE3CAD100A7E745 /* ManageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3249ED021FE3CAD100A7E745 /* ManageTableViewController.swift */; };
+		3251B6621FE364CB00D4AD82 /* ManageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3251B6611FE364CB00D4AD82 /* ManageTableViewCell.swift */; };
 		32E92D791FDFCCA10016B181 /* ViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E92D781FDFCCA10016B181 /* ViewHelper.swift */; };
 		79DAE9294A0D3E071F33C5AA /* Pods_car_manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57052502F3F8DEE40D16237 /* Pods_car_manager.framework */; };
 		EE6BB6AA1FDAC2FA0035C030 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6A91FDAC2FA0035C030 /* LoginViewController.swift */; };
@@ -27,7 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3251B6611FE364CB00D4AD82 /* AddUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserTableViewCell.swift; sourceTree = "<group>"; };
+		3249ED001FE3C76A00A7E745 /* Manage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Manage.storyboard; sourceTree = "<group>"; };
+		3249ED021FE3CAD100A7E745 /* ManageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTableViewController.swift; sourceTree = "<group>"; };
+		3251B6611FE364CB00D4AD82 /* ManageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTableViewCell.swift; sourceTree = "<group>"; };
 		32E92D781FDFCCA10016B181 /* ViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHelper.swift; sourceTree = "<group>"; };
 		B57052502F3F8DEE40D16237 /* Pods_car_manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_car_manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C653B98A830237A3609CE4BA /* Pods-car_manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-car_manager.release.xcconfig"; path = "Pods/Target Support Files/Pods-car_manager/Pods-car_manager.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,7 +105,8 @@
 		EE6BB6D61FDEAC670035C030 /* ManageModule */ = {
 			isa = PBXGroup;
 			children = (
-				3251B6611FE364CB00D4AD82 /* AddUserTableViewCell.swift */,
+				3251B6611FE364CB00D4AD82 /* ManageTableViewCell.swift */,
+				3249ED021FE3CAD100A7E745 /* ManageTableViewController.swift */,
 			);
 			path = ManageModule;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 				EE6BB6D61FDEAC670035C030 /* ManageModule */,
 				EE6BB6D31FDEAA2F0035C030 /* SearchModule */,
 				EE7DEDEE1FDA72350062928E /* AppDelegate.swift */,
+				3249ED001FE3C76A00A7E745 /* Manage.storyboard */,
 				EE7DEDF21FDA72350062928E /* Main.storyboard */,
 				EE6BB6A91FDAC2FA0035C030 /* LoginViewController.swift */,
 				EE7DEDF51FDA72350062928E /* Assets.xcassets */,
@@ -227,6 +233,7 @@
 			files = (
 				EE7DEDF91FDA72350062928E /* LaunchScreen.storyboard in Resources */,
 				EE7DEDF61FDA72350062928E /* Assets.xcassets in Resources */,
+				3249ED011FE3C76A00A7E745 /* Manage.storyboard in Resources */,
 				EE6BB6CC1FDC2B7C0035C030 /* Podfile in Resources */,
 				EE7DEDF41FDA72350062928E /* Main.storyboard in Resources */,
 			);
@@ -297,12 +304,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3251B6621FE364CB00D4AD82 /* AddUserTableViewCell.swift in Sources */,
+				3251B6621FE364CB00D4AD82 /* ManageTableViewCell.swift in Sources */,
+				3249ED031FE3CAD100A7E745 /* ManageTableViewController.swift in Sources */,
 				EE6BB6DA1FDEAD0F0035C030 /* User.swift in Sources */,
 				EE6BB6DE1FDEADBF0035C030 /* MenuTableViewCell.swift in Sources */,
 				EE6BB6AA1FDAC2FA0035C030 /* LoginViewController.swift in Sources */,
 				EE6BB6EA1FE36F6C0035C030 /* Info.swift in Sources */,
-				32E92D7B1FDFD7000016B181 /* ManageViewCell.swift in Sources */,
 				EE7DEDEF1FDA72350062928E /* AppDelegate.swift in Sources */,
 				EE6BB6D51FDEAA510035C030 /* SearchMenuViewController.swift in Sources */,
 				EE6BB6E41FE362EA0035C030 /* CarSearchTableViewController.swift in Sources */,
@@ -310,7 +317,6 @@
 				EE6BB6E21FE3584A0035C030 /* PersonSearchTableViewController.swift in Sources */,
 				32E92D791FDFCCA10016B181 /* ViewHelper.swift in Sources */,
 				EE6BB6E91FE36F6C0035C030 /* CarInfo.swift in Sources */,
-				32E92D741FDFCBA50016B181 /* ManageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
