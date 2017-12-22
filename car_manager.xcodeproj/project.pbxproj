@@ -24,6 +24,7 @@
 		EE6BB6E81FE36F6C0035C030 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6E51FE36F6C0035C030 /* Car.swift */; };
 		EE6BB6E91FE36F6C0035C030 /* CarInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6E61FE36F6C0035C030 /* CarInfo.swift */; };
 		EE6BB6EA1FE36F6C0035C030 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6E71FE36F6C0035C030 /* Info.swift */; };
+		EE6BB6EC1FE7EF4F0035C030 /* CarDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6EB1FE7EF4F0035C030 /* CarDetailTableViewController.swift */; };
 		EE7DEDEF1FDA72350062928E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7DEDEE1FDA72350062928E /* AppDelegate.swift */; };
 		EE7DEDF41FDA72350062928E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE7DEDF21FDA72350062928E /* Main.storyboard */; };
 		EE7DEDF61FDA72350062928E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE7DEDF51FDA72350062928E /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		EE6BB6E51FE36F6C0035C030 /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		EE6BB6E61FE36F6C0035C030 /* CarInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarInfo.swift; sourceTree = "<group>"; };
 		EE6BB6E71FE36F6C0035C030 /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		EE6BB6EB1FE7EF4F0035C030 /* CarDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarDetailTableViewController.swift; sourceTree = "<group>"; };
 		EE7DEDEB1FDA72350062928E /* car_manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = car_manager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE7DEDEE1FDA72350062928E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE7DEDF31FDA72350062928E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			children = (
 				EE6BB6D41FDEAA510035C030 /* SearchMenuViewController.swift */,
 				EE6BB6E11FE3584A0035C030 /* PersonSearchTableViewController.swift */,
+				EE6BB6EB1FE7EF4F0035C030 /* CarDetailTableViewController.swift */,
 				EE6BB6E31FE362EA0035C030 /* CarSearchTableViewController.swift */,
 				EE6BB6DD1FDEADBF0035C030 /* MenuTableViewCell.swift */,
 			);
@@ -208,7 +211,7 @@
 				TargetAttributes = {
 					EE7DEDEA1FDA72350062928E = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = K2VC334V4X;
+						DevelopmentTeam = 6TJKYE5XV9;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
@@ -321,6 +324,7 @@
 				EE6BB6D51FDEAA510035C030 /* SearchMenuViewController.swift in Sources */,
 				EE6BB6E41FE362EA0035C030 /* CarSearchTableViewController.swift in Sources */,
 				EE6BB6E81FE36F6C0035C030 /* Car.swift in Sources */,
+				EE6BB6EC1FE7EF4F0035C030 /* CarDetailTableViewController.swift in Sources */,
 				EE6BB6E21FE3584A0035C030 /* PersonSearchTableViewController.swift in Sources */,
 				32E92D791FDFCCA10016B181 /* ViewHelper.swift in Sources */,
 				32DC2F361FECA85F00770C55 /* AddUserTableViewCell.swift in Sources */,
@@ -464,7 +468,7 @@
 			baseConfigurationReference = D0C0585E5882544F0D1B8AF6 /* Pods-car_manager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = K2VC334V4X;
+				DEVELOPMENT_TEAM = 6TJKYE5XV9;
 				INFOPLIST_FILE = car_manager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "lqzy.car-manager";
@@ -478,7 +482,7 @@
 			baseConfigurationReference = C653B98A830237A3609CE4BA /* Pods-car_manager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = K2VC334V4X;
+				DEVELOPMENT_TEAM = 6TJKYE5XV9;
 				INFOPLIST_FILE = car_manager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "lqzy.car-manager";

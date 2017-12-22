@@ -12,7 +12,7 @@ class SearchMenuViewController: UIViewController ,UITableViewDelegate ,UITableVi
 
     @IBOutlet weak var SearchTableView: UITableView!
     
-    let functionmenu:[String] = ["车辆信息查询","人员信息查询"]
+    let functionmenu:[String] = ["人员信息查询","车辆信息查询"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
