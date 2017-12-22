@@ -1,16 +1,16 @@
 //
-//  ManageTableViewController.swift
+//  AddUserTableViewController.swift
 //  car_manager
 //
-//  Created by 沐阳 on 2017/12/15.
+//  Created by 沐阳 on 2017/12/22.
 //  Copyright © 2017年 李祎喆. All rights reserved.
 //
 
 import UIKit
 
-class ManageTableViewController: UITableViewController {
+class AddUserTableViewController: UITableViewController {
     
-    var functions = [["添加教职工","添加用户","添加单位","添加通行证"],["删除教职工","删除用户"]]
+    var addUserTitle = ["用户名","用户编号（职工号）"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,11 +20,8 @@ class ManageTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        tableView.tableFooterView = UIView(frame: .zero)
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 10
+        
+        title = "添加用户"
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,35 +33,23 @@ class ManageTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return functions.count
+        return addUserTitle.count
     }
-    
-    
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return functions[section].count
+        return 1
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ManageCell", for: indexPath) as! ManageTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "addUserCell", for: indexPath) as! AddUserTableViewCell
 
         // Configure the cell...
-        cell.label?.text = functions[indexPath.section][indexPath.row]
+        cell.titleLable.text = addUserTitle[indexPath.row]
+        cell.textfield.placeholder = "请输入"+addUserTitle[indexPath.row]
+
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if indexPath.section == 0{
-//            if indexPath.row == 1{
-//                if let addUserController = storyboard?.instantiateViewController(withIdentifier: "addUserController") as? AddUserTableViewController{
-//                    addUserController.title = "添加用户"
-//                    let segue = UIStoryboardSegue(identifier: "addUserSegue", source: self, destination: addUserController)
-//                    print("OK!")
-//                }
-//            }
-//        }
     }
     
 
