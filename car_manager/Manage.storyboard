@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ree-Ys-B7K">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--管理-->
+        <scene sceneID="DFY-Eg-479">
+            <objects>
+                <tableViewController id="VOH-Pp-WbV" customClass="ManageTableViewController" customModule="car_manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="NAZ-gi-R93">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ManageCell" id="Y1p-oq-8ln" customClass="ManageTableViewCell" customModule="car_manager" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y1p-oq-8ln" id="EVv-MA-d4z">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="功能" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUT-Wk-8K2" customClass="ArcView" customModule="car_manager" customModuleProvider="target">
+                                            <rect key="frame" x="26" y="11" width="323" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="KUT-Wk-8K2" firstAttribute="top" secondItem="EVv-MA-d4z" secondAttribute="topMargin" id="8LD-70-EZb"/>
+                                        <constraint firstItem="KUT-Wk-8K2" firstAttribute="leading" secondItem="EVv-MA-d4z" secondAttribute="leadingMargin" constant="10" id="CPt-cG-WYL"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="KUT-Wk-8K2" secondAttribute="trailing" constant="10" id="EQ8-76-gBs"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="KUT-Wk-8K2" secondAttribute="bottom" id="c9e-Io-yhB"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="label" destination="KUT-Wk-8K2" id="bW9-aA-LMR"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="VOH-Pp-WbV" id="PnJ-hb-I4S"/>
+                            <outlet property="delegate" destination="VOH-Pp-WbV" id="Ygv-yD-FEf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="管理" id="oNX-io-zOB"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WQr-OW-GXL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1764" y="-774.06296851574223"/>
+        </scene>
+        <!--管理-->
+        <scene sceneID="UkZ-5V-TIF">
+            <objects>
+                <navigationController id="Ree-Ys-B7K" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="管理" id="ETV-Vn-m5m"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eC5-yI-3xN">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="VOH-Pp-WbV" kind="relationship" relationship="rootViewController" id="sqX-VA-QhA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zhB-4g-lVp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="825" y="-774"/>
+        </scene>
+    </scenes>
+</document>
