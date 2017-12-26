@@ -14,7 +14,6 @@ class UserInfoViewController: UIViewController ,UITableViewDelegate ,UITableView
     @IBOutlet weak var Username: UILabel!
     @IBOutlet weak var UserNum: UILabel!
     @IBOutlet weak var UserPost: UILabel!
-    @IBOutlet weak var InfoTableview: UITableView!
     
     let functionlist = [["开发者官网"],["使用反馈"],["电话本"]]
     
@@ -24,9 +23,8 @@ class UserInfoViewController: UIViewController ,UITableViewDelegate ,UITableView
         LogoutButton.layer.borderColor = UIColor.red.cgColor
         LogoutButton.layer.borderWidth = 1.5
         
-        InfoTableview.tableFooterView = UIView(frame: .zero)
         
-        self.automaticallyAdjustsScrollViewInsets = false
+        //self.automaticallyAdjustsScrollViewInsets = false
         // Do any additional setup after loading the view.
     }
 
