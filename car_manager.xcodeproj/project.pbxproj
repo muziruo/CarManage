@@ -12,6 +12,7 @@
 		3251B6621FE364CB00D4AD82 /* ManageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3251B6611FE364CB00D4AD82 /* ManageTableViewCell.swift */; };
 		32DC2F341FECA60A00770C55 /* AddUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DC2F331FECA60A00770C55 /* AddUserTableViewController.swift */; };
 		32DC2F361FECA85F00770C55 /* AddUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DC2F351FECA85F00770C55 /* AddUserTableViewCell.swift */; };
+		32E7B4341FF2701400D8AD84 /* AddStaffTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7B4331FF2701400D8AD84 /* AddStaffTableViewController.swift */; };
 		32E92D791FDFCCA10016B181 /* ViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E92D781FDFCCA10016B181 /* ViewHelper.swift */; };
 		79DAE9294A0D3E071F33C5AA /* Pods_car_manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57052502F3F8DEE40D16237 /* Pods_car_manager.framework */; };
 		EE6BB6AA1FDAC2FA0035C030 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6A91FDAC2FA0035C030 /* LoginViewController.swift */; };
@@ -37,6 +38,7 @@
 		3251B6611FE364CB00D4AD82 /* ManageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTableViewCell.swift; sourceTree = "<group>"; };
 		32DC2F331FECA60A00770C55 /* AddUserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserTableViewController.swift; sourceTree = "<group>"; };
 		32DC2F351FECA85F00770C55 /* AddUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserTableViewCell.swift; sourceTree = "<group>"; };
+		32E7B4331FF2701400D8AD84 /* AddStaffTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStaffTableViewController.swift; sourceTree = "<group>"; };
 		32E92D781FDFCCA10016B181 /* ViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHelper.swift; sourceTree = "<group>"; };
 		B57052502F3F8DEE40D16237 /* Pods_car_manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_car_manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C653B98A830237A3609CE4BA /* Pods-car_manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-car_manager.release.xcconfig"; path = "Pods/Target Support Files/Pods-car_manager/Pods-car_manager.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				3249ED021FE3CAD100A7E745 /* ManageTableViewController.swift */,
 				32DC2F331FECA60A00770C55 /* AddUserTableViewController.swift */,
 				32DC2F351FECA85F00770C55 /* AddUserTableViewCell.swift */,
+				32E7B4331FF2701400D8AD84 /* AddStaffTableViewController.swift */,
 			);
 			path = ManageModule;
 			sourceTree = "<group>";
@@ -166,10 +169,10 @@
 				EE6BB6D61FDEAC670035C030 /* ManageModule */,
 				EE6BB6D31FDEAA2F0035C030 /* SearchModule */,
 				EE7DEDEE1FDA72350062928E /* AppDelegate.swift */,
+				EE7DEDF51FDA72350062928E /* Assets.xcassets */,
 				3249ED001FE3C76A00A7E745 /* Manage.storyboard */,
 				EE7DEDF21FDA72350062928E /* Main.storyboard */,
 				EE6BB6A91FDAC2FA0035C030 /* LoginViewController.swift */,
-				EE7DEDF51FDA72350062928E /* Assets.xcassets */,
 				EE7DEDF71FDA72350062928E /* LaunchScreen.storyboard */,
 				EE7DEDFA1FDA72350062928E /* Info.plist */,
 			);
@@ -326,6 +329,7 @@
 				EE6BB6E81FE36F6C0035C030 /* Car.swift in Sources */,
 				EE6BB6EC1FE7EF4F0035C030 /* CarDetailTableViewController.swift in Sources */,
 				EE6BB6E21FE3584A0035C030 /* PersonSearchTableViewController.swift in Sources */,
+				32E7B4341FF2701400D8AD84 /* AddStaffTableViewController.swift in Sources */,
 				32E92D791FDFCCA10016B181 /* ViewHelper.swift in Sources */,
 				32DC2F361FECA85F00770C55 /* AddUserTableViewCell.swift in Sources */,
 				EE6BB6E91FE36F6C0035C030 /* CarInfo.swift in Sources */,

@@ -1,16 +1,14 @@
 //
-//  AddUserTableViewController.swift
+//  AddStaffTableViewController.swift
 //  car_manager
 //
-//  Created by 沐阳 on 2017/12/22.
+//  Created by 沐阳 on 2017/12/26.
 //  Copyright © 2017年 李祎喆. All rights reserved.
 //
 
 import UIKit
 
-class AddUserTableViewController: UITableViewController {
-    
-    var addUserTitle = ["用户名","用户编号（职工号）"]
+class AddStaffTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +18,6 @@ class AddUserTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        title = "添加用户"
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,25 +29,23 @@ class AddUserTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return addUserTitle.count
+        return 0
     }
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "addUserCell", for: indexPath) as! AddUserTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-        cell.titleLable.text = addUserTitle[indexPath.row]
-        cell.textfield.placeholder = "请输入"+addUserTitle[indexPath.row]
 
         return cell
     }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.
