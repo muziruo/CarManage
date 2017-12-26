@@ -785,12 +785,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="我的信息" id="ycY-Q0-8f7"/>
-                    <connections>
-                        <outlet property="LogoutButton" destination="nzb-nb-zcb" id="kI7-iw-dhw"/>
-                        <outlet property="UserNum" destination="cCe-wS-O9h" id="SrR-Ow-i6Y"/>
-                        <outlet property="UserPost" destination="tZD-9x-TUX" id="g54-gb-bag"/>
-                        <outlet property="Username" destination="aGl-gP-Lsv" id="rMh-IX-Tn2"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OQg-t2-Av1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
