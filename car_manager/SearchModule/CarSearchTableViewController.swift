@@ -4,7 +4,7 @@
 //
 //  Created by 李祎喆 on 2017/12/15.
 //  Copyright © 2017年 李祎喆. All rights reserved.
-//
+//  车辆查询
 
 import UIKit
 import SwiftyJSON
@@ -22,6 +22,7 @@ class CarSearchTableViewController: UITableViewController {
     @IBOutlet weak var BreakInfo: UILabel!
     
     var GetCarInfo:CarInfo!
+    //是否已经查询到结果
     var IsOrder:Bool = false
     
     //查询操作
@@ -47,6 +48,7 @@ class CarSearchTableViewController: UITableViewController {
                     self.GetCarInfo = cardata
                     self.IsOrder = true
                     self.CarNum.text = cardata.info.car.id
+                    self.Owner.text = cardata.info.car.unit
                     switch cardata.info.car.type {
                     case 1:
                         //学校公车会有所有的信息
@@ -178,6 +180,7 @@ class CarSearchTableViewController: UITableViewController {
             break
         default: break
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

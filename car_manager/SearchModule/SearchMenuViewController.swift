@@ -4,7 +4,7 @@
 //
 //  Created by 李祎喆 on 2017/12/11.
 //  Copyright © 2017年 李祎喆. All rights reserved.
-//
+//  查询菜单
 
 import UIKit
 
@@ -37,6 +37,7 @@ class SearchMenuViewController: UIViewController ,UITableViewDelegate ,UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menucell", for: indexPath) as! MenuTableViewCell
         cell.textLabel?.text = functionmenu[indexPath.row]
+        cell.textLabel?.font = UIFont(name: "Avenir-Light", size: 16)
         return cell
     }
     

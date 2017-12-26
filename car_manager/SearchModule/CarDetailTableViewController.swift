@@ -4,7 +4,7 @@
 //
 //  Created by 李祎喆 on 2017/12/18.
 //  Copyright © 2017年 李祎喆. All rights reserved.
-//
+//  车辆详情页面
 
 import UIKit
 
@@ -42,7 +42,7 @@ class CarDetailTableViewController: UITableViewController {
         /*
         switch InfoKind {
         case 0:
-            return 3
+            return 4
         case 1:
             return GetInfo.count
         default:
