@@ -10,20 +10,13 @@ import UIKit
 
 class UserInfoViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSource{
 
-    @IBOutlet weak var LogoutButton: UIButton!
-    @IBOutlet weak var Username: UILabel!
-    @IBOutlet weak var UserNum: UILabel!
-    @IBOutlet weak var UserPost: UILabel!
     
     let functionlist = [["开发者官网"],["使用反馈"],["电话本"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        LogoutButton.layer.borderColor = UIColor.red.cgColor
-        LogoutButton.layer.borderWidth = 1.5
-        
-        
+                
         //self.automaticallyAdjustsScrollViewInsets = false
         // Do any additional setup after loading the view.
     }
