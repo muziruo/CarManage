@@ -19,7 +19,7 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
                   "passcard":["车牌号","类型","开始时间","结束时间","费用","车主"],
                   "blacklist":["车牌号"]]
     var pickViewItem = ["user":["普通用户","管理员"],
-                        "car":[["校车","教职工车","社会车"]],
+                        "car":["校车","教职工车","社会车"],
                         "passcard":["校车","教职工车","社会车"]]
     var pickerView = UIPickerView()
     
@@ -33,7 +33,6 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         tableView.separatorStyle = .none
         title = "添加用户"
-    
     }
     
     override func didReceiveMemoryWarning() {
@@ -93,6 +92,12 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
             }else{
                 cell.textField.placeholder = "请输入"+titles[currentType]![indexPath.row]
             }
+        case "post":
+            cell.titleLable.text = titles[currentType]![indexPath.row]
+            cell.textField.placeholder = "请输入"+titles[currentType]![indexPath.row]
+        case "blacklist":
+            cell.titleLable.text = titles[currentType]![indexPath.row]
+            cell.textField.placeholder = "请输入"+titles[currentType]![indexPath.row]
         default:
             break
         }
@@ -102,7 +107,7 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let label = view.viewWithTag(1) as! UITextField
-        label.text = pickViewItem["user"]![row] as? String
+        label.text = pickViewItem[currentType]![row] as? String
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

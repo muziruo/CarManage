@@ -54,6 +54,10 @@ class MyInfoViewController: UIViewController ,UITableViewDataSource ,UITableView
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 5
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        FunctionTable.deselectRow(at: indexPath, animated: true)
+    }
     /*
     // MARK: - Navigation
 
