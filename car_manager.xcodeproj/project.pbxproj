@@ -26,6 +26,7 @@
 		EE6BB6EA1FE36F6C0035C030 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6E71FE36F6C0035C030 /* Info.swift */; };
 		EE6BB6EC1FE7EF4F0035C030 /* CarDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6EB1FE7EF4F0035C030 /* CarDetailTableViewController.swift */; };
 		EE6BB6EE1FF2306F0035C030 /* CarDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6ED1FF2306F0035C030 /* CarDetailTableViewCell.swift */; };
+		EE6BB6F01FF236CD0035C030 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6EF1FF236CD0035C030 /* UserInfoViewController.swift */; };
 		EE7DEDEF1FDA72350062928E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7DEDEE1FDA72350062928E /* AppDelegate.swift */; };
 		EE7DEDF41FDA72350062928E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE7DEDF21FDA72350062928E /* Main.storyboard */; };
 		EE7DEDF61FDA72350062928E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE7DEDF51FDA72350062928E /* Assets.xcassets */; };
