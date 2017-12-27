@@ -11,7 +11,7 @@
 		3249ED031FE3CAD100A7E745 /* ManageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3249ED021FE3CAD100A7E745 /* ManageTableViewController.swift */; };
 		3251B6621FE364CB00D4AD82 /* ManageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3251B6611FE364CB00D4AD82 /* ManageTableViewCell.swift */; };
 		32DC2F341FECA60A00770C55 /* AddUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DC2F331FECA60A00770C55 /* AddUserTableViewController.swift */; };
-		32DC2F361FECA85F00770C55 /* AddUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DC2F351FECA85F00770C55 /* AddUserTableViewCell.swift */; };
+		32DC2F361FECA85F00770C55 /* BasisCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DC2F351FECA85F00770C55 /* BasisCell.swift */; };
 		32E7B4341FF2701400D8AD84 /* AddStaffTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7B4331FF2701400D8AD84 /* AddStaffTableViewController.swift */; };
 		32E92D791FDFCCA10016B181 /* ViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E92D781FDFCCA10016B181 /* ViewHelper.swift */; };
 		79DAE9294A0D3E071F33C5AA /* Pods_car_manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57052502F3F8DEE40D16237 /* Pods_car_manager.framework */; };
@@ -39,7 +39,7 @@
 		3249ED021FE3CAD100A7E745 /* ManageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTableViewController.swift; sourceTree = "<group>"; };
 		3251B6611FE364CB00D4AD82 /* ManageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTableViewCell.swift; sourceTree = "<group>"; };
 		32DC2F331FECA60A00770C55 /* AddUserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserTableViewController.swift; sourceTree = "<group>"; };
-		32DC2F351FECA85F00770C55 /* AddUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserTableViewCell.swift; sourceTree = "<group>"; };
+		32DC2F351FECA85F00770C55 /* BasisCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasisCell.swift; sourceTree = "<group>"; };
 		32E7B4331FF2701400D8AD84 /* AddStaffTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStaffTableViewController.swift; sourceTree = "<group>"; };
 		32E92D781FDFCCA10016B181 /* ViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHelper.swift; sourceTree = "<group>"; };
 		B57052502F3F8DEE40D16237 /* Pods_car_manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_car_manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,7 +122,7 @@
 				3251B6611FE364CB00D4AD82 /* ManageTableViewCell.swift */,
 				3249ED021FE3CAD100A7E745 /* ManageTableViewController.swift */,
 				32DC2F331FECA60A00770C55 /* AddUserTableViewController.swift */,
-				32DC2F351FECA85F00770C55 /* AddUserTableViewCell.swift */,
+				32DC2F351FECA85F00770C55 /* BasisCell.swift */,
 				32E7B4331FF2701400D8AD84 /* AddStaffTableViewController.swift */,
 			);
 			path = ManageModule;
@@ -338,7 +338,7 @@
 				32E7B4341FF2701400D8AD84 /* AddStaffTableViewController.swift in Sources */,
 				EEA3E6081FF3407900149A55 /* MyInfoViewController.swift in Sources */,
 				32E92D791FDFCCA10016B181 /* ViewHelper.swift in Sources */,
-				32DC2F361FECA85F00770C55 /* AddUserTableViewCell.swift in Sources */,
+				32DC2F361FECA85F00770C55 /* BasisCell.swift in Sources */,
 				EE6BB6E91FE36F6C0035C030 /* CarInfo.swift in Sources */,
 				EE6BB6EE1FF2306F0035C030 /* CarDetailTableViewCell.swift in Sources */,
 			);

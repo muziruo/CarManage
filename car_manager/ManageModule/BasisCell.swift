@@ -8,10 +8,10 @@
 
 import UIKit
 
-class AddUserTableViewCell: UITableViewCell {
+class BasisCell: UITableViewCell {
     
     @IBOutlet var titleLable: UILabel!
-    @IBOutlet var textfield: UITextField!
+    @IBOutlet var valueView: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
