@@ -11,7 +11,8 @@ import UIKit
 class ManageTableViewController: UITableViewController {
     
     var functions = [["添加教职工","添加车辆","添加用户","添加单位","添加通行证","添加黑名单"],["删除教职工","删除用户"]]
-
+    let Kinds = ["staff","user","post","car","passcard","blacklist"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -57,15 +58,38 @@ class ManageTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0{
-            if indexPath.row == 0{
+            switch indexPath.row {
+            case 0:
                 performSegue(withIdentifier: "addStaffSegue", sender: nil)
-            }
-            if indexPath.row == 2{
+                break
+            case 1:
                 performSegue(withIdentifier: "addUserSegue", sender: nil)
+                break
+            case 2:
+                performSegue(withIdentifier: "addUserSegue", sender: nil)
+                break
+            case 3:
+                performSegue(withIdentifier: "addUserSegue", sender: nil)
+                break
+            case 4:
+                performSegue(withIdentifier: "addUserSegue", sender: nil)
+            case 5:
+                performSegue(withIdentifier: "addUserSegue", sender: nil)
+                break
+            default:
+                break
             }
+        }else{
+            
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addUserSegue" {
+            let dest = segue.destination as! AddUserTableViewController
+            dest.currentType = Kinds[(tableView.indexPathForSelectedRow?.row)!]
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
