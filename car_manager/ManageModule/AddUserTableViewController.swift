@@ -11,10 +11,16 @@ import UIKit
 class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIPickerViewDataSource{
 
     var currentType = "user"
-    var addUserTitle = ["用户编号（职工号）","密码","权限"]
-    var permissions = ["管理员","普通用户"]
-    var titles = ["user":["用户名","密码","权限"],
-                  "post":["编号","名称","电话"]]as[String:Array<String>]
+//    var addUserTitle = ["用户编号（职工号）","密码","权限"]
+//    var permissions = ["管理员","普通用户"]
+    var titles = ["user":["用户编号（职工号）","密码","权限"],
+                  "post":["编号","名称","电话"],
+                  "car":["车牌号","类型","车辆型号","颜色","座位数"],
+                  "passcard":["车牌号","类型","开始时间","结束时间","费用","车主"],
+                  "blacklist":["车牌号"]]
+    var pickViewItem = ["user":["普通用户","管理员"],
+                        "car":[["校车","教职工车","社会车"]],
+                        "passcard":["校车","教职工车","社会车"]]
     var pickerView = UIPickerView()
     
     override func viewDidLoad() {
@@ -27,13 +33,7 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         tableView.separatorStyle = .none
         title = "添加用户"
-        
-        pickerView.frame = CGRect(x: 0, y: 440, width: 414, height: 80)
-        pickerView.delegate = self
-        pickerView.dataSource = self
-        pickerView.backgroundColor = UIColor.gray
-        self.view.addSubview(pickerView)
-        pickerView.isHidden = true
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,19 +50,59 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if section == 0{
-            return addUserTitle.count
-        }else{
-            return 1
-        }
+        return titles[currentType]!.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "basisCell", for: indexPath) as! BasisCell
-        cell.titleLable.text = addUserTitle[indexPath.row]
-        cell.textField.placeholder = "请输入"+addUserTitle[indexPath.row]
+        switch currentType {
+        case "user":
+            cell.titleLable.text = titles[currentType]![indexPath.row]
+            if indexPath.row == 2{
+                cell.textField.placeholder = "请选择权限"
+                cell.textField.tag = 1
+                pickerView.translatesAutoresizingMaskIntoConstraints = true
+                pickerView.delegate = self
+                pickerView.dataSource = self
+                cell.textField.inputView = pickerView
+            }else{
+                cell.textField.placeholder = "请输入"+titles[currentType]![indexPath.row]
+            }
+        case "car":
+            cell.titleLable.text = titles[currentType]![indexPath.row]
+            if indexPath.row == 1{
+                cell.textField.placeholder = "请选择类型"
+                cell.textField.tag = 1
+                pickerView.translatesAutoresizingMaskIntoConstraints = true
+                pickerView.delegate = self
+                pickerView.dataSource = self
+                cell.textField.inputView = pickerView
+            }else{
+                cell.textField.placeholder = "请输入"+titles[currentType]![indexPath.row]
+            }
+        case "passcard":
+            cell.titleLable.text = titles[currentType]![indexPath.row]
+            if indexPath.row == 1{
+                cell.textField.placeholder = "请选择类型"
+                cell.textField.tag = 1
+                pickerView.translatesAutoresizingMaskIntoConstraints = true
+                pickerView.delegate = self
+                pickerView.dataSource = self
+                cell.textField.inputView = pickerView
+            }else{
+                cell.textField.placeholder = "请输入"+titles[currentType]![indexPath.row]
+            }
+        default:
+            break
+        }
+        
         return cell
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let label = view.viewWithTag(1) as! UITextField
+        label.text = pickViewItem["user"]![row] as? String
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -70,11 +110,11 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return permissions.count
+        return pickViewItem[currentType]!.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return permissions[row]
+        return pickViewItem[currentType]![row] as? String
     }
     
     /*
