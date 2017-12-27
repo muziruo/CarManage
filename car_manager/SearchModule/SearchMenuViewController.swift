@@ -50,6 +50,7 @@ class SearchMenuViewController: UIViewController ,UITableViewDelegate ,UITableVi
         default:
             print("进入车辆管理系统")
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     /*
     // MARK: - Navigation
