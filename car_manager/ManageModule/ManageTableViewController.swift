@@ -56,15 +56,14 @@ class ManageTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if indexPath.section == 0{
-//            if indexPath.row == 1{
-//                if let addUserController = storyboard?.instantiateViewController(withIdentifier: "addUserController") as? AddUserTableViewController{
-//                    addUserController.title = "添加用户"
-//                    let segue = UIStoryboardSegue(identifier: "addUserSegue", source: self, destination: addUserController)
-//                    print("OK!")
-//                }
-//            }
-//        }
+        if indexPath.section == 0{
+            if indexPath.row == 0{
+                performSegue(withIdentifier: "addStaffSegue", sender: nil)
+            }
+            if indexPath.row == 1{
+                performSegue(withIdentifier: "addUserSegue", sender: nil)
+            }
+        }
     }
     
 
