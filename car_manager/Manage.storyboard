@@ -227,17 +227,17 @@
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Hjp-5H-GPN" secondAttribute="trailing" id="4p9-2J-qvk"/>
-                                        <constraint firstItem="Hjp-5H-GPN" firstAttribute="top" secondItem="Ivk-z7-FHe" secondAttribute="bottom" constant="6" id="Ghs-mB-gbR"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="fO7-6i-jBd" secondAttribute="trailing" id="4B3-ga-X9D"/>
+                                        <constraint firstItem="fO7-6i-jBd" firstAttribute="top" secondItem="Ivk-z7-FHe" secondAttribute="bottom" constant="6" id="D7C-2L-0a3"/>
                                         <constraint firstItem="Ivk-z7-FHe" firstAttribute="top" secondItem="Sy9-tj-csl" secondAttribute="topMargin" id="Gqz-Ug-1vA"/>
-                                        <constraint firstItem="Hjp-5H-GPN" firstAttribute="leading" secondItem="Sy9-tj-csl" secondAttribute="leadingMargin" id="VkP-E4-pEh"/>
+                                        <constraint firstItem="fO7-6i-jBd" firstAttribute="bottom" secondItem="Sy9-tj-csl" secondAttribute="bottomMargin" id="Z9f-wt-KP9"/>
                                         <constraint firstItem="Ivk-z7-FHe" firstAttribute="leading" secondItem="Sy9-tj-csl" secondAttribute="leadingMargin" id="bMe-Bj-ZPv"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Hjp-5H-GPN" secondAttribute="bottom" id="ctL-Qi-oAc"/>
+                                        <constraint firstItem="fO7-6i-jBd" firstAttribute="leading" secondItem="Sy9-tj-csl" secondAttribute="leadingMargin" id="xh7-hb-zIU"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="textField" destination="fO7-6i-jBd" id="0oy-03-6wp"/>
                                     <outlet property="titleLable" destination="Ivk-z7-FHe" id="TWB-fO-osk"/>
-                                    <outlet property="valueView" destination="Hjp-5H-GPN" id="eTg-E0-X1h"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

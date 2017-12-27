@@ -11,7 +11,7 @@ import UIKit
 class BasisCell: UITableViewCell {
     
     @IBOutlet var titleLable: UILabel!
-    @IBOutlet var valueView: UIView!
+    @IBOutlet var textField: UITextField!
 
     override func awakeFromNib() {
         super.awakeFromNib()
