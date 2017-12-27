@@ -665,6 +665,16 @@
             </objects>
             <point key="canvasLocation" x="2703" y="887"/>
         </scene>
+        <!--Manage-->
+        <scene sceneID="nCJ-bf-0JZ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Manage" id="2oH-4c-0Lc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="l6U-eO-kda"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HwS-yQ-wDy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="903" y="-459"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="okk-Bv-1lK">
             <objects>
@@ -677,6 +687,7 @@
                     <connections>
                         <segue destination="kkN-23-dUR" kind="relationship" relationship="viewControllers" id="P17-qz-DJC"/>
                         <segue destination="wlO-rP-CQy" kind="relationship" relationship="viewControllers" id="Cju-cM-mTq"/>
+                        <segue destination="2oH-4c-0Lc" kind="relationship" relationship="viewControllers" id="8TM-RM-CS1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlv-3k-6ZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
