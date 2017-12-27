@@ -8,10 +8,12 @@
 
 import UIKit
 
-class AddUserTableViewController: UITableViewController {
+class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIPickerViewDataSource{
     
-    var addUserTitle = ["用户名","用户编号（职工号）"]
-
+    var addUserTitle = ["用户编号（职工号）","密码","权限"]
+    var permissions = ["管理员","普通用户"]
+    var pickerView = UIPickerView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,8 +22,15 @@ class AddUserTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
+        tableView.separatorStyle = .none
         title = "添加用户"
+        
+        pickerView.frame = CGRect(x: 0, y: 440, width: 414, height: 80)
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        pickerView.backgroundColor = UIColor.gray
+        self.view.addSubview(pickerView)
+        pickerView.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,18 +47,48 @@ class AddUserTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return addUserTitle.count
+        if section == 0{
+            return addUserTitle.count
+        }else{
+            return 1
+        }
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "addUserCell", for: indexPath) as! AddUserTableViewCell
-
-        // Configure the cell...
-        cell.titleLable.text = addUserTitle[indexPath.row]
-        cell.textfield.placeholder = "请输入"+addUserTitle[indexPath.row]
-
-        return cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "basisCell", for: indexPath) as! BasisCell
+            cell.titleLable.text = addUserTitle[indexPath.row]
+        if indexPath.row != 2{
+            let textfield = UITextField()
+            textfield.frame = CGRect(x: 0, y: 0, width: 414, height: 30)
+            textfield.placeholder = "请输入"+addUserTitle[indexPath.row]
+            cell.valueView.addSubview(textfield)
+        }else{
+            let permissionLabel = UILabel()
+            permissionLabel.text = "请选择权限"
+            permissionLabel.frame = CGRect(x: 0, y: 0, width: 414, height: 30)
+            cell.valueView.addSubview(permissionLabel)
+            cell.accessoryType = .disclosureIndicator
+        }
+            return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 2{
+            pickerView.isHidden = false
+        }
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return permissions.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return permissions[row]
     }
     
 
