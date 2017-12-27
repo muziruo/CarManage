@@ -10,7 +10,7 @@ import UIKit
 
 class ManageTableViewController: UITableViewController {
     
-    var functions = [["添加教职工","添加用户","添加单位","添加通行证"],["删除教职工","删除用户"]]
+    var functions = [["添加教职工","添加车辆","添加用户","添加单位","添加通行证","添加黑名单"],["删除教职工","删除用户"]]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +60,7 @@ class ManageTableViewController: UITableViewController {
             if indexPath.row == 0{
                 performSegue(withIdentifier: "addStaffSegue", sender: nil)
             }
-            if indexPath.row == 1{
+            if indexPath.row == 2{
                 performSegue(withIdentifier: "addUserSegue", sender: nil)
             }
         }
