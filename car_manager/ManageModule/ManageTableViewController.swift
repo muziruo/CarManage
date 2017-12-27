@@ -11,7 +11,7 @@ import UIKit
 class ManageTableViewController: UITableViewController {
     
     var functions = [["添加教职工","添加车辆","添加用户","添加单位","添加通行证","添加黑名单"],["删除教职工","删除用户"]]
-    let Kinds = ["staff","user","post","car","passcard","blacklist"]
+    let Kinds = ["staff","car","user","post","passcard","blacklist"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
