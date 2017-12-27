@@ -253,13 +253,13 @@
                                                     <rect key="frame" x="38" y="99" width="329" height="20"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="车辆种类:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mm-2s-K7W">
-                                                            <rect key="frame" x="0.0" y="0.0" width="110" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="109.5" height="20"/>
                                                             <fontDescription key="fontDescription" name="PingFangSC-Thin" family="PingFang SC" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ft8-xb-htK">
-                                                            <rect key="frame" x="110" y="0.0" width="219" height="20"/>
+                                                            <rect key="frame" x="109.5" y="0.0" width="219.5" height="20"/>
                                                             <fontDescription key="fontDescription" name="PingFangSC-Thin" family="PingFang SC" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -465,6 +465,25 @@
             </objects>
             <point key="canvasLocation" x="2701.5999999999999" y="1648.4257871064469"/>
         </scene>
+        <!--My Info View Controller-->
+        <scene sceneID="po5-EY-1QM">
+            <objects>
+                <viewController id="a41-Qa-Gbl" customClass="MyInfoViewController" customModule="car_manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Hi-fC-1oK"/>
+                        <viewControllerLayoutGuide type="bottom" id="5kB-PL-PCk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lwW-MR-bMg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7UD-B7-bXh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="htG-Xr-TEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2702" y="135"/>
+        </scene>
         <!--Person Search Table View Controller-->
         <scene sceneID="93h-oZ-0uM">
             <objects>
@@ -621,13 +640,13 @@
                                                     <rect key="frame" x="8" y="11.5" width="359" height="21"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人员车辆信息:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sq2-Aq-cQ6">
-                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="21"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="119.5" height="21"/>
                                                             <fontDescription key="fontDescription" name="PingFangSC-Thin" family="PingFang SC" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9j-b5-5oi">
-                                                            <rect key="frame" x="120" y="0.0" width="239" height="21"/>
+                                                            <rect key="frame" x="119.5" y="0.0" width="239.5" height="21"/>
                                                             <fontDescription key="fontDescription" name="PingFangSC-Thin" family="PingFang SC" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -686,8 +705,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="kkN-23-dUR" kind="relationship" relationship="viewControllers" id="P17-qz-DJC"/>
-                        <segue destination="wlO-rP-CQy" kind="relationship" relationship="viewControllers" id="Cju-cM-mTq"/>
                         <segue destination="2oH-4c-0Lc" kind="relationship" relationship="viewControllers" id="8TM-RM-CS1"/>
+                        <segue destination="7uZ-mt-3QJ" kind="relationship" relationship="viewControllers" id="8cI-Rd-Vpf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlv-3k-6ZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -714,20 +733,23 @@
             <point key="canvasLocation" x="824.79999999999995" y="886.50674662668678"/>
         </scene>
         <!--我的-->
-        <scene sceneID="glu-lI-glh">
+        <scene sceneID="Ev2-c8-Je0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wlO-rP-CQy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" id="muB-xh-Tut"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7uZ-mt-3QJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="我的" id="F8P-my-NNM"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4OU-b8-OEm">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X56-7g-aXa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="a41-Qa-Gbl" kind="relationship" relationship="rootViewController" id="ILz-lZ-Idd"/>
+                    </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZPJ-NZ-qKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OC6-TG-v9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1764" y="134.48275862068968"/>
+            <point key="canvasLocation" x="1764" y="135"/>
         </scene>
     </scenes>
 </document>
