@@ -36,6 +36,10 @@ class AddStaffTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
+    
+//    @IBAction func selectPhoto(){
+//        var photo = 
+//    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

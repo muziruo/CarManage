@@ -40,6 +40,10 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func add(){
+        
+    }
+    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
