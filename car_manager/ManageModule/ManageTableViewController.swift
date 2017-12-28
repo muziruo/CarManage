@@ -80,7 +80,16 @@ class ManageTableViewController: UITableViewController {
                 break
             }
         }else{
-            
+            switch indexPath.row {
+            case 0:
+                performSegue(withIdentifier: "deleteUserSegue", sender: nil)
+                break
+//            case 1:
+//                performSegue(withIdentifier: "addUserSegue", sender: nil)
+//                break
+            default:
+                break
+            }
         }
     }
     

@@ -22,6 +22,7 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
                         "car":["校车","教职工车","社会车"],
                         "passcard":["校车","教职工车","社会车"]]
     var pickerView = UIPickerView()
+    var datePickerView = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,9 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         tableView.separatorStyle = .none
         title = "添加用户"
+        datePickerView.datePickerMode = .date
+        datePickerView.locale = Locale(identifier: "Chinese")
+        datePickerView.addTarget(self, action: #selector(chooseDate), for: .valueChanged)
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,7 +45,7 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
     }
     
     @IBAction func add(){
-        
+        print("点击")
     }
     
     // MARK: - Table view data source
@@ -86,15 +90,27 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
             }
         case "passcard":
             cell.titleLable.text = titles[currentType]![indexPath.row]
-            if indexPath.row == 1{
+            switch indexPath.row{
+            case 1:
                 cell.textField.placeholder = "请选择类型"
                 cell.textField.tag = 1
                 pickerView.translatesAutoresizingMaskIntoConstraints = true
                 pickerView.delegate = self
                 pickerView.dataSource = self
                 cell.textField.inputView = pickerView
-            }else{
-                cell.textField.placeholder = "请输入"+titles[currentType]![indexPath.row]
+            case 2:
+                cell.textField.placeholder = "请选择通行证开始日期"
+                cell.textField.tag = 2
+                datePickerView.translatesAutoresizingMaskIntoConstraints = true
+                cell.textField.inputView = datePickerView
+            case 3:
+                cell.textField.placeholder = "请选择通行证结束日期"
+                cell.textField.tag = 3
+                datePickerView.translatesAutoresizingMaskIntoConstraints = true
+                chooseDate(indexPath: indexPath)
+                cell.textField.inputView = datePickerView
+            default:
+                break
             }
         case "post":
             cell.titleLable.text = titles[currentType]![indexPath.row]
@@ -111,8 +127,14 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let label = view.viewWithTag(1) as! UITextField
-        label.text = pickViewItem[currentType]![row] as? String
+        label.text = pickViewItem[currentType]![row]
     }
+    
+    func chooseDate(indexPath: IndexPath) {
+        
+    }
+    
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -123,7 +145,7 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickViewItem[currentType]![row] as? String
+        return pickViewItem[currentType]![row]
     }
     
     /*

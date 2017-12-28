@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="staffCell" rowHeight="82" id="KGk-i7-Jjw" customClass="BasisCell" customModule="car_manager" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="81.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7z-XP-tNV">
+                        <rect key="frame" x="16" y="11" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eeY-Vh-fg7">
+                        <rect key="frame" x="16" y="38" width="288" height="33"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="A7z-XP-tNV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Ahf-0K-lRp"/>
+                    <constraint firstItem="A7z-XP-tNV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="ExN-1i-VKg"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="eeY-Vh-fg7" secondAttribute="trailing" id="SIp-kQ-IXy"/>
+                    <constraint firstItem="eeY-Vh-fg7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Wpd-NP-vFK"/>
+                    <constraint firstItem="eeY-Vh-fg7" firstAttribute="top" secondItem="A7z-XP-tNV" secondAttribute="bottom" constant="6" id="jN7-QZ-rpb"/>
+                    <constraint firstItem="eeY-Vh-fg7" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="tfV-Gh-p6a"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="textField" destination="eeY-Vh-fg7" id="sN4-8G-E2f"/>
+                <outlet property="titleLable" destination="A7z-XP-tNV" id="7SG-cc-PyZ"/>
+            </connections>
+            <point key="canvasLocation" x="33" y="130"/>
+        </tableViewCell>
+    </objects>
+</document>
