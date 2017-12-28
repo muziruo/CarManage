@@ -14,6 +14,8 @@
 		32DC2F361FECA85F00770C55 /* BasisCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DC2F351FECA85F00770C55 /* BasisCell.swift */; };
 		32E7B4341FF2701400D8AD84 /* AddStaffTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7B4331FF2701400D8AD84 /* AddStaffTableViewController.swift */; };
 		32E92D791FDFCCA10016B181 /* ViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E92D781FDFCCA10016B181 /* ViewHelper.swift */; };
+		32F065521FF4E89900922AA9 /* DeleteUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F065511FF4E89900922AA9 /* DeleteUserController.swift */; };
+		32F0655E1FF506E900922AA9 /* BasisCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F0655C1FF506E900922AA9 /* BasisCell.xib */; };
 		79DAE9294A0D3E071F33C5AA /* Pods_car_manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57052502F3F8DEE40D16237 /* Pods_car_manager.framework */; };
 		EE6BB6AA1FDAC2FA0035C030 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6BB6A91FDAC2FA0035C030 /* LoginViewController.swift */; };
 		EE6BB6CC1FDC2B7C0035C030 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = EE6BB6CB1FDC2B7C0035C030 /* Podfile */; };
@@ -42,6 +44,8 @@
 		32DC2F351FECA85F00770C55 /* BasisCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasisCell.swift; sourceTree = "<group>"; };
 		32E7B4331FF2701400D8AD84 /* AddStaffTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStaffTableViewController.swift; sourceTree = "<group>"; };
 		32E92D781FDFCCA10016B181 /* ViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHelper.swift; sourceTree = "<group>"; };
+		32F065511FF4E89900922AA9 /* DeleteUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserController.swift; sourceTree = "<group>"; };
+		32F0655C1FF506E900922AA9 /* BasisCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasisCell.xib; sourceTree = "<group>"; };
 		B57052502F3F8DEE40D16237 /* Pods_car_manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_car_manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C653B98A830237A3609CE4BA /* Pods-car_manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-car_manager.release.xcconfig"; path = "Pods/Target Support Files/Pods-car_manager/Pods-car_manager.release.xcconfig"; sourceTree = "<group>"; };
 		D0C0585E5882544F0D1B8AF6 /* Pods-car_manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-car_manager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-car_manager/Pods-car_manager.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 				32DC2F331FECA60A00770C55 /* AddUserTableViewController.swift */,
 				32DC2F351FECA85F00770C55 /* BasisCell.swift */,
 				32E7B4331FF2701400D8AD84 /* AddStaffTableViewController.swift */,
+				32F065511FF4E89900922AA9 /* DeleteUserController.swift */,
+				32F0655C1FF506E900922AA9 /* BasisCell.xib */,
 			);
 			path = ManageModule;
 			sourceTree = "<group>";
@@ -250,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE7DEDF91FDA72350062928E /* LaunchScreen.storyboard in Resources */,
+				32F0655E1FF506E900922AA9 /* BasisCell.xib in Resources */,
 				EE7DEDF61FDA72350062928E /* Assets.xcassets in Resources */,
 				3249ED011FE3C76A00A7E745 /* Manage.storyboard in Resources */,
 				EE6BB6CC1FDC2B7C0035C030 /* Podfile in Resources */,
@@ -325,6 +332,7 @@
 				3251B6621FE364CB00D4AD82 /* ManageTableViewCell.swift in Sources */,
 				3249ED031FE3CAD100A7E745 /* ManageTableViewController.swift in Sources */,
 				32DC2F341FECA60A00770C55 /* AddUserTableViewController.swift in Sources */,
+				32F065521FF4E89900922AA9 /* DeleteUserController.swift in Sources */,
 				EE6BB6DA1FDEAD0F0035C030 /* User.swift in Sources */,
 				EE6BB6DE1FDEADBF0035C030 /* MenuTableViewCell.swift in Sources */,
 				EE6BB6AA1FDAC2FA0035C030 /* LoginViewController.swift in Sources */,

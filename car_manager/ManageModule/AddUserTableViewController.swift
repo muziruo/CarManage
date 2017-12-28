@@ -30,6 +30,7 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
     let AddCarUrl = "https://car.wuruoye.com/car/add_car"
     
     var pickerView = UIPickerView()
+    var datePickerView = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,9 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         tableView.separatorStyle = .none
         title = "添加用户"
+        datePickerView.datePickerMode = .date
+        datePickerView.locale = Locale(identifier: "Chinese")
+        datePickerView.addTarget(self, action: #selector(chooseDate), for: .valueChanged)
     }
     
     @IBAction func AddInfo(_ sender: Any) {
@@ -364,7 +368,8 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
             }
         case "passcard":
             cell.titleLable.text = titles[currentType]![indexPath.row]
-            if indexPath.row == 1{
+            switch indexPath.row{
+            case 1:
                 cell.textField.placeholder = "请选择类型"
                 cell.textField.tag = 1
                 pickerView.translatesAutoresizingMaskIntoConstraints = true
@@ -396,8 +401,14 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let label = view.viewWithTag(1) as! UITextField
-        label.text = pickViewItem[currentType]![row] as? String
+        label.text = pickViewItem[currentType]![row]
     }
+    
+    func chooseDate(indexPath: IndexPath) {
+        
+    }
+    
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -408,7 +419,7 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickViewItem[currentType]![row] as? String
+        return pickViewItem[currentType]![row]
     }
     
     /*
