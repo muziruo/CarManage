@@ -53,6 +53,7 @@ class ManageTableViewController: UITableViewController {
 
         // Configure the cell...
         cell.label?.text = functions[indexPath.section][indexPath.row]
+        cell.label.font = UIFont(name: "Avenir-Light", size: 16)
         return cell
     }
     
@@ -82,6 +83,7 @@ class ManageTableViewController: UITableViewController {
         }else{
             
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

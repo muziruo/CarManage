@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import SVProgressHUD
 
 class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIPickerViewDataSource{
 
@@ -19,8 +22,13 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
                   "passcard":["车牌号","类型","开始时间","结束时间","费用","车主"],
                   "blacklist":["车牌号"]]
     var pickViewItem = ["user":["普通用户","管理员"],
-                        "car":["校车","教职工车","社会车"],
+                        "car":["小型车","大型车"],
                         "passcard":["校车","教职工车","社会车"]]
+    let AddBlackListUrl = "https://car.wuruoye.com/car/add_no_car"
+    let AddPostUrl = "https://car.wuruoye.com/user/add_unit"
+    let AddUserUrl = "https://car.wuruoye.com/user/add_user"
+    let AddCarUrl = "https://car.wuruoye.com/car/add_car"
+    
     var pickerView = UIPickerView()
     
     override func viewDidLoad() {
@@ -35,14 +43,279 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
         title = "添加用户"
     }
     
+    @IBAction func AddInfo(_ sender: Any) {
+        SVProgressHUD.show()
+        switch currentType {
+        case "user":
+            AddUserInfo()
+            break
+        case "post":
+            AddPostInfo()
+            break
+        case "car":
+            AddCarInfo()
+            break
+        case "passcard":
+            break
+        case "blacklist":
+            AddBlackList()
+            break
+        default:
+            break
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func add(){
+    func AddCarInfo() {
+        let carnumtextfield = view.viewWithTag(101) as! UITextField
+        let cartypetextfield = view.viewWithTag(1) as! UITextField
+        let carmodeltextfield = view.viewWithTag(103) as! UITextField
+        let carcolortextfield = view.viewWithTag(104) as! UITextField
+        let carseatstextfield = view.viewWithTag(105) as! UITextField
+        let carnum = carnumtextfield.text!
+        var cartype = "0"
+        switch cartypetextfield.text! {
+        case "小型车":
+            cartype = "1"
+            break
+        case "大型车":
+            cartype = "2"
+            break
+        default:
+            break
+        }
+        let carmodel = carmodeltextfield.text!
+        let carcolor = carcolortextfield.text!
+        let carseats = carseatstextfield.text!
+        let seatnum = Int(carseats)!
         
+        
+        if carnum != "" && cartype != "" && carmodel != "" && carcolor != "" && carseats != "" {
+            let url = URL(string: AddCarUrl)
+            let parameter = ["id":carnum,"type":cartype,"model":carmodel,"color":carcolor,"seat":seatnum] as [String : Any]
+            
+            Alamofire.request(url!, method: .post, parameters: parameter, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
+                switch responsedata.result {
+                case .success(let data):
+                    let jsondata = JSON(data)
+                    let issuccess = jsondata.dictionaryObject?["result"] as! Bool
+                    if issuccess {
+                        SVProgressHUD.dismiss()
+                        let successdata = jsondata.dictionaryObject?["info"] as! String
+                        let notice = UIAlertController(title: "提示", message: successdata, preferredStyle: .alert)
+                        let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                        notice.addAction(noticeaction)
+                        self.present(notice, animated: true, completion: nil)
+                    }else{
+                        SVProgressHUD.dismiss()
+                        let errordata = jsondata.dictionaryObject?["info"] as! String
+                        let notice = UIAlertController(title: "提示", message: errordata, preferredStyle: .alert)
+                        let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                        notice.addAction(noticeaction)
+                        self.present(notice, animated: true, completion: nil)
+                    }
+                    break
+                case .failure(let error):
+                    SVProgressHUD.dismiss()
+                    print("网络请求出错：\(error)")
+                    break
+                }
+            })
+        }else{
+            let notice = UIAlertController(title: "提示", message: "输入不能为空", preferredStyle: .alert)
+            let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+            notice.addAction(noticeaction)
+            self.present(notice, animated: true, completion: nil)
+        }
     }
+    
+    //添加用户
+    func AddUserInfo() {
+        let usernumtextfield = view.viewWithTag(101) as! UITextField
+        let userpasswordtextfield = view.viewWithTag(102) as! UITextField
+        let usertypetextfield = view.viewWithTag(1) as! UITextField
+        let usernum = usernumtextfield.text!
+        let userpassword = userpasswordtextfield.text!
+        let usertype = usertypetextfield.text!
+        
+        if usernum != "" && userpassword != "" && usertype != "" {
+            let url = URL(string: AddUserUrl)
+            let parmeters = ["id":usernum,"password":userpassword,"type":usertype]
+            
+            Alamofire.request(url!, method: .post, parameters: parmeters, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
+                switch responsedata.result {
+                case .success(let data):
+                    let jsondata = JSON(data)
+                    let issuccess = jsondata.dictionaryObject?["result"] as! Bool
+                    if issuccess {
+                        SVProgressHUD.dismiss()
+                        let successdata = jsondata.dictionaryObject?["info"] as! String
+                        let notice = UIAlertController(title: "提示", message: successdata, preferredStyle: .alert)
+                        let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                        notice.addAction(noticeaction)
+                        self.present(notice, animated: true, completion: nil)
+                    }else{
+                        SVProgressHUD.dismiss()
+                        let errordata = jsondata.dictionaryObject?["info"] as! String
+                        let notice = UIAlertController(title: "提示", message: errordata, preferredStyle: .alert)
+                        let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                        notice.addAction(noticeaction)
+                        self.present(notice, animated: true, completion: nil)
+                    }
+                    break
+                case .failure(let error):
+                    SVProgressHUD.dismiss()
+                    print("网络请求出错：\(error)")
+                    break
+                }
+            })
+        }
+    }
+    
+    //添加单位
+    func AddPostInfo() {
+        let postnumtextfield = view.viewWithTag(101) as! UITextField
+        let postnametextfield = view.viewWithTag(102) as! UITextField
+        let postphonetextfield = view.viewWithTag(103) as! UITextField
+        
+        let postnum = postnumtextfield.text!
+        let postname = postnametextfield.text!
+        let postphone = postphonetextfield.text!
+        if postphone != "" && postnum != "" && postname != "" {
+            if postphone.characters.count != 11 {
+                SVProgressHUD.dismiss()
+                let notice = UIAlertController(title: "警告", message: "请输入正确的电话号码格式", preferredStyle: .alert)
+                let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                notice.addAction(noticeaction)
+                self.present(notice, animated: true, completion: nil)
+            }else{
+                let url = URL(string: AddPostUrl)
+                let parmeters = ["id":postnum,"name":postname,"phone":postphone]
+                
+                Alamofire.request(url!, method: .post, parameters: parmeters, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
+                    switch responsedata.result {
+                    case .success(let data):
+                        let jsondata = JSON(data)
+                        let issuccess = jsondata.dictionaryObject?["result"] as! Bool
+                        if issuccess {
+                            SVProgressHUD.dismiss()
+                            let successdata = jsondata.dictionaryObject?["info"] as! String
+                            let notice = UIAlertController(title: "提示", message: successdata, preferredStyle: .alert)
+                            let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                            notice.addAction(noticeaction)
+                            self.present(notice, animated: true, completion: nil)
+                        }else{
+                            SVProgressHUD.dismiss()
+                            let errordata = jsondata.dictionaryObject?["info"] as! String
+                            let notice = UIAlertController(title: "提示", message: errordata, preferredStyle: .alert)
+                            let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                            notice.addAction(noticeaction)
+                            self.present(notice, animated: true, completion: nil)
+                        }
+                        break
+                    case .failure(let error):
+                        SVProgressHUD.dismiss()
+                        print("网络请求出错：\(error)")
+                        break
+                    }
+                })
+            }
+        }else{
+            SVProgressHUD.dismiss()
+            let notice = UIAlertController(title: "警告", message: "输入不能为空", preferredStyle: .alert)
+            let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+            notice.addAction(noticeaction)
+            self.present(notice, animated: true, completion: nil)
+        }
+    }
+    
+    //添加黑名单
+    func AddBlackList() {
+        let carnumtextfield = view.viewWithTag(101) as! UITextField
+        let carnum = carnumtextfield.text!
+        
+        if carnum != "" {
+            if carnum.characters.count <= 8 {
+                let url = URL(string: AddBlackListUrl)
+                let prameters = ["car":carnum]
+                Alamofire.request(url!, method: .post, parameters: prameters, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
+                    switch responsedata.result {
+                    case .success(let data):
+                        let jsondata = JSON(data)
+                        let issuccess = jsondata.dictionaryObject?["result"] as! Bool
+                        if issuccess {
+                            SVProgressHUD.dismiss()
+                            let successdata = jsondata.dictionaryObject?["info"] as! String
+                            let notice = UIAlertController(title: "提示", message: successdata, preferredStyle: .alert)
+                            let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                            notice.addAction(noticeaction)
+                            self.present(notice, animated: true, completion: nil)
+                        }else{
+                            SVProgressHUD.dismiss()
+                            let errordata = jsondata.dictionaryObject?["info"] as! String
+                            let notice = UIAlertController(title: "提示", message: errordata, preferredStyle: .alert)
+                            let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                            notice.addAction(noticeaction)
+                            self.present(notice, animated: true, completion: nil)
+                        }
+                        break
+                    case .failure(let error):
+                        SVProgressHUD.dismiss()
+                        print("网络请求出错：\(error)")
+                        break
+                    }
+                })
+            }else{
+                SVProgressHUD.dismiss()
+                let notice = UIAlertController(title: "提示", message: "车辆编号应小于8位", preferredStyle: .alert)
+                let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                notice.addAction(noticeaction)
+                self.present(notice, animated: true, completion: nil)
+            }
+        }else{
+            SVProgressHUD.dismiss()
+            let notice = UIAlertController(title: "提示", message: "车辆编号输入不能为空", preferredStyle: .alert)
+            let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+            notice.addAction(noticeaction)
+            self.present(notice, animated: true, completion: nil)
+        }
+    }
+    
+    /*
+    func NetworkRequest(parameter:Parameters,url:URL) {
+        Alamofire.request(url!, method: .post, parameters: parameter, encoding: URLEncoding.default, headers: nil).responseString(completionHandler: { (responsedata) in
+            switch responsedata.result {
+            case .success(let data):
+                let jsondata = JSON(data)
+                let issuccess = jsondata.dictionaryObject?["result"] as! Bool
+                if issuccess {
+                    SVProgressHUD.dismiss()
+                    let successdata = jsondata.dictionaryObject?["info"] as! String
+                    let notice = UIAlertController(title: "提示", message: successdata, preferredStyle: .alert)
+                    let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                    notice.addAction(noticeaction)
+                    self.present(notice, animated: true, completion: nil)
+                }else{
+                    SVProgressHUD.dismiss()
+                    let errordata = jsondata.dictionaryObject?["info"] as! String
+                    let notice = UIAlertController(title: "提示", message: errordata, preferredStyle: .alert)
+                    let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                    notice.addAction(noticeaction)
+                    self.present(notice, animated: true, completion: nil)
+                }
+                break
+            case .failure(let error):
+                SVProgressHUD.dismiss()
+                print("网络请求出错：\(error)")
+                break
+            }
+        })
+    }
+    */
     
     // MARK: - Table view data source
     
@@ -59,6 +332,9 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "basisCell", for: indexPath) as! BasisCell
+        
+        let tagnum = 101 + indexPath.row
+        
         switch currentType {
         case "user":
             cell.titleLable.text = titles[currentType]![indexPath.row]
@@ -71,6 +347,7 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
                 cell.textField.inputView = pickerView
             }else{
                 cell.textField.placeholder = "请输入"+titles[currentType]![indexPath.row]
+                cell.textField.tag = tagnum
             }
         case "car":
             cell.titleLable.text = titles[currentType]![indexPath.row]
@@ -83,6 +360,7 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
                 cell.textField.inputView = pickerView
             }else{
                 cell.textField.placeholder = "请输入"+titles[currentType]![indexPath.row]
+                cell.textField.tag = tagnum
             }
         case "passcard":
             cell.titleLable.text = titles[currentType]![indexPath.row]
@@ -95,18 +373,25 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
                 cell.textField.inputView = pickerView
             }else{
                 cell.textField.placeholder = "请输入"+titles[currentType]![indexPath.row]
+                cell.textField.tag = tagnum
             }
         case "post":
             cell.titleLable.text = titles[currentType]![indexPath.row]
             cell.textField.placeholder = "请输入"+titles[currentType]![indexPath.row]
+            cell.textField.tag = tagnum
         case "blacklist":
             cell.titleLable.text = titles[currentType]![indexPath.row]
             cell.textField.placeholder = "请输入"+titles[currentType]![indexPath.row]
+            cell.textField.tag = tagnum
         default:
             break
         }
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

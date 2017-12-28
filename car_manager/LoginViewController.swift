@@ -39,15 +39,23 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
             let url = URL(string: "https://car.wuruoye.com/user/login_user")!
             let parameters = ["id":nameinput,"password":passwordinput]
             Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
-                let jsondata = JSON.init(data: responsedata.data!)
-                let issuccess = jsondata.dictionaryObject?["result"] as! Bool
-                if issuccess {
-                    SVProgressHUD.dismiss()
-                    self.performSegue(withIdentifier: "LoginSuccess", sender: nil)
+                if responsedata.result.isSuccess {
+                    let jsondata = JSON.init(data: responsedata.data!)
+                    let issuccess = jsondata.dictionaryObject?["result"] as! Bool
+                    if issuccess {
+                        SVProgressHUD.dismiss()
+                        self.performSegue(withIdentifier: "LoginSuccess", sender: nil)
+                    }else{
+                        SVProgressHUD.dismiss()
+                        let jsonstr = jsondata.dictionaryObject?["info"] as! String
+                        let notice = UIAlertController(title: "提示", message: jsonstr, preferredStyle: .alert)
+                        let noticeactivity = UIAlertAction(title: "确定", style: .default, handler: nil)
+                        notice.addAction(noticeactivity)
+                        self.present(notice, animated: true, completion: nil)
+                    }
                 }else{
                     SVProgressHUD.dismiss()
-                    let jsonstr = jsondata.dictionaryObject?["info"] as! String
-                    let notice = UIAlertController(title: "提示", message: jsonstr, preferredStyle: .alert)
+                    let notice = UIAlertController(title: "提示", message: "网络请求错误", preferredStyle: .alert)
                     let noticeactivity = UIAlertAction(title: "确定", style: .default, handler: nil)
                     notice.addAction(noticeactivity)
                     self.present(notice, animated: true, completion: nil)
