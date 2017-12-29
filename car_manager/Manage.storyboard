@@ -731,11 +731,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="488-ZJ-hDY">
-                                        <rect key="frame" x="0.0" y="178" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="52" id="488-ZJ-hDY">
+                                        <rect key="frame" x="0.0" y="178" width="375" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="488-ZJ-hDY" id="sH7-ya-45N">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="51.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WI2-Tc-B2M">
@@ -754,6 +754,7 @@
                                                 <constraint firstItem="WI2-Tc-B2M" firstAttribute="centerX" secondItem="sH7-ya-45N" secondAttribute="centerX" id="A3a-Z6-zD2"/>
                                                 <constraint firstItem="WI2-Tc-B2M" firstAttribute="leading" secondItem="sH7-ya-45N" secondAttribute="leadingMargin" constant="10" id="a8m-0V-xR6"/>
                                                 <constraint firstItem="WI2-Tc-B2M" firstAttribute="top" secondItem="sH7-ya-45N" secondAttribute="top" constant="5" id="hea-x9-8UR"/>
+                                                <constraint firstItem="WI2-Tc-B2M" firstAttribute="centerY" secondItem="sH7-ya-45N" secondAttribute="centerY" id="qWm-mP-6af"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="414" minY="0.0" maxX="0.0" maxY="0.0"/>
