@@ -259,7 +259,7 @@
 				TargetAttributes = {
 					EE7DEDEA1FDA72350062928E = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = K2VC334V4X;
+						DevelopmentTeam = 6TJKYE5XV9;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
@@ -532,10 +532,10 @@
 			baseConfigurationReference = D0C0585E5882544F0D1B8AF6 /* Pods-car_manager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = K2VC334V4X;
+				DEVELOPMENT_TEAM = 6TJKYE5XV9;
 				INFOPLIST_FILE = car_manager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "lqzy.car-manager";
+				PRODUCT_BUNDLE_IDENTIFIER = "muziruo.car-manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -546,10 +546,10 @@
 			baseConfigurationReference = C653B98A830237A3609CE4BA /* Pods-car_manager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = K2VC334V4X;
+				DEVELOPMENT_TEAM = 6TJKYE5XV9;
 				INFOPLIST_FILE = car_manager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "lqzy.car-manager";
+				PRODUCT_BUNDLE_IDENTIFIER = "muziruo.car-manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
