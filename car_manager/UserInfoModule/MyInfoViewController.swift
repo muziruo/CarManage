@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import SVProgressHUD
 
 class MyInfoViewController: UIViewController ,UITableViewDataSource ,UITableViewDelegate{
 
@@ -19,6 +22,7 @@ class MyInfoViewController: UIViewController ,UITableViewDataSource ,UITableView
     
     let functionlist = [["开发者网站"],["使用反馈"],["电话本"]]
     let ImageUrl = "https://car.wuruoye.com/user/photo/unit/"
+    let SearchUrl = "https://car.wuruoye.com/user/query_staff_detail"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +46,8 @@ class MyInfoViewController: UIViewController ,UITableViewDataSource ,UITableView
             }
         }) as URLSessionTask
         datadask.resume()
+        
+        searchuser()
         // Do any additional setup after loading the view.
     }
 
@@ -50,6 +56,44 @@ class MyInfoViewController: UIViewController ,UITableViewDataSource ,UITableView
         // Dispose of any resources that can be recreated.
     }
     
+    func searchuser() {
+        let userinfo = UserDefaults.standard
+        let userid = userinfo.value(forKey: "userid") as! String
+        
+        let url = URL(string: SearchUrl)
+        let parameter = ["id":userid]
+        Alamofire.request(url!, method: .get, parameters: parameter, encoding: URLEncoding.default, headers: nil).responseJSON { (responsedata) in
+            switch responsedata.result {
+            case .success(let data):
+                let jsondata = JSON(data)
+                let issuccess = jsondata.dictionaryObject?["result"] as! Bool
+                if issuccess {
+                    SVProgressHUD.dismiss()
+                    let querystaff = QueryStaff.init(fromDictionary: jsondata.dictionaryObject!)
+                    self.UserName.text = querystaff.info.staff.name + " "
+                    self.UserNum.text = querystaff.info.staff.id
+                    self.UserPost.text = querystaff.info.unit.name
+                }else{
+                    SVProgressHUD.dismiss()
+                    let errordata = jsondata.dictionaryObject?["info"] as! String
+                    let notice = UIAlertController(title: "提示", message: errordata, preferredStyle: .alert)
+                    let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                    notice.addAction(noticeaction)
+                    self.present(notice, animated: true, completion: nil)
+                }
+                break
+            case .failure(let error):
+                SVProgressHUD.dismiss()
+                print(error.localizedDescription)
+                let notice = UIAlertController(title: "提示", message: "网络请求出错", preferredStyle: .alert)
+                let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                notice.addAction(noticeaction)
+                self.present(notice, animated: true, completion: nil)
+                break
+            }
+        }
+        
+    }
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
@@ -72,6 +116,13 @@ class MyInfoViewController: UIViewController ,UITableViewDataSource ,UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 2:
+            performSegue(withIdentifier: "GoToPostList", sender: nil)
+            break
+        default:
+            break
+        }
         FunctionTable.deselectRow(at: indexPath, animated: true)
     }
     /*

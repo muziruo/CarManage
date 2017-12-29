@@ -29,6 +29,8 @@ class CarSearchTableViewController: UITableViewController ,UITextFieldDelegate{
     @IBAction func SearchActivity(_ sender: UIButton) {
         SVProgressHUD.show()
         
+        view.endEditing(true)
+        
         let userinput:String = InputNum.text!
         
         if userinput == "" {
@@ -101,6 +103,7 @@ class CarSearchTableViewController: UITableViewController ,UITextFieldDelegate{
                     }
                 })
             }else{
+                SVProgressHUD.dismiss()
                 let notice = UIAlertController(title: "提示", message: "编号输入不能超过8位", preferredStyle: .alert)
                 let noticeactivity = UIAlertAction(title: "确定", style: .default, handler: nil)
                 notice.addAction(noticeactivity)

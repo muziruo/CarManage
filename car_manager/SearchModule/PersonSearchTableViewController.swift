@@ -23,7 +23,10 @@ class PersonSearchTableViewController: UITableViewController ,UITextFieldDelegat
     
     //进行查询操作
     @IBAction func SearchActivity(_ sender: UIButton) {
-        let userinput = InputNum.text
+        view.endEditing(true)
+        
+        SVProgressHUD.show()
+        let userinput = InputNum.text!
         
         if userinput == "" {
             let notice = UIAlertController(title: "提示", message: "输入不能为空", preferredStyle: .alert)
@@ -40,12 +43,27 @@ class PersonSearchTableViewController: UITableViewController ,UITextFieldDelegat
                     let issuccess = jsondata.dictionaryObject?["result"] as! Bool
                     if issuccess {
                         SVProgressHUD.dismiss()
-                        
+                        let querystaff = QueryStaff.init(fromDictionary: jsondata.dictionaryObject!)
+                        self.PersonNum.text = querystaff.info.staff.id
+                        self.PersonName.text = querystaff.info.staff.name
+                        self.PersonCompany.text = querystaff.info.unit.name
+                        if querystaff.info.car.count == 0 {
+                            self.Info.text = "该人员无车辆"
+                        }else{
+                            self.Info.text = querystaff.info.car[0].id
+                        }
                     }else{
                         SVProgressHUD.dismiss()
+                        let errordata = jsondata.dictionaryObject?["info"] as! String
+                        let notice = UIAlertController(title: "提示", message: errordata, preferredStyle: .alert)
+                        let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                        notice.addAction(noticeaction)
+                        self.present(notice, animated: true, completion: nil)
                     }
                     break
                 case .failure(let error):
+                    SVProgressHUD.dismiss()
+                    print(error.localizedDescription)
                     let notice = UIAlertController(title: "警告", message: "网络请求出错", preferredStyle: .alert)
                     let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
                     notice.addAction(noticeaction)

@@ -40,6 +40,9 @@
 		EED8C1CB1FF5D8520097C9EB /* Staff.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C1C71FF5D8520097C9EB /* Staff.swift */; };
 		EED8C1CC1FF5D8520097C9EB /* StaffInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C1C81FF5D8520097C9EB /* StaffInfo.swift */; };
 		EED8C1CD1FF5D8520097C9EB /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C1C91FF5D8520097C9EB /* Unit.swift */; };
+		EED8C1CF1FF5ED860097C9EB /* QueryPostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C1CE1FF5ED860097C9EB /* QueryPostList.swift */; };
+		EED8C1D11FF5EEF40097C9EB /* PostListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C1D01FF5EEF40097C9EB /* PostListTableViewController.swift */; };
+		EED8C1D31FF5EF3E0097C9EB /* PostListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C1D21FF5EF3E0097C9EB /* PostListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +83,9 @@
 		EED8C1C71FF5D8520097C9EB /* Staff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
 		EED8C1C81FF5D8520097C9EB /* StaffInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaffInfo.swift; sourceTree = "<group>"; };
 		EED8C1C91FF5D8520097C9EB /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
+		EED8C1CE1FF5ED860097C9EB /* QueryPostList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryPostList.swift; sourceTree = "<group>"; };
+		EED8C1D01FF5EEF40097C9EB /* PostListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListTableViewController.swift; sourceTree = "<group>"; };
+		EED8C1D21FF5EF3E0097C9EB /* PostListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				EEA3E6071FF3407900149A55 /* MyInfoViewController.swift */,
+				EED8C1D21FF5EF3E0097C9EB /* PostListTableViewCell.swift */,
+				EED8C1D01FF5EEF40097C9EB /* PostListTableViewController.swift */,
 			);
 			path = UserInfoModule;
 			sourceTree = "<group>";
@@ -156,6 +164,7 @@
 		EE6BB6D81FDEAD0F0035C030 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EED8C1CE1FF5ED860097C9EB /* QueryPostList.swift */,
 				EED8C1C61FF5D8520097C9EB /* QueryStaff.swift */,
 				EED8C1C71FF5D8520097C9EB /* Staff.swift */,
 				EED8C1C81FF5D8520097C9EB /* StaffInfo.swift */,
@@ -244,7 +253,7 @@
 				TargetAttributes = {
 					EE7DEDEA1FDA72350062928E = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = K2VC334V4X;
+						DevelopmentTeam = 6TJKYE5XV9;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
@@ -351,11 +360,13 @@
 				3249ED031FE3CAD100A7E745 /* ManageTableViewController.swift in Sources */,
 				EED8C1CD1FF5D8520097C9EB /* Unit.swift in Sources */,
 				32DC2F341FECA60A00770C55 /* AddUserTableViewController.swift in Sources */,
+				EED8C1D11FF5EEF40097C9EB /* PostListTableViewController.swift in Sources */,
 				32F065521FF4E89900922AA9 /* DeleteUserController.swift in Sources */,
 				EE6BB6DA1FDEAD0F0035C030 /* User.swift in Sources */,
 				EE6BB6DE1FDEADBF0035C030 /* MenuTableViewCell.swift in Sources */,
 				EE6BB6AA1FDAC2FA0035C030 /* LoginViewController.swift in Sources */,
 				EE7DEDEF1FDA72350062928E /* AppDelegate.swift in Sources */,
+				EED8C1CF1FF5ED860097C9EB /* QueryPostList.swift in Sources */,
 				EED8C1C11FF5D6C90097C9EB /* Info.swift in Sources */,
 				EE6BB6D51FDEAA510035C030 /* SearchMenuViewController.swift in Sources */,
 				EE6BB6E41FE362EA0035C030 /* CarSearchTableViewController.swift in Sources */,
@@ -373,6 +384,7 @@
 				EED8C1CA1FF5D8520097C9EB /* QueryStaff.swift in Sources */,
 				32DC2F361FECA85F00770C55 /* BasisCell.swift in Sources */,
 				EE6BB6EE1FF2306F0035C030 /* CarDetailTableViewCell.swift in Sources */,
+				EED8C1D31FF5EF3E0097C9EB /* PostListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,10 +524,10 @@
 			baseConfigurationReference = D0C0585E5882544F0D1B8AF6 /* Pods-car_manager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = K2VC334V4X;
+				DEVELOPMENT_TEAM = 6TJKYE5XV9;
 				INFOPLIST_FILE = car_manager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "lqzy.car-manager";
+				PRODUCT_BUNDLE_IDENTIFIER = "muziruo.car-manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -526,10 +538,10 @@
 			baseConfigurationReference = C653B98A830237A3609CE4BA /* Pods-car_manager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = K2VC334V4X;
+				DEVELOPMENT_TEAM = 6TJKYE5XV9;
 				INFOPLIST_FILE = car_manager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "lqzy.car-manager";
+				PRODUCT_BUNDLE_IDENTIFIER = "muziruo.car-manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
