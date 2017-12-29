@@ -18,6 +18,7 @@ class MyInfoViewController: UIViewController ,UITableViewDataSource ,UITableView
     @IBOutlet weak var FunctionTable: UITableView!
     
     let functionlist = [["开发者网站"],["使用反馈"],["电话本"]]
+    let ImageUrl = "https://car.wuruoye.com/user/photo/unit/"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,21 @@ class MyInfoViewController: UIViewController ,UITableViewDataSource ,UITableView
         LogoutButton.layer.borderWidth = 1.5
         
         FunctionTable.tableFooterView = UIView(frame: .zero)
+        
+        let userinfo = UserDefaults.standard
+        let imagename = userinfo.value(forKey: "userid") as! String
+        let imageurltext = ImageUrl + imagename + ".jpg"
+        let imageurl = URL(string: imageurltext)
+        
+        let session = URLSession.shared
+        let datadask = session.dataTask(with: imageurl!, completionHandler: { (dataimg, respone, error) in
+            let imagedata = UIImage(data: dataimg!)
+            //得到图片之后在主线程中更新UI
+            OperationQueue.main.addOperation {
+                self.UserImage.image = imagedata
+            }
+        }) as URLSessionTask
+        datadask.resume()
         // Do any additional setup after loading the view.
     }
 

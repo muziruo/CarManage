@@ -1,27 +1,23 @@
 //
-//	Car.swift
+//	Owne.swift
 //	Model file generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
 import Foundation
 
-struct Car{
+struct Owne{
 
-	var color : String!
-	var id : String!
-	var model : String!
-	var seat : Int!
-	var type : String!
+	var owner : Owner!
+	var type : Int!
 
 
 	/**
 	 * Instantiate the instance using the passed dictionary values to set the properties values
 	 */
 	init(fromDictionary dictionary: [String:Any]){
-		color = dictionary["color"] as? String
-		id = dictionary["id"] as? String
-		model = dictionary["model"] as? String
-		seat = dictionary["seat"] as? Int
-		type = dictionary["type"] as? String
+		if let ownerData = dictionary["owner"] as? [String:Any]{
+				owner = Owner(fromDictionary: ownerData)
+			}
+		type = dictionary["type"] as? Int
 	}
 
 	/**
@@ -30,17 +26,8 @@ struct Car{
 	func toDictionary() -> [String:Any]
 	{
 		var dictionary = [String:Any]()
-		if color != nil{
-			dictionary["color"] = color
-		}
-		if id != nil{
-			dictionary["id"] = id
-		}
-		if model != nil{
-			dictionary["model"] = model
-		}
-		if seat != nil{
-			dictionary["seat"] = seat
+		if owner != nil{
+			dictionary["owner"] = owner.toDictionary()
 		}
 		if type != nil{
 			dictionary["type"] = type

@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 import SVProgressHUD
 
-class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIPickerViewDataSource{
+class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIPickerViewDataSource ,UITextFieldDelegate{
 
     var currentType = "user"
 //    var addUserTitle = ["用户编号（职工号）","密码","权限"]
@@ -321,6 +321,10 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
     }
     */
     
+    func goback() {
+        performSegue(withIdentifier: "goback", sender: nil)
+    }
+    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -376,9 +380,19 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
                 pickerView.delegate = self
                 pickerView.dataSource = self
                 cell.textField.inputView = pickerView
-            }else{
-                cell.textField.placeholder = "请输入"+titles[currentType]![indexPath.row]
-                cell.textField.tag = tagnum
+            case 2:
+                cell.textField.placeholder = "请选择通行证开始日期"
+                cell.textField.tag = 2
+                datePickerView.translatesAutoresizingMaskIntoConstraints = true
+                cell.textField.inputView = datePickerView
+            case 3:
+                cell.textField.placeholder = "请选择通行证结束日期"
+                cell.textField.tag = 3
+                datePickerView.translatesAutoresizingMaskIntoConstraints = true
+                chooseDate(indexPath: indexPath)
+                cell.textField.inputView = datePickerView
+            default:
+                break
             }
         case "post":
             cell.titleLable.text = titles[currentType]![indexPath.row]
@@ -421,6 +435,12 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickViewItem[currentType]![row]
     }
+    
+    //点击输入框之外的地方停止输入
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+
     
     /*
      // Override to support conditional editing of the table view.

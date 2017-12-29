@@ -11,7 +11,7 @@ import SwiftyJSON
 import Alamofire
 import SVProgressHUD
 
-class CarSearchTableViewController: UITableViewController {
+class CarSearchTableViewController: UITableViewController ,UITextFieldDelegate{
     
     @IBOutlet weak var InputNum: UITextField!
     @IBOutlet weak var CarNum: UILabel!
@@ -21,7 +21,7 @@ class CarSearchTableViewController: UITableViewController {
     @IBOutlet weak var PassInfo: UILabel!
     @IBOutlet weak var BreakInfo: UILabel!
     
-    var GetCarInfo:CarInfo!
+    var GetCarInfo:QueryCar!
     //是否已经查询到结果
     var IsOrder:Bool = false
     
@@ -38,75 +38,76 @@ class CarSearchTableViewController: UITableViewController {
             notice.addAction(noticeaction)
             self.present(notice, animated: true, completion: nil)
         }else{
-            let url:URL = URL(string: "https://car.wuruoye.com/car/query_car_detail")!
-            let prameters = ["id":userinput]
-            Alamofire.request(url, method: .get, parameters: prameters, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
-                let jsondata = JSON.init(responsedata.value!)
-                let success = jsondata.dictionaryObject?["result"] as! Bool
-                if success {
-                    let cardata = CarInfo.init(fromDictionary: jsondata.dictionaryObject!)
-                    self.GetCarInfo = cardata
-                    self.IsOrder = true
-                    self.CarNum.text = cardata.info.car.id
-                    self.Owner.text = cardata.info.car.unit
-                    switch cardata.info.car.type {
-                    case 1:
-                        //学校公车会有所有的信息
-                        self.CarKind.text = "学校公车"
-                    
-                        /*
-                        if cardata.info.fillUp.count == 0 {
-                            self.AddInfo.text = "暂无加油记录"
-                        }else{
-                            let addstring:String = cardata.info.fillUp[0] as! String
-                            self.AddInfo.text = addstring
+            if userinput.characters.count <= 8 {
+                let url:URL = URL(string: "https://car.wuruoye.com/car/query_car_detail")!
+                let prameters = ["id":userinput]
+                Alamofire.request(url, method: .get, parameters: prameters, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
+                    let jsondata = JSON.init(responsedata.value!)
+                    let success = jsondata.dictionaryObject?["result"] as! Bool
+                    if success {
+                        let cardata = QueryCar.init(fromDictionary: jsondata.dictionaryObject!)
+                        self.GetCarInfo = cardata
+                        self.IsOrder = true
+                        self.CarNum.text = cardata.info.car.id
+                        switch cardata.info.car.type {
+                        case "校车":
+                            //学校公车会有所有的信息
+                            self.Owner.text = cardata.info.owne.owner.name
+                            self.CarKind.text = "学校公车"
+                            break
+                        case "教职工车":
+                            //教职工车不收录维护和加油信息
+                            self.Owner.text = cardata.info.owne.owner.name
+                            self.CarKind.text = "教职工车"
+                            break
+                        case "社会车":
+                            //社会车辆不收录维护和加油信息
+                            self.CarKind.text = "无"
+                            self.CarKind.text = "社会车辆"
+                            break
+                        default:
+                            self.CarKind.text = "未知"
                         }
-                        if cardata.info.upkeep.count == 0 {
-                            self.UpholdInfo.text = "暂无维护记录"
+                        
+                        //以下三项是所有车辆都会有，也都应该收录的信息
+                        if cardata.info.inOutNote.count == 0 {
+                            self.PassInfo.text = "暂无进出记录"
                         }else{
-                            let upholdstring = cardata.info.upkeep[0] as! String
-                            self.UpholdInfo.text = upholdstring
+                            let passstring:String = cardata.info.inOutNote[0] as! String
+                            self.PassInfo.text = passstring
                         }
-                        */
-                        break
-                    case 2:
-                        //教职工车不收录维护和加油信息
-                        self.CarKind.text = "教职工车"
-                        break
-                    case 3:
-                        //社会车辆不收录维护和加油信息
-                        self.CarKind.text = "社会车辆"
-                        break
-                    default:
-                        self.CarKind.text = "未知"
-                    }
-                    
-                    //以下两项是所有车辆都会有，也都应该收录的信息
-                    if cardata.info.inOutNote.count == 0 {
-                        self.PassInfo.text = "暂无进出记录"
+                        if cardata.info.ticket.count == 0 {
+                            self.PassDocumentInfo.text = "该车辆没有通行证"
+                        }else{
+                            let passdocumentstring = cardata.info.pass as! String
+                            self.PassDocumentInfo.text = passdocumentstring
+                        }
+                        if cardata.info.ticket.count == 0 {
+                            self.BreakInfo.text = "该车辆没有违章记录"
+                        }else{
+                            let breakstring = String(cardata.info.ticket[0].id)
+                            self.BreakInfo.text = breakstring
+                        }
+                        SVProgressHUD.dismiss()
+                        
                     }else{
-                        let passstring:String = cardata.info.inOutNote[0] as! String
-                        self.PassInfo.text = passstring
+                        //未查询到信息
+                        SVProgressHUD.dismiss()
+                        let errordata = jsondata.dictionaryObject?["info"] as! String
+                        let notice = UIAlertController(title: "提示", message: errordata, preferredStyle: .alert)
+                        let noticeactivity = UIAlertAction(title: "确定", style: .default, handler: nil)
+                        notice.addAction(noticeactivity)
+                        self.present(notice, animated: true, completion: nil)
                     }
-                    if cardata.info.ticket.count == 0 {
-                        self.PassDocumentInfo.text = "该车辆没有通行证"
-                    }else{
-                        let passdocumentstring = cardata.info.ticket[0] as! String
-                        self.PassDocumentInfo.text = passdocumentstring
-                    }
-                    SVProgressHUD.dismiss()
-                    
-                }else{
-                    //未查询到信息
-                    SVProgressHUD.dismiss()
-                    let errordata = jsondata.dictionaryObject?["info"] as! String
-                    let notice = UIAlertController(title: "提示", message: errordata, preferredStyle: .alert)
-                    let noticeactivity = UIAlertAction(title: "确定", style: .default, handler: nil)
-                    notice.addAction(noticeactivity)
-                    self.present(notice, animated: true, completion: nil)
-                }
-            })
-        }
+                })
+            }else{
+                let notice = UIAlertController(title: "提示", message: "编号输入不能超过8位", preferredStyle: .alert)
+                let noticeactivity = UIAlertAction(title: "确定", style: .default, handler: nil)
+                notice.addAction(noticeactivity)
+                self.present(notice, animated: true, completion: nil)
+                
+            }
+            }
     }
     
     
@@ -189,7 +190,7 @@ class CarSearchTableViewController: UITableViewController {
             case 2:
                 let dest = segue.destination as! CarDetailTableViewController
                 if let temp = GetCarInfo.info.ticket {
-                    dest.GetInfo = temp
+                    dest.GetInfo = temp as [AnyObject]
                 }else{
                     dest.GetInfo = []
                 }
@@ -214,6 +215,12 @@ class CarSearchTableViewController: UITableViewController {
             }
         }
     }
+    
+    //点击其他区域输入框消失
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+
     
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

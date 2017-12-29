@@ -44,6 +44,8 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
                     let issuccess = jsondata.dictionaryObject?["result"] as! Bool
                     if issuccess {
                         SVProgressHUD.dismiss()
+                        let userinfo = UserDefaults.standard
+                        userinfo.set(nameinput, forKey: "userid")
                         self.performSegue(withIdentifier: "LoginSuccess", sender: nil)
                     }else{
                         SVProgressHUD.dismiss()
