@@ -28,10 +28,15 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
     let AddPostUrl = "https://car.wuruoye.com/user/add_unit"
     let AddUserUrl = "https://car.wuruoye.com/user/add_user"
     let AddCarUrl = "https://car.wuruoye.com/car/add_car"
+    let AddPassUrl = "https://car.wuruoye.com/car/add_pass"
     
     var pickerView = UIPickerView()
     var datePickerView = UIDatePicker()
     let toolBar = UIToolbar()
+    
+    var StartDate:Date!
+    var EndDate:Date!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +75,7 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
     
     @IBAction func AddInfo(_ sender: Any) {
         SVProgressHUD.show()
+        view.endEditing(true)
         switch currentType {
         case "user":
             AddUserInfo()
@@ -81,6 +87,7 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
             AddCarInfo()
             break
         case "passcard":
+            AddPassCard()
             break
         case "blacklist":
             AddBlackList()
@@ -93,6 +100,98 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func AddPassCard() {
+        let carnumtextfield = view.viewWithTag(101) as! UITextField
+        let cartypetextfield = view.viewWithTag(1) as! UITextField
+        let startdatetextfield = view.viewWithTag(2) as! UITextField
+        let enddatetextfield = view.viewWithTag(3) as! UITextField
+        let feetextfield = view.viewWithTag(105) as! UITextField
+        let ownertextfield = view.viewWithTag(106) as! UITextField
+        let carnum = carnumtextfield.text!
+        var cartype = cartypetextfield.text!
+        let startdate = startdatetextfield.text!
+        let enddate = enddatetextfield.text!
+        let fee = feetextfield.text!
+        let owner = ownertextfield.text!
+        
+        let isnum = isPurnInt(string: fee)
+        if carnum != "" && cartype != "" && startdate != "" && enddate != "" && fee != "" && owner != "" {
+            if isnum {
+                if carnum.characters.count <= 8 {
+                    let starttime = Int(StartDate.timeIntervalSince1970)
+                    let endtime = Int(EndDate.timeIntervalSince1970)
+                    let feenum = Float(fee)!
+                    switch cartype {
+                    case "校车":
+                        cartype = "1"
+                        break
+                    case "教职工车":
+                        cartype = "2"
+                        break
+                    case "社会车":
+                        cartype = "3"
+                        break
+                    default:
+                        cartype = "0"
+                        break
+                    }
+                    
+                    let url = URL(string: AddPassUrl)
+                    let parameter = ["car":carnum,"type":cartype,"from":starttime,"to":endtime,"fee":feenum,"owner":owner] as [String : Any]
+                    
+                    Alamofire.request(url!, method: .post, parameters: parameter, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
+                        switch responsedata.result {
+                        case .success(let data):
+                            SVProgressHUD.dismiss()
+                            let jsondata = JSON(data)
+                            let issuccess = jsondata.dictionaryObject?["result"] as! Bool
+                            if issuccess {
+                                let successdata = jsondata.dictionaryObject?["info"] as! String
+                                let notice = UIAlertController(title: "提示", message: successdata, preferredStyle: .alert)
+                                let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                                notice.addAction(noticeaction)
+                                self.present(notice, animated: true, completion: nil)
+                            }else{
+                                let errordata = jsondata.dictionaryObject?["info"] as! String
+                                let notice = UIAlertController(title: "提示", message: errordata, preferredStyle: .alert)
+                                let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                                notice.addAction(noticeaction)
+                                self.present(notice, animated: true, completion: nil)
+                             }
+                            break
+                        case .failure(let error):
+                            SVProgressHUD.dismiss()
+                            print(error.localizedDescription)
+                            let notice = UIAlertController(title: "提示", message: "网络请求出错", preferredStyle: .alert)
+                            let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                            notice.addAction(noticeaction)
+                            self.present(notice, animated: true, completion: nil)
+                            break
+                        }
+                    })
+                }else{
+                    SVProgressHUD.dismiss()
+                    let notice = UIAlertController(title: "提示", message: "车辆编号不能超过8位", preferredStyle: .alert)
+                    let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                    notice.addAction(noticeaction)
+                    self.present(notice, animated: true, completion: nil)
+                }
+            }else{
+                SVProgressHUD.dismiss()
+                let notice = UIAlertController(title: "提示", message: "输入不能为空", preferredStyle: .alert)
+                let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                notice.addAction(noticeaction)
+                self.present(notice, animated: true, completion: nil)
+            }
+        }else{
+            SVProgressHUD.dismiss()
+            let notice = UIAlertController(title: "提示", message: "输入不能为空", preferredStyle: .alert)
+            let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+            notice.addAction(noticeaction)
+            self.present(notice, animated: true, completion: nil)
+        }
     }
     
     func AddCarInfo() {
@@ -417,16 +516,19 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
                 cell.textField.inputView = datePickerView
                 cell.textField.inputAccessoryView = toolBar
             default:
+                cell.textField.tag = tagnum
                 break
             }
         case "post":
             cell.titleLable.text = titles[currentType]![indexPath.row]
             cell.textField.placeholder = "请输入"+titles[currentType]![indexPath.row]
             cell.textField.tag = tagnum
+            break
         case "blacklist":
             cell.titleLable.text = titles[currentType]![indexPath.row]
             cell.textField.placeholder = "请输入"+titles[currentType]![indexPath.row]
             cell.textField.tag = tagnum
+            break
         default:
             break
         }
@@ -449,9 +551,11 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
         if (view.viewWithTag(2)?.isFirstResponder)!{
             let label = view.viewWithTag(2) as! UITextField
             label.text = dateformatter.string(from: datePickerView.date)
+            StartDate = datePickerView.date
         }else{
             let label = view.viewWithTag(3) as! UITextField
             label.text = dateformatter.string(from: datePickerView.date)
+            EndDate = datePickerView.date
         }
     }
     
@@ -474,6 +578,12 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
         view.endEditing(true)
     }
 
+    //判断输入是否为数字
+    func isPurnInt(string: String) -> Bool {
+        let scan: Scanner = Scanner(string: string)
+        var val:Int = 0
+        return scan.scanInt(&val) && scan.isAtEnd
+    }
     
     /*
      // Override to support conditional editing of the table view.
