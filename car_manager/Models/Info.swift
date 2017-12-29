@@ -7,10 +7,10 @@ import Foundation
 struct Info{
 
 	var car : Car!
-	var fillUp : [AnyObject]!
 	var inOutNote : [AnyObject]!
-	var ticket : [AnyObject]!
-	var upkeep : [AnyObject]!
+	var owne : Owne!
+	var pass : AnyObject!
+	var ticket : [Ticket]!
 
 
 	/**
@@ -20,10 +20,18 @@ struct Info{
 		if let carData = dictionary["car"] as? [String:Any]{
 				car = Car(fromDictionary: carData)
 			}
-		fillUp = dictionary["fill_up"] as? [AnyObject]
 		inOutNote = dictionary["in_out_note"] as? [AnyObject]
-		ticket = dictionary["ticket"] as? [AnyObject]
-		upkeep = dictionary["upkeep"] as? [AnyObject]
+		if let owneData = dictionary["owne"] as? [String:Any]{
+				owne = Owne(fromDictionary: owneData)
+			}
+		pass = dictionary["pass"] as? AnyObject
+		ticket = [Ticket]()
+		if let ticketArray = dictionary["ticket"] as? [[String:Any]]{
+			for dic in ticketArray{
+				let value = Ticket(fromDictionary: dic)
+				ticket.append(value)
+			}
+		}
 	}
 
 	/**
@@ -35,17 +43,21 @@ struct Info{
 		if car != nil{
 			dictionary["car"] = car.toDictionary()
 		}
-		if fillUp != nil{
-			dictionary["fill_up"] = fillUp
-		}
 		if inOutNote != nil{
 			dictionary["in_out_note"] = inOutNote
 		}
-		if ticket != nil{
-			dictionary["ticket"] = ticket
+		if owne != nil{
+			dictionary["owne"] = owne.toDictionary()
 		}
-		if upkeep != nil{
-			dictionary["upkeep"] = upkeep
+		if pass != nil{
+			dictionary["pass"] = pass
+		}
+		if ticket != nil{
+			var dictionaryElements = [[String:Any]]()
+			for ticketElement in ticket {
+				dictionaryElements.append(ticketElement.toDictionary())
+			}
+			dictionary["ticket"] = dictionaryElements
 		}
 		return dictionary
 	}

@@ -1,18 +1,19 @@
 //
-//  AddUserTableViewCell.swift
+//  PostListTableViewCell.swift
 //  car_manager
 //
-//  Created by 沐阳 on 2017/12/22.
+//  Created by 李祎喆 on 2017/12/29.
 //  Copyright © 2017年 李祎喆. All rights reserved.
 //
 
 import UIKit
 
-class AddUserTableViewCell: UITableViewCell {
-    
-    @IBOutlet var titleLable: UILabel!
-    @IBOutlet var textfield: UITextField!
+class PostListTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var PostNum: UILabel!
+    @IBOutlet weak var PostName: UILabel!
+    @IBOutlet weak var PostPhone: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

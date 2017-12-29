@@ -8,8 +8,30 @@
 
 import UIKit
 
-class AddStaffTableViewController: UITableViewController {
-
+class AddStaffTableViewController: UITableViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,
+UIPickerViewDelegate,UIPickerViewDataSource{
+    
+    
+    @IBOutlet var photoView: UIImageView!
+    @IBOutlet var haveCarSwitch: UISwitch!
+    @IBOutlet var button: UIButton!
+    
+    //教职工信息textfield
+    @IBOutlet var nameTextfiled: UITextField!
+    @IBOutlet var partTextfield: UITextField!
+    @IBOutlet var idTextfield: UITextField!
+    //车辆信息textfield
+    @IBOutlet var carIdTextfield: UITextField!
+    @IBOutlet var carTypeTextfield: UITextField!
+    @IBOutlet var carModelTextfield: UITextField!
+    @IBOutlet var carColorTextfield: UITextField!
+    @IBOutlet var carSeatTextfield: UITextField!
+    
+    var pickerView = UIPickerView()
+    
+    let carinfo = ["车牌号","类型","车辆型号","颜色","座位数"]
+    let cartype = ["校车","教职工车","社会车"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +40,38 @@ class AddStaffTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        haveCarSwitch.addTarget(self, action: #selector(reload), for: .valueChanged)
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        pickerView.translatesAutoresizingMaskIntoConstraints = true
+        carTypeTextfield.inputView = pickerView
+ 
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+//        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "确定", style: UIBarButtonItemStyle.plain, target: self, action: #selector(done))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back))
+        
+        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: true)
+        toolBar.isUserInteractionEnabled = true
+        
+        carTypeTextfield.inputView = pickerView
+        carTypeTextfield.inputAccessoryView = toolBar
+        
+        haveCarSwitch.isOn = false
+    }
+    
+    func back() {
+        carTypeTextfield.resignFirstResponder()
+    }
+    func done() {
+        carTypeTextfield.text = cartype[pickerView.selectedRow(inComponent: 0)]
+        carTypeTextfield.resignFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,24 +82,54 @@ class AddStaffTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        if haveCarSwitch.isOn {
+            return 2
+        }else{
+            return 1
+        }
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    
+    func reload() {
+        tableView.reloadData()
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    
+    @IBAction func selectPhoto(){
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .savedPhotosAlbum
+        present(imagePicker, animated: true, completion: nil)
     }
-    */
+    
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let photo = info[UIImagePickerControllerOriginalImage]
+        photoView.image = photo as? UIImage
+        photoView.clipsToBounds = true
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    //pickerview setting
+    
+//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        carTypeTextfield.text = cartype[row]
+//    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return cartype.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return cartype[row]
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

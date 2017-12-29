@@ -1,32 +1,53 @@
 //
-//  ManageTableViewController.swift
+//  PostListTableViewController.swift
 //  car_manager
 //
-//  Created by 沐阳 on 2017/12/15.
+//  Created by 李祎喆 on 2017/12/29.
 //  Copyright © 2017年 李祎喆. All rights reserved.
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import SVProgressHUD
 
-class ManageTableViewController: UITableViewController {
-    
-    var functions = [["添加教职工","添加车辆","添加用户","添加单位","添加通行证","添加黑名单"],["删除教职工","删除用户"]]
-    let Kinds = ["staff","car","user","post","passcard","blacklist"]
-    let delete = ["deleteStaff","deleteUser"]
+class PostListTableViewController: UITableViewController {
+
+    let SearchUrl = "https://car.wuruoye.com/user/query_unit"
+    var GetList:[QueryPostList] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.title = "单位信息"
+        
+        SVProgressHUD.show()
+        let url = URL(string: SearchUrl)
+        Alamofire.request(url!, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (responsedata) in
+            switch responsedata.result {
+            case .success(let data):
+                SVProgressHUD.dismiss()
+                let jsondata = JSON(data)
+                let jsonarray = jsondata.arrayObject
+                for item in jsonarray! {
+                    let listitem = QueryPostList.init(fromDictionary: item as! [String : Any])
+                    print("单个解析")
+                    print(listitem)
+                    self.GetList.append(listitem)
+                }
+                self.tableView.reloadData()
+                break
+            case .failure(let error):
+                SVProgressHUD.dismiss()
+                print(error.localizedDescription)
+                break
+            }
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        tableView.tableFooterView = UIView(frame: .zero)
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 10
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,66 +59,22 @@ class ManageTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return functions.count
+        return 1
     }
-    
-    
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return functions[section].count
+        return GetList.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ManageCell", for: indexPath) as! ManageTableViewCell
-
-        // Configure the cell...
-        cell.label?.text = functions[indexPath.section][indexPath.row]
-        cell.label.font = UIFont(name: "Avenir-Light", size: 16)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Postcell", for: indexPath) as! PostListTableViewCell
+        cell.PostNum.text = GetList[indexPath.row].id
+        cell.PostName.text = GetList[indexPath.row].name
+        cell.PostPhone.text = GetList[indexPath.row].phone
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0{
-            switch indexPath.row {
-            case 0:
-                performSegue(withIdentifier: "addStaffSegue", sender: nil)
-                break
-            case 1:
-                performSegue(withIdentifier: "addUserSegue", sender: nil)
-                break
-            case 2:
-                performSegue(withIdentifier: "addUserSegue", sender: nil)
-                break
-            case 3:
-                performSegue(withIdentifier: "addUserSegue", sender: nil)
-                break
-            case 4:
-                performSegue(withIdentifier: "addUserSegue", sender: nil)
-            case 5:
-                performSegue(withIdentifier: "addUserSegue", sender: nil)
-                break
-            default:
-                break
-            }
-        }else{
-            performSegue(withIdentifier: "deleteSegue", sender: nil)
-        }
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "addUserSegue" {
-            let dest = segue.destination as! AddUserTableViewController
-            dest.currentType = Kinds[(tableView.indexPathForSelectedRow?.row)!]
-        }else if segue.identifier == "deleteSegue"{
-            let dest = segue.destination as! DeleteUserController
-            dest.currntType = delete[(tableView.indexPathForSelectedRow?.row)!]
-        }
-    }
 
-    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
