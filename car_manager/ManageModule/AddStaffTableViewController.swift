@@ -45,6 +45,33 @@ UIPickerViewDelegate,UIPickerViewDataSource{
         pickerView.dataSource = self
         pickerView.translatesAutoresizingMaskIntoConstraints = true
         carTypeTextfield.inputView = pickerView
+ 
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+//        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "确定", style: UIBarButtonItemStyle.plain, target: self, action: #selector(done))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back))
+        
+        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: true)
+        toolBar.isUserInteractionEnabled = true
+        
+        carTypeTextfield.inputView = pickerView
+        carTypeTextfield.inputAccessoryView = toolBar
+        
+        haveCarSwitch.isOn = false
+    }
+    
+    func back() {
+        carTypeTextfield.resignFirstResponder()
+    }
+    func done() {
+        carTypeTextfield.text = cartype[pickerView.selectedRow(inComponent: 0)]
+        carTypeTextfield.resignFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -87,9 +114,9 @@ UIPickerViewDelegate,UIPickerViewDataSource{
     
     //pickerview setting
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        carTypeTextfield.text = cartype[row]
-    }
+//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        carTypeTextfield.text = cartype[row]
+//    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

@@ -31,6 +31,7 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
     
     var pickerView = UIPickerView()
     var datePickerView = UIDatePicker()
+    let toolBar = UIToolbar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +43,29 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         tableView.separatorStyle = .none
         title = "添加用户"
+        
         datePickerView.datePickerMode = .date
         datePickerView.locale = Locale(identifier: "Chinese")
         datePickerView.addTarget(self, action: #selector(chooseDate), for: .valueChanged)
+        
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        //        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "确定", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back))
+        
+        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: true)
+        toolBar.isUserInteractionEnabled = true
+        
+    }
+    
+    func back() {
+        for i in 1...3 {
+            view.viewWithTag(i)?.resignFirstResponder()
+        }
     }
     
     @IBAction func AddInfo(_ sender: Any) {
@@ -353,6 +374,7 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
                 pickerView.delegate = self
                 pickerView.dataSource = self
                 cell.textField.inputView = pickerView
+                cell.textField.inputAccessoryView = toolBar
             }else{
                 cell.textField.placeholder = "请输入"+titles[currentType]![indexPath.row]
                 cell.textField.tag = tagnum
@@ -366,6 +388,7 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
                 pickerView.delegate = self
                 pickerView.dataSource = self
                 cell.textField.inputView = pickerView
+                cell.textField.inputAccessoryView = toolBar
             }else{
                 cell.textField.placeholder = "请输入"+titles[currentType]![indexPath.row]
                 cell.textField.tag = tagnum
@@ -380,17 +403,19 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
                 pickerView.delegate = self
                 pickerView.dataSource = self
                 cell.textField.inputView = pickerView
+                cell.textField.inputAccessoryView = toolBar
             case 2:
                 cell.textField.placeholder = "请选择通行证开始日期"
                 cell.textField.tag = 2
                 datePickerView.translatesAutoresizingMaskIntoConstraints = true
                 cell.textField.inputView = datePickerView
+                cell.textField.inputAccessoryView = toolBar
             case 3:
                 cell.textField.placeholder = "请选择通行证结束日期"
                 cell.textField.tag = 3
                 datePickerView.translatesAutoresizingMaskIntoConstraints = true
-                chooseDate(indexPath: indexPath)
                 cell.textField.inputView = datePickerView
+                cell.textField.inputAccessoryView = toolBar
             default:
                 break
             }
@@ -418,8 +443,16 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
         label.text = pickViewItem[currentType]![row]
     }
     
-    func chooseDate(indexPath: IndexPath) {
-        
+    func chooseDate() {
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = " YYYY-MM-dd"
+        if (view.viewWithTag(2)?.isFirstResponder)!{
+            let label = view.viewWithTag(2) as! UITextField
+            label.text = dateformatter.string(from: datePickerView.date)
+        }else{
+            let label = view.viewWithTag(3) as! UITextField
+            label.text = dateformatter.string(from: datePickerView.date)
+        }
     }
     
     
