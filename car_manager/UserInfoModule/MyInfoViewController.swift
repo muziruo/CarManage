@@ -56,6 +56,19 @@ class MyInfoViewController: UIViewController ,UITableViewDataSource ,UITableView
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func Logout(_ sender: Any) {
+        let notice = UIAlertController(title: "警告", message: "确定注销？", preferredStyle: .alert)
+        let noticeaction = UIAlertAction(title: "确定", style: .destructive) { (action) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        let noticeactioncanel = UIAlertAction(title: "取消", style: .default, handler: nil)
+        notice.addAction(noticeaction)
+        notice.addAction(noticeactioncanel)
+        present(notice, animated: true, completion: nil)
+        //self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     func searchuser() {
         let userinfo = UserDefaults.standard
         let userid = userinfo.value(forKey: "userid") as! String
@@ -117,6 +130,18 @@ class MyInfoViewController: UIViewController ,UITableViewDataSource ,UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
+        case 0:
+            let urlString = "https://www.muziruo.com"
+            if let url = URL(string: urlString) {
+                UIApplication.shared.open(url)
+            }
+            break
+        case 1:
+            let urlString = "mailto:1149354821@qq.com"
+            if let url = URL(string: urlString) {
+                UIApplication.shared.open(url)
+            }
+            break
         case 2:
             performSegue(withIdentifier: "GoToPostList", sender: nil)
             break

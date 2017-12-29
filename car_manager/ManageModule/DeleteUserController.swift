@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import SVProgressHUD
+import Alamofire
+import SwiftyJSON
 
 class DeleteUserController: UITableViewController {
     
@@ -14,12 +17,16 @@ class DeleteUserController: UITableViewController {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var partLabel: UILabel!
     @IBOutlet var idLabel: UILabel!
+    @IBOutlet weak var UserInput: UITextField!
     
     @IBOutlet var deleteButton: UIButton!
     
     var currntType = "deleteUser"
     let SearchUrl = "https://car.wuruoye.com/user/query_staff_detail"
-
+    let DeleteUrl = "https://car.wuruoye.com/user/delete_user"
+    var issearch:Bool = false
+    var Deleteid:String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -68,13 +75,104 @@ class DeleteUserController: UITableViewController {
 //    }
     
     @IBAction func query(){
+        view.endEditing(true)
+        SVProgressHUD.show()
+        let userinput = UserInput.text!
         
+        if userinput == "" {
+            SVProgressHUD.dismiss()
+            let notice = UIAlertController(title: "提示", message: "输入不能为空", preferredStyle: .alert)
+            let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+            notice.addAction(noticeaction)
+            self
+            .present(notice, animated: true, completion: nil)
+        }else{
+            SVProgressHUD.dismiss()
+            let url = URL(string: SearchUrl)
+            let parameter = ["id":userinput]
+            
+            Alamofire.request(url!, method: .get, parameters: parameter, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
+                switch responsedata.result {
+                case .success(let data):
+                    SVProgressHUD.dismiss()
+                    let jsondata = JSON(data)
+                    let issuccess = jsondata.dictionaryObject?["result"] as! Bool
+                    if issuccess {
+                        self.issearch = true
+                        self.Deleteid = userinput
+                        let queryuser = QueryStaff.init(fromDictionary: jsondata.dictionaryObject!)
+                        self.nameLabel.text = queryuser.info.staff.name
+                        self.idLabel.text = queryuser.info.staff.id
+                        self.partLabel.text = queryuser.info.unit.name
+                    }else{
+                        let errordata = jsondata.dictionaryObject?["info"] as! String
+                        let notice = UIAlertController(title: "提示", message: errordata, preferredStyle: .alert)
+                        let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                        notice.addAction(noticeaction)
+                        self.present(notice, animated: true, completion: nil)
+                        break
+                    }
+                    break
+                case .failure(let error):
+                    SVProgressHUD.dismiss()
+                    print(error.localizedDescription)
+                    let notice = UIAlertController(title: "提示", message: "网络请求出错", preferredStyle: .alert)
+                    let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                    notice.addAction(noticeaction)
+                    self.present(notice, animated: true, completion: nil)
+                    break
+                }
+            })
+        }
     }
     
     @IBAction func delete(){
-        
+        view.endEditing(true)
+        SVProgressHUD.show()
+        if issearch {
+            let detelepeople = UserInput.text!
+            let url = URL(string: DeleteUrl)
+            let parameter = ["id":detelepeople]
+            
+            Alamofire.request(url!, method: .post, parameters: parameter, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
+                switch responsedata.result {
+                case .success(let data):
+                    let jsondata = JSON(data)
+                    let issuccess = jsondata.dictionaryObject?["result"] as! Bool
+                    if issuccess {
+                        let successdata = jsondata.dictionaryObject?["info"] as! String
+                        let notice = UIAlertController(title: "提示", message: successdata, preferredStyle: .alert)
+                        let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                        notice.addAction(noticeaction)
+                        self.present(notice, animated: true, completion: nil)
+                    }else{
+                        let errordata = jsondata.dictionaryObject?["info"] as! String
+                        let notice = UIAlertController(title: "提示", message: errordata, preferredStyle: .alert)
+                        let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                        notice.addAction(noticeaction)
+                        self.present(notice, animated: true, completion: nil)
+                    }
+                    break
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    let notice = UIAlertController(title: "提示", message: "网络请求出错", preferredStyle: .alert)
+                    let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                    notice.addAction(noticeaction)
+                    self.present(notice, animated: true, completion: nil)
+                    break
+                }
+            })
+        }else{
+            SVProgressHUD.dismiss()
+            let notice = UIAlertController(title: "提示", message: "请先进行查询确认信息后再进行删除", preferredStyle: .alert)
+            let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+            notice.addAction(noticeaction)
+            self.present(notice, animated: true, completion: nil)
+        }
     }
 
+    
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

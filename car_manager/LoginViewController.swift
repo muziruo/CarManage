@@ -39,6 +39,40 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
             let url = URL(string: "https://car.wuruoye.com/user/login_user")!
             let parameters = ["id":nameinput,"password":passwordinput]
             Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
+                /*
+                switch responsedata.result {
+                case .success(let data):
+                    SVProgressHUD.dismiss()
+                    let jsondata = JSON(data)
+                    let issuccess = jsondata.dictionaryObject?["result"] as! Bool
+                    if issuccess {
+                        let successid = jsondata.dictionaryObject?["id"] as! String
+                        let successtype = jsondata.dictionaryObject?["type"] as! String
+                        let userinfo = UserDefaults.standard
+                        print(successid)
+                        print(successtype)
+                        userinfo.set(successid, forKey: "userid")
+                        userinfo.set(successtype, forKey: "usertype")
+                        self.performSegue(withIdentifier: "LoginSuccess", sender: nil)
+                    }else{
+                        let errordata = jsondata.dictionaryObject?["info"] as! String
+                        let notice = UIAlertController(title: "提示", message: errordata, preferredStyle: .alert)
+                        let noticeactivity = UIAlertAction(title: "确定", style: .default, handler: nil)
+                        notice.addAction(noticeactivity)
+                        self.present(notice, animated: true, completion: nil)
+                    }
+                    break
+                case .failure(let error):
+                    SVProgressHUD.dismiss()
+                    print(error.localizedDescription)
+                    let notice = UIAlertController(title: "提示", message: "网络请求错误", preferredStyle: .alert)
+                    let noticeactivity = UIAlertAction(title: "确定", style: .default, handler: nil)
+                    notice.addAction(noticeactivity)
+                    self.present(notice, animated: true, completion: nil)
+                    break
+                }
+                */
+                
                 if responsedata.result.isSuccess {
                     let jsondata = JSON.init(data: responsedata.data!)
                     let issuccess = jsondata.dictionaryObject?["result"] as! Bool
@@ -62,6 +96,7 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
                     notice.addAction(noticeactivity)
                     self.present(notice, animated: true, completion: nil)
                 }
+                
             })
         }
     }
