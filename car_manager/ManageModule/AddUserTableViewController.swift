@@ -37,6 +37,25 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
         datePickerView.datePickerMode = .date
         datePickerView.locale = Locale(identifier: "Chinese")
         datePickerView.addTarget(self, action: #selector(chooseDate), for: .valueChanged)
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        //        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "确定", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back))
+        
+        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: true)
+        toolBar.isUserInteractionEnabled = true
+        
+    }
+    
+    func back() {
+        pickerView.resignFirstResponder()
+        datePickerView.resignFirstResponder()
     }
     
     override func didReceiveMemoryWarning() {
