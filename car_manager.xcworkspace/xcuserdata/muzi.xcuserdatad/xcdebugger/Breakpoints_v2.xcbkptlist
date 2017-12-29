@@ -10,13 +10,61 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "car_manager/SearchModule/CarSearchTableViewController.swift"
-            timestampString = "535966754.524744"
+            timestampString = "536205102.040758"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "car_manager/ManageModule/AddUserTableViewController.swift"
+            timestampString = "536161522.471769"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
+            landmarkName = "AddBlackList()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "car_manager.AddUserTableViewController.(AddBlackList () -&gt; ()).(closure #1)"
+                  moduleName = "car_manager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/muzi/Documents/XcodeDevelopment/car_manager/car_manager/ManageModule/AddUserTableViewController.swift"
+                  timestampString = "536152558.111334"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "190"
+                  endingLineNumber = "190"
+                  offsetFromSymbolStart = "1507">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "car_manager.AddUserTableViewController.(AddBlackList () -&gt; ()).(closure #1)"
+                  moduleName = "car_manager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/muzi/Documents/XcodeDevelopment/car_manager/car_manager/ManageModule/AddUserTableViewController.swift"
+                  timestampString = "536152558.11499"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "190"
+                  endingLineNumber = "190"
+                  offsetFromSymbolStart = "7043">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

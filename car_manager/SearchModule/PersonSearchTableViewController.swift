@@ -7,14 +7,19 @@
 //  查询人员信息
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import SVProgressHUD
 
-class PersonSearchTableViewController: UITableViewController {
+class PersonSearchTableViewController: UITableViewController ,UITextFieldDelegate{
 
     @IBOutlet weak var PersonName: UILabel!
     @IBOutlet weak var PersonNum: UILabel!
     @IBOutlet weak var PersonCompany: UILabel!
     @IBOutlet weak var Info: UILabel!
     @IBOutlet weak var InputNum: UITextField!
+    
+    let SearchUrl = "https://car.wuruoye.com/user/query_staff_detail"
     
     //进行查询操作
     @IBAction func SearchActivity(_ sender: UIButton) {
@@ -26,7 +31,28 @@ class PersonSearchTableViewController: UITableViewController {
             notice.addAction(noticeaction)
             self.present(notice, animated: true, completion: nil)
         }else{
-            
+            let url = URL(string: SearchUrl)
+            let parameter = ["id":userinput]
+            Alamofire.request(url!, method: .get, parameters: parameter, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
+                switch responsedata.result {
+                case .success(let data):
+                    let jsondata = JSON(data)
+                    let issuccess = jsondata.dictionaryObject?["result"] as! Bool
+                    if issuccess {
+                        SVProgressHUD.dismiss()
+                        
+                    }else{
+                        SVProgressHUD.dismiss()
+                    }
+                    break
+                case .failure(let error):
+                    let notice = UIAlertController(title: "警告", message: "网络请求出错", preferredStyle: .alert)
+                    let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                    notice.addAction(noticeaction)
+                    self.present(notice, animated: true, completion: nil)
+                    break
+                }
+            })
         }
     }
     
@@ -70,6 +96,12 @@ class PersonSearchTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10
     }
+    
+    //点击输入框其他区域输入停止
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

@@ -1,27 +1,23 @@
 //
-//	Car.swift
+//	QueryCar.swift
 //	Model file generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
 import Foundation
 
-struct Car{
+struct QueryCar{
 
-	var color : String!
-	var id : String!
-	var model : String!
-	var seat : Int!
-	var type : String!
+	var info : Info!
+	var result : Bool!
 
 
 	/**
 	 * Instantiate the instance using the passed dictionary values to set the properties values
 	 */
 	init(fromDictionary dictionary: [String:Any]){
-		color = dictionary["color"] as? String
-		id = dictionary["id"] as? String
-		model = dictionary["model"] as? String
-		seat = dictionary["seat"] as? Int
-		type = dictionary["type"] as? String
+		if let infoData = dictionary["info"] as? [String:Any]{
+				info = Info(fromDictionary: infoData)
+			}
+		result = dictionary["result"] as? Bool
 	}
 
 	/**
@@ -30,20 +26,11 @@ struct Car{
 	func toDictionary() -> [String:Any]
 	{
 		var dictionary = [String:Any]()
-		if color != nil{
-			dictionary["color"] = color
+		if info != nil{
+			dictionary["info"] = info.toDictionary()
 		}
-		if id != nil{
-			dictionary["id"] = id
-		}
-		if model != nil{
-			dictionary["model"] = model
-		}
-		if seat != nil{
-			dictionary["seat"] = seat
-		}
-		if type != nil{
-			dictionary["type"] = type
+		if result != nil{
+			dictionary["result"] = result
 		}
 		return dictionary
 	}
