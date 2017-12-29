@@ -12,6 +12,7 @@ class ManageTableViewController: UITableViewController {
     
     var functions = [["添加教职工","添加车辆","添加用户","添加单位","添加通行证","添加黑名单"],["删除教职工","删除用户"]]
     let Kinds = ["staff","car","user","post","passcard","blacklist"]
+    let delete = ["deleteStaff","deleteUser"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,16 +81,7 @@ class ManageTableViewController: UITableViewController {
                 break
             }
         }else{
-            switch indexPath.row {
-            case 0:
-                performSegue(withIdentifier: "deleteUserSegue", sender: nil)
-                break
-//            case 1:
-//                performSegue(withIdentifier: "addUserSegue", sender: nil)
-//                break
-            default:
-                break
-            }
+            performSegue(withIdentifier: "deleteSegue", sender: nil)
         }
     }
     
@@ -97,6 +89,9 @@ class ManageTableViewController: UITableViewController {
         if segue.identifier == "addUserSegue" {
             let dest = segue.destination as! AddUserTableViewController
             dest.currentType = Kinds[(tableView.indexPathForSelectedRow?.row)!]
+        }else if segue.identifier == "deleteSegue"{
+            let dest = segue.destination as! DeleteUserController
+            dest.currntType = delete[(tableView.indexPathForSelectedRow?.row)!]
         }
     }
 

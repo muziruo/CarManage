@@ -9,6 +9,13 @@
 import UIKit
 
 class DeleteUserController: UITableViewController {
+    
+    @IBOutlet var infoLabel: UILabel!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var partLabel: UILabel!
+    @IBOutlet var idLabel: UILabel!
+    
+    var currntType = "deleteUser"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +25,18 @@ class DeleteUserController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        switch currntType{
+        case "deleteUser":
+            title = "删除用户"
+            infoLabel.text = "用户信息"
+            break
+        case "deleteStaff":
+            title = "删除教职工"
+            infoLabel.text = "教职工信息"
+            break
+        default:
+            break
+        }
     }
 
     override func didReceiveMemoryWarning() {
