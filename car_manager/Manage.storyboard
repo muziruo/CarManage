@@ -770,6 +770,7 @@
                     <navigationItem key="navigationItem" title="删除用户" id="kvJ-IN-AqE"/>
                     <connections>
                         <outlet property="deleteButton" destination="WI2-Tc-B2M" id="ovJ-l1-2fe"/>
+                        <outlet property="UserInput" destination="RMF-QB-PUn" id="8rj-sc-obU"/>
                         <outlet property="idLabel" destination="Xtf-px-Iah" id="gfs-RZ-OcL"/>
                         <outlet property="infoLabel" destination="Jb0-oY-gK6" id="dyh-qK-TMr"/>
                         <outlet property="nameLabel" destination="2Dk-n3-bez" id="y4Y-zE-aks"/>
