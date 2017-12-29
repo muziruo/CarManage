@@ -12,6 +12,9 @@
 		3251B6621FE364CB00D4AD82 /* ManageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3251B6611FE364CB00D4AD82 /* ManageTableViewCell.swift */; };
 		32AAED021FF625FE0042B551 /* DeleteBlackListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAED011FF625FE0042B551 /* DeleteBlackListController.swift */; };
 		32AAED041FF6313F0042B551 /* AddButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAED031FF6313F0042B551 /* AddButtonCell.swift */; };
+		32AAED061FF68E8D0042B551 /* AddRecordingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAED051FF68E8D0042B551 /* AddRecordingController.swift */; };
+		32AAED081FF6938D0042B551 /* RecordingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAED071FF6938C0042B551 /* RecordingController.swift */; };
+		32AAED0A1FF693AB0042B551 /* RecordingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAED091FF693AB0042B551 /* RecordingCell.swift */; };
 		32DC2F341FECA60A00770C55 /* AddUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DC2F331FECA60A00770C55 /* AddUserTableViewController.swift */; };
 		32DC2F361FECA85F00770C55 /* BasisCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DC2F351FECA85F00770C55 /* BasisCell.swift */; };
 		32E7B4341FF2701400D8AD84 /* AddStaffTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7B4331FF2701400D8AD84 /* AddStaffTableViewController.swift */; };
@@ -53,6 +56,9 @@
 		3251B6611FE364CB00D4AD82 /* ManageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTableViewCell.swift; sourceTree = "<group>"; };
 		32AAED011FF625FE0042B551 /* DeleteBlackListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteBlackListController.swift; sourceTree = "<group>"; };
 		32AAED031FF6313F0042B551 /* AddButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonCell.swift; sourceTree = "<group>"; };
+		32AAED051FF68E8D0042B551 /* AddRecordingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordingController.swift; sourceTree = "<group>"; };
+		32AAED071FF6938C0042B551 /* RecordingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingController.swift; sourceTree = "<group>"; };
+		32AAED091FF693AB0042B551 /* RecordingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingCell.swift; sourceTree = "<group>"; };
 		32DC2F331FECA60A00770C55 /* AddUserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserTableViewController.swift; sourceTree = "<group>"; };
 		32DC2F351FECA85F00770C55 /* BasisCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasisCell.swift; sourceTree = "<group>"; };
 		32E7B4331FF2701400D8AD84 /* AddStaffTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStaffTableViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +159,9 @@
 				32F065511FF4E89900922AA9 /* DeleteUserController.swift */,
 				32AAED011FF625FE0042B551 /* DeleteBlackListController.swift */,
 				32AAED031FF6313F0042B551 /* AddButtonCell.swift */,
+				32AAED051FF68E8D0042B551 /* AddRecordingController.swift */,
+				32AAED071FF6938C0042B551 /* RecordingController.swift */,
+				32AAED091FF693AB0042B551 /* RecordingCell.swift */,
 			);
 			path = ManageModule;
 			sourceTree = "<group>";
@@ -379,8 +388,10 @@
 				EED8C1CC1FF5D8520097C9EB /* StaffInfo.swift in Sources */,
 				EE6BB6EC1FE7EF4F0035C030 /* CarDetailTableViewController.swift in Sources */,
 				EE6BB6E21FE3584A0035C030 /* PersonSearchTableViewController.swift in Sources */,
+				32AAED061FF68E8D0042B551 /* AddRecordingController.swift in Sources */,
 				EED8C1C41FF5D6C90097C9EB /* QueryCar.swift in Sources */,
 				32AAED041FF6313F0042B551 /* AddButtonCell.swift in Sources */,
+				32AAED081FF6938D0042B551 /* RecordingController.swift in Sources */,
 				32E7B4341FF2701400D8AD84 /* AddStaffTableViewController.swift in Sources */,
 				EED8C1C21FF5D6C90097C9EB /* Owne.swift in Sources */,
 				EEA3E6081FF3407900149A55 /* MyInfoViewController.swift in Sources */,
@@ -392,6 +403,7 @@
 				32DC2F361FECA85F00770C55 /* BasisCell.swift in Sources */,
 				32AAED021FF625FE0042B551 /* DeleteBlackListController.swift in Sources */,
 				EE6BB6EE1FF2306F0035C030 /* CarDetailTableViewCell.swift in Sources */,
+				32AAED0A1FF693AB0042B551 /* RecordingCell.swift in Sources */,
 				EED8C1D31FF5EF3E0097C9EB /* PostListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
