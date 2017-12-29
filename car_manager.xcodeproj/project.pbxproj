@@ -10,6 +10,8 @@
 		3249ED011FE3C76A00A7E745 /* Manage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3249ED001FE3C76A00A7E745 /* Manage.storyboard */; };
 		3249ED031FE3CAD100A7E745 /* ManageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3249ED021FE3CAD100A7E745 /* ManageTableViewController.swift */; };
 		3251B6621FE364CB00D4AD82 /* ManageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3251B6611FE364CB00D4AD82 /* ManageTableViewCell.swift */; };
+		32AAED021FF625FE0042B551 /* DeleteBlackListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAED011FF625FE0042B551 /* DeleteBlackListController.swift */; };
+		32AAED041FF6313F0042B551 /* AddButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAED031FF6313F0042B551 /* AddButtonCell.swift */; };
 		32DC2F341FECA60A00770C55 /* AddUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DC2F331FECA60A00770C55 /* AddUserTableViewController.swift */; };
 		32DC2F361FECA85F00770C55 /* BasisCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DC2F351FECA85F00770C55 /* BasisCell.swift */; };
 		32E7B4341FF2701400D8AD84 /* AddStaffTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7B4331FF2701400D8AD84 /* AddStaffTableViewController.swift */; };
@@ -49,6 +51,8 @@
 		3249ED001FE3C76A00A7E745 /* Manage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Manage.storyboard; sourceTree = "<group>"; };
 		3249ED021FE3CAD100A7E745 /* ManageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTableViewController.swift; sourceTree = "<group>"; };
 		3251B6611FE364CB00D4AD82 /* ManageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTableViewCell.swift; sourceTree = "<group>"; };
+		32AAED011FF625FE0042B551 /* DeleteBlackListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteBlackListController.swift; sourceTree = "<group>"; };
+		32AAED031FF6313F0042B551 /* AddButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonCell.swift; sourceTree = "<group>"; };
 		32DC2F331FECA60A00770C55 /* AddUserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserTableViewController.swift; sourceTree = "<group>"; };
 		32DC2F351FECA85F00770C55 /* BasisCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasisCell.swift; sourceTree = "<group>"; };
 		32E7B4331FF2701400D8AD84 /* AddStaffTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStaffTableViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 				32DC2F351FECA85F00770C55 /* BasisCell.swift */,
 				32E7B4331FF2701400D8AD84 /* AddStaffTableViewController.swift */,
 				32F065511FF4E89900922AA9 /* DeleteUserController.swift */,
+				32AAED011FF625FE0042B551 /* DeleteBlackListController.swift */,
+				32AAED031FF6313F0042B551 /* AddButtonCell.swift */,
 			);
 			path = ManageModule;
 			sourceTree = "<group>";
@@ -253,7 +259,7 @@
 				TargetAttributes = {
 					EE7DEDEA1FDA72350062928E = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 6TJKYE5XV9;
+						DevelopmentTeam = K2VC334V4X;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
@@ -374,6 +380,7 @@
 				EE6BB6EC1FE7EF4F0035C030 /* CarDetailTableViewController.swift in Sources */,
 				EE6BB6E21FE3584A0035C030 /* PersonSearchTableViewController.swift in Sources */,
 				EED8C1C41FF5D6C90097C9EB /* QueryCar.swift in Sources */,
+				32AAED041FF6313F0042B551 /* AddButtonCell.swift in Sources */,
 				32E7B4341FF2701400D8AD84 /* AddStaffTableViewController.swift in Sources */,
 				EED8C1C21FF5D6C90097C9EB /* Owne.swift in Sources */,
 				EEA3E6081FF3407900149A55 /* MyInfoViewController.swift in Sources */,
@@ -383,6 +390,7 @@
 				EED8C1C51FF5D6C90097C9EB /* Ticket.swift in Sources */,
 				EED8C1CA1FF5D8520097C9EB /* QueryStaff.swift in Sources */,
 				32DC2F361FECA85F00770C55 /* BasisCell.swift in Sources */,
+				32AAED021FF625FE0042B551 /* DeleteBlackListController.swift in Sources */,
 				EE6BB6EE1FF2306F0035C030 /* CarDetailTableViewCell.swift in Sources */,
 				EED8C1D31FF5EF3E0097C9EB /* PostListTableViewCell.swift in Sources */,
 			);
@@ -524,10 +532,10 @@
 			baseConfigurationReference = D0C0585E5882544F0D1B8AF6 /* Pods-car_manager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6TJKYE5XV9;
+				DEVELOPMENT_TEAM = K2VC334V4X;
 				INFOPLIST_FILE = car_manager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "muziruo.car-manager";
+				PRODUCT_BUNDLE_IDENTIFIER = "lqzy.car-manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -538,10 +546,10 @@
 			baseConfigurationReference = C653B98A830237A3609CE4BA /* Pods-car_manager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6TJKYE5XV9;
+				DEVELOPMENT_TEAM = K2VC334V4X;
 				INFOPLIST_FILE = car_manager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "muziruo.car-manager";
+				PRODUCT_BUNDLE_IDENTIFIER = "lqzy.car-manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

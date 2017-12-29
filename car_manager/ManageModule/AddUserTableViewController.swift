@@ -14,9 +14,9 @@ import SVProgressHUD
 class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIPickerViewDataSource ,UITextFieldDelegate{
 
     var currentType = "user"
-//    var addUserTitle = ["用户编号（职工号）","密码","权限"]
-//    var permissions = ["管理员","普通用户"]
-    var titles = ["user":["用户编号（职工号）","密码","权限"],
+
+    var titles = ["staff":[],
+                  "user":["用户编号（职工号）","密码","权限"],
                   "post":["编号","名称","电话"],
                   "car":["车牌号","类型","车辆型号","颜色","座位数"],
                   "passcard":["车牌号","类型","开始时间","结束时间","费用","车主"],
@@ -42,7 +42,30 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         tableView.separatorStyle = .none
-        title = "添加用户"
+        
+        switch currentType {
+        case "user":
+            title = "添加用户"
+            break
+        case "staff":
+            title = "添加教职工"
+            break
+        case "car":
+            title = "添加车辆"
+            break
+        case "passcard":
+            title = "添加通行证"
+            break
+        case "blacklist":
+            title = "添加黑名单"
+            break
+        case "post":
+            title = "添加单位"
+            break
+        default:
+            break
+        }
+        
         
         datePickerView.datePickerMode = .date
         datePickerView.locale = Locale(identifier: "Chinese")
@@ -350,16 +373,26 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if section == 0{
         return titles[currentType]!.count
+        }else{
+            return 1
+        }
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.section == 1{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "addCell", for: indexPath) as! AddButtonCell
+            return cell
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "basisCell", for: indexPath) as! BasisCell
         
         let tagnum = 101 + indexPath.row

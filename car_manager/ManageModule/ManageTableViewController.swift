@@ -10,9 +10,9 @@ import UIKit
 
 class ManageTableViewController: UITableViewController {
     
-    var functions = [["添加教职工","添加车辆","添加用户","添加单位","添加通行证","添加黑名单"],["删除教职工","删除用户"]]
+    var functions = [["添加教职工","添加车辆","添加用户","添加单位","添加通行证","添加黑名单"],["删除教职工","删除用户","移除黑名单"]]
     let Kinds = ["staff","car","user","post","passcard","blacklist"]
-    let delete = ["deleteStaff","deleteUser"]
+    let delete = ["deleteStaff","deleteUser","deleteBlackList"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,7 +82,16 @@ class ManageTableViewController: UITableViewController {
                 break
             }
         }else{
-            performSegue(withIdentifier: "deleteSegue", sender: nil)
+            switch indexPath.row{
+            case 0,1:
+                performSegue(withIdentifier: "deleteSegue", sender: nil)
+                break
+            case 2:
+                performSegue(withIdentifier: "deleteBlackListSegue", sender: nil)
+                break
+            default:
+                break
+            }
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }

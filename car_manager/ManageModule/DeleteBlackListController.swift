@@ -1,24 +1,19 @@
 //
-//  DeleteUserController.swift
+//  DeleteBlackListController.swift
 //  car_manager
 //
-//  Created by 沐阳 on 2017/12/28.
+//  Created by 沐阳 on 2017/12/29.
 //  Copyright © 2017年 李祎喆. All rights reserved.
 //
 
 import UIKit
 
-class DeleteUserController: UITableViewController {
+class DeleteBlackListController: UITableViewController {
     
-    @IBOutlet var infoLabel: UILabel!
-    @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var partLabel: UILabel!
-    @IBOutlet var idLabel: UILabel!
-    
-    @IBOutlet var deleteButton: UIButton!
-    
-    var currntType = "deleteUser"
-    let SearchUrl = "https://car.wuruoye.com/user/query_staff_detail"
+    @IBOutlet var textfield: UITextField!
+    @IBAction func remove(){
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,26 +23,9 @@ class DeleteUserController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        switch currntType{
-        case "deleteUser":
-            title = "删除用户"
-            infoLabel.text = "用户信息"
-            break
-        case "deleteStaff":
-            title = "删除教职工"
-            infoLabel.text = "教职工信息"
-            break
-        default:
-            break
-        }
-        
-        deleteButton.layer.cornerRadius = 20
-        deleteButton.tintColor = UIColor.red
-        deleteButton.layer.borderColor = UIColor.red.cgColor
-        deleteButton.layer.borderWidth = 1.5
-        deleteButton.clipsToBounds = true
-        
         tableView.tableFooterView = UIView(frame: .zero)
+        tableView.separatorStyle = .none
+        title = "移除黑名单"
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,21 +37,13 @@ class DeleteUserController: UITableViewController {
 
 //    override func numberOfSections(in tableView: UITableView) -> Int {
 //        // #warning Incomplete implementation, return the number of sections
-//        return 1
+//        return 0
 //    }
 //
 //    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        // #warning Incomplete implementation, return the number of rows
 //        return 0
 //    }
-    
-    @IBAction func query(){
-        
-    }
-    
-    @IBAction func delete(){
-        
-    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

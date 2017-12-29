@@ -45,6 +45,12 @@ UIPickerViewDelegate,UIPickerViewDataSource{
         pickerView.dataSource = self
         pickerView.translatesAutoresizingMaskIntoConstraints = true
         carTypeTextfield.inputView = pickerView
+        
+        button.layer.cornerRadius = 20
+        button.tintColor = UIColor.blue
+        button.layer.borderColor = UIColor.blue.cgColor
+        button.layer.borderWidth = 1.5
+        button.clipsToBounds = true
  
         
         let toolBar = UIToolbar()
@@ -109,6 +115,21 @@ UIPickerViewDelegate,UIPickerViewDataSource{
         photoView.clipsToBounds = true
         dismiss(animated: true, completion: nil)
     }
+    
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if haveCarSwitch {
+//            <#code#>
+//        }
+//    }
+    
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        if !haveCarSwitch.isOn{
+//            if indexPath.section == 1{
+//
+//            }
+//        }
+//        return super.tableView(tableView, cellForRowAt: indexPath)
+//    }
     
     
     
