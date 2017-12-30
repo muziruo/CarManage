@@ -12,6 +12,9 @@ class CarDetailTableViewController: UITableViewController {
 
     var InfoKind:Int!
     var breakinfo:[Ticket] = []
+    var inoutinfo:[InOutNote] = []
+    
+    let location:[String] = ["余区-友谊大道门","余区-和平大道门","南湖-东门","南湖-文治街门","南湖雄楚大道门","鉴湖-雄楚大道门","鉴湖-工大路门","西院-珞狮路门","西院-工大路门","东院-珞狮路门","东院-桂珞路门"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,10 +57,8 @@ class CarDetailTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         switch InfoKind {
-        case 1:
-            return 0
         case 2:
-            return 0
+            return inoutinfo.count
         case 3:
             return breakinfo.count
         default:
@@ -73,9 +74,52 @@ class CarDetailTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CarDetailCell", for: indexPath) as! CarDetailTableViewCell
         
         switch InfoKind {
-        case 1:
-            break
         case 2:
+            if inoutinfo[indexPath.row].inTime != nil {
+                let intime = changetime(time: inoutinfo[indexPath.row].inTime)
+                if inoutinfo[indexPath.row].inGate != nil {
+                    if inoutinfo[indexPath.row].inGate > 11 || inoutinfo[indexPath.row].inGate < 1{
+                        cell.TimeLabel.text = "进：" + intime + "," + "未知地点"
+                    }else{
+                        cell.TimeLabel.text = "进：" + intime + "," + location[inoutinfo[indexPath.row].inGate]
+                    }
+                }else{
+                    cell.TimeLabel.text = "进：" + intime + "," + "未知地点"
+                }
+            }else{
+                if inoutinfo[indexPath.row].inGate != nil {
+                    if inoutinfo[indexPath.row].inGate > 11 || inoutinfo[indexPath.row].inGate < 1{
+                        cell.TimeLabel.text = "进：" + "未知时间" + "," + "未知地点"
+                    }else{
+                        cell.TimeLabel.text = "进：" + "未知时间" + "," + location[inoutinfo[indexPath.row].inGate]
+                    }
+                }else{
+                    cell.TimeLabel.text = "进：" + "未知时间" + "," + "未知地点"
+                }
+            }
+            
+            if inoutinfo[indexPath.row].outTime != nil {
+                let outtime = changetime(time: inoutinfo[indexPath.row].outTime)
+                if inoutinfo[indexPath.row].outGate != nil {
+                    if inoutinfo[indexPath.row].outGate > 11 || inoutinfo[indexPath.row].outGate < 1{
+                        cell.InfoLabel.text = "出：" + outtime + "," + "未知地点"
+                    }else{
+                        cell.InfoLabel.text = "出：" + outtime + "," + location[inoutinfo[indexPath.row].outGate]
+                    }
+                }else{
+                    cell.InfoLabel.text = "出：" + outtime + "," + "未知地点"
+                }
+            }else{
+                if inoutinfo[indexPath.row].outGate != nil {
+                    if inoutinfo[indexPath.row].outGate > 11 || inoutinfo[indexPath.row].outGate < 1{
+                        cell.InfoLabel.text = "出：" + "未知时间" + "," + "未知地点"
+                    }else{
+                        cell.InfoLabel.text = "出：" + "未知时间" + "," + location[inoutinfo[indexPath.row].outGate]
+                    }
+                }else{
+                    cell.InfoLabel.text = "出：" + "未知时间" + "," + "未知地点"
+                }
+            }
             break
         case 3:
             if breakinfo[indexPath.row].id != nil {
@@ -102,6 +146,17 @@ class CarDetailTableViewController: UITableViewController {
         return cell
     }
 
+    
+    func changetime(time:Int) -> String {
+        let inttime = time/1000
+        let timestamp = TimeInterval(inttime)
+        let timedate = Date(timeIntervalSince1970: timestamp)
+        let dateform = DateFormatter()
+        dateform.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return dateform.string(from: timedate)
+    }
+
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

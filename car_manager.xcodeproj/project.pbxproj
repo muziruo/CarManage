@@ -46,6 +46,7 @@
 		EEB670371FF75C3A00D86AFD /* Pas.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6702F1FF75C3A00D86AFD /* Pas.swift */; };
 		EEB670381FF75C3A00D86AFD /* QueryCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB670301FF75C3A00D86AFD /* QueryCar.swift */; };
 		EEB670391FF75C3A00D86AFD /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB670311FF75C3A00D86AFD /* Ticket.swift */; };
+		EEB6703B1FF7634500D86AFD /* CarPassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6703A1FF7634500D86AFD /* CarPassDetailViewController.swift */; };
 		EED8C1CA1FF5D8520097C9EB /* QueryStaff.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C1C61FF5D8520097C9EB /* QueryStaff.swift */; };
 		EED8C1CB1FF5D8520097C9EB /* Staff.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C1C71FF5D8520097C9EB /* Staff.swift */; };
 		EED8C1CC1FF5D8520097C9EB /* StaffInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C1C81FF5D8520097C9EB /* StaffInfo.swift */; };
@@ -99,6 +100,7 @@
 		EEB6702F1FF75C3A00D86AFD /* Pas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pas.swift; sourceTree = "<group>"; };
 		EEB670301FF75C3A00D86AFD /* QueryCar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryCar.swift; sourceTree = "<group>"; };
 		EEB670311FF75C3A00D86AFD /* Ticket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		EEB6703A1FF7634500D86AFD /* CarPassDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarPassDetailViewController.swift; sourceTree = "<group>"; };
 		EED8C1C61FF5D8520097C9EB /* QueryStaff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryStaff.swift; sourceTree = "<group>"; };
 		EED8C1C71FF5D8520097C9EB /* Staff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
 		EED8C1C81FF5D8520097C9EB /* StaffInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaffInfo.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				EE6BB6D41FDEAA510035C030 /* SearchMenuViewController.swift */,
 				EE6BB6E11FE3584A0035C030 /* PersonSearchTableViewController.swift */,
 				EEB670261FF6AAAA00D86AFD /* PersonCarTableViewController.swift */,
+				EEB6703A1FF7634500D86AFD /* CarPassDetailViewController.swift */,
 				EE6BB6EB1FE7EF4F0035C030 /* CarDetailTableViewController.swift */,
 				EE6BB6ED1FF2306F0035C030 /* CarDetailTableViewCell.swift */,
 				EE6BB6E31FE362EA0035C030 /* CarSearchTableViewController.swift */,
@@ -394,6 +397,7 @@
 				32DC2F341FECA60A00770C55 /* AddUserTableViewController.swift in Sources */,
 				EED8C1D11FF5EEF40097C9EB /* PostListTableViewController.swift in Sources */,
 				32F065521FF4E89900922AA9 /* DeleteUserController.swift in Sources */,
+				EEB6703B1FF7634500D86AFD /* CarPassDetailViewController.swift in Sources */,
 				EE6BB6DA1FDEAD0F0035C030 /* User.swift in Sources */,
 				EE6BB6DE1FDEADBF0035C030 /* MenuTableViewCell.swift in Sources */,
 				EEB670351FF75C3A00D86AFD /* Owne.swift in Sources */,

@@ -54,23 +54,54 @@ class CarSearchTableViewController: UITableViewController ,UITextFieldDelegate{
                         let cardata = QueryCar.init(fromDictionary: jsondata.dictionaryObject!)
                         self.GetCarInfo = cardata
                         self.IsOrder = true
+                        
                         self.CarNum.text = cardata.info.car.id
-                        self.CarKind.text = cardata.info.car.type
-                        self.CarModel.text = cardata.info.car.model
-                        self.CarColor.text = cardata.info.car.color
+                        if cardata.info.car.type != nil {
+                            self.CarKind.text = cardata.info.car.type
+                        }else{
+                             self.CarKind.text = "未知"
+                        }
+                        if cardata.info.car.model != nil {
+                            self.CarModel.text = cardata.info.car.model
+                        }else{
+                            self.CarModel.text = "未知"
+                        }
+                        if cardata.info.car.color != nil {
+                            self.CarColor.text = cardata.info.car.color
+                        }else{
+                            self.CarColor.text = "未知"
+                        }
                         
                         //以下三项是所有车辆都会有，也都应该收录的信息
                         if cardata.info.inOutNote.count == 0 {
                             self.PassInfo.text = "暂无进出记录"
                         }else{
-                            let passstring:String = String(cardata.info.inOutNote[0].id)
+                            var passstring:String = ""
+                            if cardata.info.inOutNote[0].inTime != nil {
+                                passstring = passstring + self.changetimedetail(time: cardata.info.inOutNote[0].inTime) + "~~"
+                            }else{
+                                passstring = passstring + "未知时间" + "~~"
+                            }
+                            if cardata.info.inOutNote[0].outTime != nil {
+                                passstring = passstring + self.changetimedetail(time: cardata.info.inOutNote[0].outTime)
+                            }else{
+                                passstring = passstring + "未知时间"
+                            }
                             self.PassInfo.text = passstring
                         }
-                        if cardata.info.ticket.count == 0 {
+                        if cardata.info.pass == nil {
                             self.PassDocumentInfo.text = "该车辆没有通行证"
                         }else{
-                            let passdocumentstring = String(describing: cardata.info.pass)
-                            self.PassDocumentInfo.text = passdocumentstring
+                            var startstring = "未知时间"
+                            var endstring = "未知时间"
+                            if cardata.info.pass.fromTime != nil {
+                                startstring = self.changetime(time: cardata.info.pass.fromTime)
+                            }
+                            if cardata.info.pass.toTime != nil {
+                                endstring = self.changetime(time: cardata.info.pass.toTime)
+                            }
+                            let timestring = startstring + "~~" + endstring
+                            self.PassDocumentInfo.text = timestring
                         }
                         if cardata.info.ticket.count == 0 {
                             self.BreakInfo.text = "该车辆没有违章记录"
@@ -142,7 +173,7 @@ class CarSearchTableViewController: UITableViewController ,UITextFieldDelegate{
         switch indexPath.section {
         case 2:
             if IsOrder {
-                performSegue(withIdentifier: "LookForDetail", sender: nil)
+                performSegue(withIdentifier: "GoToPass", sender: nil)
             }else{
                 let notice = UIAlertController(title: "提示", message: "没有查询信息，请先进行查询", preferredStyle: .alert)
                 let noticeactivity = UIAlertAction(title: "确定", style: .default, handler: nil)
@@ -179,11 +210,13 @@ class CarSearchTableViewController: UITableViewController ,UITextFieldDelegate{
         if segue.identifier == "LookForDetail" {
             let dest = segue.destination as! CarDetailTableViewController
             switch (tableView.indexPathForSelectedRow?.section)! {
-            case 2:
-                dest.InfoKind = 1
-                break
             case 3:
                 dest.InfoKind = 2
+                if GetCarInfo.info.inOutNote.count != 0 {
+                    dest.inoutinfo = GetCarInfo.info.inOutNote
+                }else{
+                    dest.inoutinfo = []
+                }
                 break
             case 4:
                 if GetCarInfo.info.ticket != nil {
@@ -194,12 +227,37 @@ class CarSearchTableViewController: UITableViewController ,UITextFieldDelegate{
                 dest.InfoKind = 3
             default: break
             }
+        }else if segue.identifier == "GoToPass" {
+            let dest = segue.destination as! CarPassDetailViewController
+            if GetCarInfo.info.pass != nil {
+                dest.PassCard = GetCarInfo.info.pass
+            }else{
+                dest.PassCard = nil
+            }
         }
     }
     
     //点击其他区域输入框消失
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+    }
+
+    func changetime(time:Int) -> String {
+        let inttime = time/1000
+        let timestamp = TimeInterval(inttime)
+        let timedate = Date(timeIntervalSince1970: timestamp)
+        let dateform = DateFormatter()
+        dateform.dateFormat = "yyyy-MM-dd"
+        return dateform.string(from: timedate)
+    }
+    
+    func changetimedetail(time:Int) -> String {
+        let inttime = time/1000
+        let timestamp = TimeInterval(inttime)
+        let timedate = Date(timeIntervalSince1970: timestamp)
+        let dateform = DateFormatter()
+        dateform.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return dateform.string(from: timedate)
     }
 
     
