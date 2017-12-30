@@ -26,12 +26,12 @@ class AddInSchoolController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     
     @IBAction func inSchool(){
         
-        if carIdTextfield.text?.count == 0 {
+        if carIdTextfield.text!.characters.count == 0 {
             let alertController = UIAlertController(title: "提示", message: "车牌号信息不能为空", preferredStyle: .alert)
             let action = UIAlertAction(title: "确定", style: .default, handler: nil)
             alertController.addAction(action)
             present(alertController, animated: true, completion: nil)
-        }else if((carIdTextfield.text?.count)! > String.IndexDistance(8)){
+        }else if((carIdTextfield.text!.characters.count) > String.IndexDistance(8)){
             let alertController = UIAlertController(title: "提示", message: "车牌号信息格式错误", preferredStyle: .alert)
             let action = UIAlertAction(title: "确定", style: .default, handler: nil)
             alertController.addAction(action)
