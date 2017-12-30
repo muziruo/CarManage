@@ -15,6 +15,7 @@
 		32AAED061FF68E8D0042B551 /* AddRecordingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAED051FF68E8D0042B551 /* AddRecordingController.swift */; };
 		32AAED081FF6938D0042B551 /* RecordingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAED071FF6938C0042B551 /* RecordingController.swift */; };
 		32AAED0A1FF693AB0042B551 /* RecordingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAED091FF693AB0042B551 /* RecordingCell.swift */; };
+		32AAED0C1FF732050042B551 /* AddInSchoolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AAED0B1FF732050042B551 /* AddInSchoolController.swift */; };
 		32DC2F341FECA60A00770C55 /* AddUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DC2F331FECA60A00770C55 /* AddUserTableViewController.swift */; };
 		32DC2F361FECA85F00770C55 /* BasisCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DC2F351FECA85F00770C55 /* BasisCell.swift */; };
 		32E7B4341FF2701400D8AD84 /* AddStaffTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7B4331FF2701400D8AD84 /* AddStaffTableViewController.swift */; };
@@ -59,6 +60,7 @@
 		32AAED051FF68E8D0042B551 /* AddRecordingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordingController.swift; sourceTree = "<group>"; };
 		32AAED071FF6938C0042B551 /* RecordingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingController.swift; sourceTree = "<group>"; };
 		32AAED091FF693AB0042B551 /* RecordingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingCell.swift; sourceTree = "<group>"; };
+		32AAED0B1FF732050042B551 /* AddInSchoolController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInSchoolController.swift; sourceTree = "<group>"; };
 		32DC2F331FECA60A00770C55 /* AddUserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserTableViewController.swift; sourceTree = "<group>"; };
 		32DC2F351FECA85F00770C55 /* BasisCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasisCell.swift; sourceTree = "<group>"; };
 		32E7B4331FF2701400D8AD84 /* AddStaffTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStaffTableViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				32AAED051FF68E8D0042B551 /* AddRecordingController.swift */,
 				32AAED071FF6938C0042B551 /* RecordingController.swift */,
 				32AAED091FF693AB0042B551 /* RecordingCell.swift */,
+				32AAED0B1FF732050042B551 /* AddInSchoolController.swift */,
 			);
 			path = ManageModule;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				EE6BB6DA1FDEAD0F0035C030 /* User.swift in Sources */,
 				EE6BB6DE1FDEADBF0035C030 /* MenuTableViewCell.swift in Sources */,
 				EE6BB6AA1FDAC2FA0035C030 /* LoginViewController.swift in Sources */,
+				32AAED0C1FF732050042B551 /* AddInSchoolController.swift in Sources */,
 				EE7DEDEF1FDA72350062928E /* AppDelegate.swift in Sources */,
 				EED8C1CF1FF5ED860097C9EB /* QueryPostList.swift in Sources */,
 				EED8C1C11FF5D6C90097C9EB /* Info.swift in Sources */,
