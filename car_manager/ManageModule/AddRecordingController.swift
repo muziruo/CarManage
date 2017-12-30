@@ -10,7 +10,6 @@ import UIKit
 
 class AddRecordingController: UITableViewController {
     
-    var currentType = "inSchool"
     let recordingType = ["添加进校记录","添加出校记录","添加违章记录"]
 
     override func viewDidLoad() {
@@ -102,14 +101,18 @@ class AddRecordingController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "recording" {
+            let dest = segue.destination as! RecordingController
+            dest.current = recordingType[(tableView.indexPathForSelectedRow?.row)!]
+        }
     }
-    */
+    
 
 }

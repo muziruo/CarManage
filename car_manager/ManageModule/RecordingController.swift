@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class RecordingController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    var current = "添加出校记录"
     @IBOutlet var tableView: UITableView!
-
+    var num = 10
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
@@ -37,12 +39,12 @@ class RecordingController: UIViewController,UITableViewDelegate,UITableViewDataS
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return num
     }
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "recording", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "recording", for: indexPath) as! RecordingCell
 
         // Configure the cell...
 
@@ -50,25 +52,50 @@ class RecordingController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     
 
-    /*
+    
     // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        if current == "添加出校记录" {
+            let action = UITableViewRowAction(style: .default, title: "出校") { (action, indexPath) in
+                self.num = self.num - 1
+                
+                //发起出校网络请求
+                
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            action.backgroundColor = UIColor.green
+            return [action]
+        }else{
+            let action = UITableViewRowAction(style: .default, title: "违章", handler: { (action, indexPath) in
+                
+                //发起违章网络请求
+                SVProgressHUD.showInfo(withStatus: "添加违章成功")
+                SVProgressHUD.dismiss(withDelay: 0.5)
+            })
+            action.backgroundColor = UIColor.red
+            return [action]
+        }
     }
-    */
+
+    
+    // Override to support editing the table view.
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            // Delete the row from the data source
+//            num = num - 1
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//        } else if editingStyle == .insert {
+//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//        }
+//    }
+    
+    
 
     /*
     // Override to support rearranging the table view.
