@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3202F08F1FF7368A00606323 /* PersonCarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3202F08E1FF7368A00606323 /* PersonCarTableViewCell.swift */; };
 		3249ED011FE3C76A00A7E745 /* Manage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3249ED001FE3C76A00A7E745 /* Manage.storyboard */; };
 		3249ED031FE3CAD100A7E745 /* ManageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3249ED021FE3CAD100A7E745 /* ManageTableViewController.swift */; };
 		3251B6621FE364CB00D4AD82 /* ManageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3251B6611FE364CB00D4AD82 /* ManageTableViewCell.swift */; };
@@ -37,7 +38,6 @@
 		EE7DEDF91FDA72350062928E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE7DEDF71FDA72350062928E /* LaunchScreen.storyboard */; };
 		EEA3E6081FF3407900149A55 /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA3E6071FF3407900149A55 /* MyInfoViewController.swift */; };
 		EEB670271FF6AAAA00D86AFD /* PersonCarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB670261FF6AAAA00D86AFD /* PersonCarTableViewController.swift */; };
-		EEB670291FF6AADE00D86AFD /* PersonCarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB670281FF6AADE00D86AFD /* PersonCarTableViewCell.swift */; };
 		EED8C1C01FF5D6C90097C9EB /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C1BA1FF5D6C90097C9EB /* Car.swift */; };
 		EED8C1C11FF5D6C90097C9EB /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C1BB1FF5D6C90097C9EB /* Info.swift */; };
 		EED8C1C21FF5D6C90097C9EB /* Owne.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C1BC1FF5D6C90097C9EB /* Owne.swift */; };
@@ -54,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3202F08E1FF7368A00606323 /* PersonCarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCarTableViewCell.swift; sourceTree = "<group>"; };
 		3249ED001FE3C76A00A7E745 /* Manage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Manage.storyboard; sourceTree = "<group>"; };
 		3249ED021FE3CAD100A7E745 /* ManageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTableViewController.swift; sourceTree = "<group>"; };
 		3251B6611FE364CB00D4AD82 /* ManageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTableViewCell.swift; sourceTree = "<group>"; };
@@ -88,7 +89,6 @@
 		EE7DEDFA1FDA72350062928E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEA3E6071FF3407900149A55 /* MyInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyInfoViewController.swift; sourceTree = "<group>"; };
 		EEB670261FF6AAAA00D86AFD /* PersonCarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCarTableViewController.swift; sourceTree = "<group>"; };
-		EEB670281FF6AADE00D86AFD /* PersonCarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCarTableViewCell.swift; sourceTree = "<group>"; };
 		EED8C1BA1FF5D6C90097C9EB /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		EED8C1BB1FF5D6C90097C9EB /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		EED8C1BC1FF5D6C90097C9EB /* Owne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owne.swift; sourceTree = "<group>"; };
@@ -146,12 +146,12 @@
 			children = (
 				EE6BB6D41FDEAA510035C030 /* SearchMenuViewController.swift */,
 				EE6BB6E11FE3584A0035C030 /* PersonSearchTableViewController.swift */,
-				EEB670281FF6AADE00D86AFD /* PersonCarTableViewCell.swift */,
 				EEB670261FF6AAAA00D86AFD /* PersonCarTableViewController.swift */,
 				EE6BB6EB1FE7EF4F0035C030 /* CarDetailTableViewController.swift */,
 				EE6BB6ED1FF2306F0035C030 /* CarDetailTableViewCell.swift */,
 				EE6BB6E31FE362EA0035C030 /* CarSearchTableViewController.swift */,
 				EE6BB6DD1FDEADBF0035C030 /* MenuTableViewCell.swift */,
+				3202F08E1FF7368A00606323 /* PersonCarTableViewCell.swift */,
 			);
 			path = SearchModule;
 			sourceTree = "<group>";
@@ -277,7 +277,7 @@
 				TargetAttributes = {
 					EE7DEDEA1FDA72350062928E = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 6TJKYE5XV9;
+						DevelopmentTeam = K2VC334V4X;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
@@ -414,6 +414,7 @@
 				32DC2F361FECA85F00770C55 /* BasisCell.swift in Sources */,
 				32AAED021FF625FE0042B551 /* DeleteBlackListController.swift in Sources */,
 				EE6BB6EE1FF2306F0035C030 /* CarDetailTableViewCell.swift in Sources */,
+				3202F08F1FF7368A00606323 /* PersonCarTableViewCell.swift in Sources */,
 				32AAED0A1FF693AB0042B551 /* RecordingCell.swift in Sources */,
 				EED8C1D31FF5EF3E0097C9EB /* PostListTableViewCell.swift in Sources */,
 			);
@@ -555,10 +556,10 @@
 			baseConfigurationReference = D0C0585E5882544F0D1B8AF6 /* Pods-car_manager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6TJKYE5XV9;
+				DEVELOPMENT_TEAM = K2VC334V4X;
 				INFOPLIST_FILE = car_manager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "muziruo.car-manager";
+				PRODUCT_BUNDLE_IDENTIFIER = "lqzy.car-manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -569,10 +570,10 @@
 			baseConfigurationReference = C653B98A830237A3609CE4BA /* Pods-car_manager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6TJKYE5XV9;
+				DEVELOPMENT_TEAM = K2VC334V4X;
 				INFOPLIST_FILE = car_manager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "muziruo.car-manager";
+				PRODUCT_BUNDLE_IDENTIFIER = "lqzy.car-manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
