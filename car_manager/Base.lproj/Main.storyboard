@@ -270,16 +270,16 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPg-nm-8U0">
-                                                    <rect key="frame" x="38" y="129" width="329" height="20"/>
+                                                    <rect key="frame" x="46" y="132" width="313" height="20"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="车辆型号：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tas-m0-LOX">
-                                                            <rect key="frame" x="0.0" y="0.0" width="109.5" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="104" height="20"/>
                                                             <fontDescription key="fontDescription" name="PingFangSC-Thin" family="PingFang SC" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gil-Mc-KuK">
-                                                            <rect key="frame" x="109.5" y="0.0" width="219.5" height="20"/>
+                                                            <rect key="frame" x="104" y="0.0" width="209" height="20"/>
                                                             <fontDescription key="fontDescription" name="PingFangSC-Thin" family="PingFang SC" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -290,16 +290,16 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIb-FQ-svh">
-                                                    <rect key="frame" x="38" y="159" width="329" height="20"/>
+                                                    <rect key="frame" x="46" y="162" width="313" height="20"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="车辆颜色：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JU9-hu-cQG">
-                                                            <rect key="frame" x="0.0" y="0.0" width="109.5" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="104" height="20"/>
                                                             <fontDescription key="fontDescription" name="PingFangSC-Thin" family="PingFang SC" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRT-18-ErA">
-                                                            <rect key="frame" x="109.5" y="0.0" width="219.5" height="20"/>
+                                                            <rect key="frame" x="104" y="0.0" width="209" height="20"/>
                                                             <fontDescription key="fontDescription" name="PingFangSC-Thin" family="PingFang SC" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -726,7 +726,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVK-mJ-8bo">
-                                            <rect key="frame" x="18" y="31" width="349" height="20"/>
+                                            <rect key="frame" x="26" y="29" width="333" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="Can-wJ-TMi"/>
                                             </constraints>
@@ -735,7 +735,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nq7-6J-jBD">
-                                            <rect key="frame" x="18" y="8" width="349" height="20"/>
+                                            <rect key="frame" x="26" y="11" width="333" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="lKC-Zs-4V6"/>
                                             </constraints>
@@ -754,8 +754,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="FirstLabel" destination="Nq7-6J-jBD" id="28p-kZ-okE"/>
-                                    <outlet property="SecondLabel" destination="tVK-mJ-8bo" id="MWg-vO-klg"/>
+                                    <outlet property="FirstLabel" destination="Nq7-6J-jBD" id="OVP-OL-AaU"/>
+                                    <outlet property="SecondLabel" destination="tVK-mJ-8bo" id="N9u-cg-EHR"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -894,16 +894,16 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IBZ-2h-SHU">
-                                                    <rect key="frame" x="38" y="132" width="329" height="21"/>
+                                                    <rect key="frame" x="46" y="130" width="313" height="21"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系方式：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCK-1D-zD0">
-                                                            <rect key="frame" x="0.0" y="0.0" width="94" height="21"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="89.5" height="21"/>
                                                             <fontDescription key="fontDescription" name="PingFangSC-Thin" family="PingFang SC" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTy-an-xNi">
-                                                            <rect key="frame" x="94" y="0.0" width="235" height="21"/>
+                                                            <rect key="frame" x="89.5" y="0.0" width="223.5" height="21"/>
                                                             <fontDescription key="fontDescription" name="PingFangSC-Thin" family="PingFang SC" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
