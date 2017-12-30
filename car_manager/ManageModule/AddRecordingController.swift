@@ -56,7 +56,7 @@ class AddRecordingController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            //添加进校记录
+            performSegue(withIdentifier: "addInSchool", sender: nil)
             break
         case 1,2:
             performSegue(withIdentifier: "recording", sender: nil)
