@@ -11,7 +11,7 @@ import UIKit
 class AddInSchoolController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource{
     
     
-    @IBOutlet var carid: UITextField!
+    @IBOutlet var carIdTextfield: UITextField!
     @IBOutlet var textfield: UITextField!
     var pickerView = UIPickerView()
     
@@ -25,6 +25,32 @@ class AddInSchoolController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     var gateRow = 0
     
     @IBAction func inSchool(){
+        
+        if carIdTextfield.text?.count == 0 {
+            let alertController = UIAlertController(title: "提示", message: "车牌号信息不能为空", preferredStyle: .alert)
+            let action = UIAlertAction(title: "确定", style: .default, handler: nil)
+            alertController.addAction(action)
+            present(alertController, animated: true, completion: nil)
+        }else if((carIdTextfield.text?.count)! > String.IndexDistance(8)){
+            let alertController = UIAlertController(title: "提示", message: "车牌号信息格式错误", preferredStyle: .alert)
+            let action = UIAlertAction(title: "确定", style: .default, handler: nil)
+            alertController.addAction(action)
+            present(alertController, animated: true, completion: nil)
+        }else if (textfield.text == ""){
+            let alertController = UIAlertController(title: "提示", message: "请选择进校门口", preferredStyle: .alert)
+            let action = UIAlertAction(title: "确定", style: .default, handler: nil)
+            alertController.addAction(action)
+            present(alertController, animated: true, completion: nil)
+        }else{
+            var car = carIdTextfield.text
+            var gate = textfield.text
+            //发起网络请求
+            
+            let alertController = UIAlertController(title: "提示", message: "添加成功", preferredStyle: .alert)
+            let action = UIAlertAction(title: "确定", style: .default, handler: nil)
+            alertController.addAction(action)
+            present(alertController, animated: true, completion: nil)
+        }
         
     }
 
