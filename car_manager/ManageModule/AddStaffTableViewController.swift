@@ -23,6 +23,7 @@ UIPickerViewDelegate,UIPickerViewDataSource{
     @IBOutlet var nameTextfiled: UITextField!
     @IBOutlet var partTextfield: UITextField!
     @IBOutlet var idTextfield: UITextField!
+    @IBOutlet var phoneTextfield: UITextField!
     //车辆信息textfield
     @IBOutlet var carIdTextfield: UITextField!
     @IBOutlet var carTypeTextfield: UITextField!
