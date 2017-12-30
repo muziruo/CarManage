@@ -30,6 +30,7 @@ class PersonSearchTableViewController: UITableViewController ,UITextFieldDelegat
         let userinput = InputNum.text!
         
         if userinput == "" {
+            SVProgressHUD.dismiss()
             let notice = UIAlertController(title: "提示", message: "输入不能为空", preferredStyle: .alert)
             let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
             notice.addAction(noticeaction)

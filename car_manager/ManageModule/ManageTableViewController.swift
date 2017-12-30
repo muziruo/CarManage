@@ -13,7 +13,7 @@ class ManageTableViewController: UITableViewController {
     var functions = [["添加教职工","添加车辆","添加用户","添加单位","添加通行证","添加黑名单"],["删除教职工","删除用户","移除黑名单"]]
     let Kinds = ["staff","car","user","post","passcard","blacklist"]
     let delete = ["deleteStaff","deleteUser","deleteBlackList"]
-    var type = 2
+    var type = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,25 +28,35 @@ class ManageTableViewController: UITableViewController {
 //        if type == 1{
 //            let view
 //        }
+
         
-        /*
         if type == 2 {
             let whiteview = UIView()
             whiteview.frame = tableView.frame
             whiteview.backgroundColor = UIColor.white
+            
             view.addSubview(whiteview)
+            view.bringSubview(toFront: whiteview)
             
             let noticelabel = UILabel()
+            let width = view.frame.width
+            noticelabel.adjustsFontSizeToFitWidth = true
+            noticelabel.numberOfLines = 0
+            noticelabel.frame = CGRect(x: 0, y: 100, width: width, height: 30)
             noticelabel.center = whiteview.center
+            noticelabel.textAlignment = .center
             noticelabel.text = "您不是管理员，无权限进行管理"
-            noticelabel.font = UIFont(name: "Avenir-Light", size: 25)
+            noticelabel.font = UIFont(name: "Avenir-Light", size: 15)
             whiteview.addSubview(noticelabel)
         }
-        */
+
         
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if type == 2 {
+            return 0
+        }
         return 10
     }
 

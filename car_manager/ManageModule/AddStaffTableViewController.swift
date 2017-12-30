@@ -353,12 +353,16 @@ UIPickerViewDelegate,UIPickerViewDataSource{
             let imagedata = UIImageJPEGRepresentation(userimage, 0.8)
             let staffid = self.idTextfield.text!
             let imagename = staffid + ".jpg"
+            print(imagename)
             MultipartFormData.append(imagedata!, withName: imagename)
+            
             
             
             let parameter = ["folder":"staff","name":imagename]
             
             for (key,value) in parameter {
+                print(key)
+                print(value)
                 MultipartFormData.append(value.data(using: String.Encoding.unicode)!, withName: key)
             }
             

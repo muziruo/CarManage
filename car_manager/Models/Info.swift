@@ -7,9 +7,9 @@ import Foundation
 struct Info{
 
 	var car : Car!
-	var inOutNote : [AnyObject]!
+	var inOutNote : [InOutNote]!
 	var owne : Owne!
-	var pass : AnyObject!
+	var pass : Pas!
 	var ticket : [Ticket]!
 
 
@@ -20,11 +20,19 @@ struct Info{
 		if let carData = dictionary["car"] as? [String:Any]{
 				car = Car(fromDictionary: carData)
 			}
-		inOutNote = dictionary["in_out_note"] as? [AnyObject]
+		inOutNote = [InOutNote]()
+		if let inOutNoteArray = dictionary["in_out_note"] as? [[String:Any]]{
+			for dic in inOutNoteArray{
+				let value = InOutNote(fromDictionary: dic)
+				inOutNote.append(value)
+			}
+		}
 		if let owneData = dictionary["owne"] as? [String:Any]{
 				owne = Owne(fromDictionary: owneData)
 			}
-		pass = dictionary["pass"] as? AnyObject
+		if let passData = dictionary["pass"] as? [String:Any]{
+				pass = Pas(fromDictionary: passData)
+			}
 		ticket = [Ticket]()
 		if let ticketArray = dictionary["ticket"] as? [[String:Any]]{
 			for dic in ticketArray{
@@ -44,13 +52,17 @@ struct Info{
 			dictionary["car"] = car.toDictionary()
 		}
 		if inOutNote != nil{
-			dictionary["in_out_note"] = inOutNote
+			var dictionaryElements = [[String:Any]]()
+			for inOutNoteElement in inOutNote {
+				dictionaryElements.append(inOutNoteElement.toDictionary())
+			}
+			dictionary["in_out_note"] = dictionaryElements
 		}
 		if owne != nil{
 			dictionary["owne"] = owne.toDictionary()
 		}
 		if pass != nil{
-			dictionary["pass"] = pass
+			dictionary["pass"] = pass.toDictionary()
 		}
 		if ticket != nil{
 			var dictionaryElements = [[String:Any]]()

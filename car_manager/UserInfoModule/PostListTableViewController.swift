@@ -69,9 +69,22 @@ class PostListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Postcell", for: indexPath) as! PostListTableViewCell
-        cell.PostNum.text = GetList[indexPath.row].id
-        cell.PostName.text = GetList[indexPath.row].name
-        cell.PostPhone.text = GetList[indexPath.row].phone
+        if GetList[indexPath.row].id != nil {
+            cell.PostNum.text = "编号：" + GetList[indexPath.row].id
+        }else{
+            cell.PostNum.text = "编号：" + "未知"
+        }
+        //为了更好的显示信息，以下两项进行交换
+        if GetList[indexPath.row].name != nil {
+            cell.PostName.text = "电话：" + GetList[indexPath.row].phone
+        }else{
+            cell.PostName.text = "电话：" + "未知"
+        }
+        if GetList[indexPath.row].phone != nil {
+            cell.PostPhone.text = "名称：" + GetList[indexPath.row].name
+        }else{
+            cell.PostPhone.text = "名称：" + "未知"
+        }
         return cell
     }
 

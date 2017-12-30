@@ -63,7 +63,7 @@ class CarSearchTableViewController: UITableViewController ,UITextFieldDelegate{
                         if cardata.info.inOutNote.count == 0 {
                             self.PassInfo.text = "暂无进出记录"
                         }else{
-                            let passstring:String = cardata.info.inOutNote[0] as! String
+                            let passstring:String = String(cardata.info.inOutNote[0].id)
                             self.PassInfo.text = passstring
                         }
                         if cardata.info.ticket.count == 0 {

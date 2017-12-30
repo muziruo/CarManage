@@ -17,6 +17,8 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
     @IBOutlet weak var UserName: UITextField!
     @IBOutlet weak var LoginButton: UIButton!
     
+    let SearchUrl = "https://car.wuruoye.com/user/query_staff_detail"
+    
     //登录操作
     @IBAction func LoginActivity(_ sender: UIButton) {
         //调试用，正式版请删除
@@ -39,21 +41,18 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
             let url = URL(string: "https://car.wuruoye.com/user/login_user")!
             let parameters = ["id":nameinput,"password":passwordinput]
             Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
-                /*
+
                 switch responsedata.result {
                 case .success(let data):
                     SVProgressHUD.dismiss()
                     let jsondata = JSON(data)
                     let issuccess = jsondata.dictionaryObject?["result"] as! Bool
                     if issuccess {
-                        let successid = jsondata.dictionaryObject?["id"] as! String
-                        let successtype = jsondata.dictionaryObject?["type"] as! String
-                        let userinfo = UserDefaults.standard
-                        print(successid)
-                        print(successtype)
-                        userinfo.set(successid, forKey: "userid")
-                        userinfo.set(successtype, forKey: "usertype")
+                        let user = UserDefaults.standard
+                        user.set(nameinput, forKey: "userid")
+                        print(jsondata.dictionaryObject?["info"] ?? "无信息")
                         self.performSegue(withIdentifier: "LoginSuccess", sender: nil)
+                        //GetType(id: nameinput)
                     }else{
                         let errordata = jsondata.dictionaryObject?["info"] as! String
                         let notice = UIAlertController(title: "提示", message: errordata, preferredStyle: .alert)
@@ -71,8 +70,8 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
                     self.present(notice, animated: true, completion: nil)
                     break
                 }
-                */
                 
+                /*
                 if responsedata.result.isSuccess {
                     let jsondata = JSON.init(data: responsedata.data!)
                     let issuccess = jsondata.dictionaryObject?["result"] as! Bool
@@ -96,10 +95,47 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
                     notice.addAction(noticeactivity)
                     self.present(notice, animated: true, completion: nil)
                 }
+                */
                 
             })
         }
     }
+    
+    /*
+    func GetType(id:String) {
+        let user = UserDefaults.standard
+        let id = user.value(forKey: "userid") as! String
+        let url = URL(string: SearchUrl)
+        let parameter = ["id":id]
+        Alamofire.request(url!, method: .get, parameters: parameter, encoding: URLEncoding.default, headers: nil).responseJSON { (responsedata) in
+            switch responsedata.result {
+            case .success(let data):
+                let jsondata = JSON(data)
+                let issuccess = jsondata.dictionaryObject?["result"] as! Bool
+                if issuccess {
+                    let userinfos = QueryStaff.init(fromDictionary: jsondata.dictionaryObject!)
+                    self.performSegue(withIdentifier: "LoginSuccess", sender: nil)
+                }else{
+                    SVProgressHUD.dismiss()
+                    let errordata = jsondata.dictionaryObject?["info"] as! String
+                    let notice = UIAlertController(title: "提示", message: errordata, preferredStyle: .alert)
+                    let noticeactivity = UIAlertAction(title: "确定", style: .default, handler: nil)
+                    notice.addAction(noticeactivity)
+                    self.present(notice, animated: true, completion: nil)
+                }
+                break
+            case .failure(let error):
+                SVProgressHUD.dismiss()
+                print(error.localizedDescription)
+                let notice = UIAlertController(title: "提示", message: "网络请求错误", preferredStyle: .alert)
+                let noticeactivity = UIAlertAction(title: "确定", style: .default, handler: nil)
+                notice.addAction(noticeactivity)
+                self.present(notice, animated: true, completion: nil)
+                break
+            }
+        }
+    }
+    */
     
     override func viewDidLoad() {
         super.viewDidLoad()

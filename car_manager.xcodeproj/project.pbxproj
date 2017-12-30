@@ -38,12 +38,14 @@
 		EE7DEDF91FDA72350062928E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE7DEDF71FDA72350062928E /* LaunchScreen.storyboard */; };
 		EEA3E6081FF3407900149A55 /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA3E6071FF3407900149A55 /* MyInfoViewController.swift */; };
 		EEB670271FF6AAAA00D86AFD /* PersonCarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB670261FF6AAAA00D86AFD /* PersonCarTableViewController.swift */; };
-		EED8C1C01FF5D6C90097C9EB /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C1BA1FF5D6C90097C9EB /* Car.swift */; };
-		EED8C1C11FF5D6C90097C9EB /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C1BB1FF5D6C90097C9EB /* Info.swift */; };
-		EED8C1C21FF5D6C90097C9EB /* Owne.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C1BC1FF5D6C90097C9EB /* Owne.swift */; };
-		EED8C1C31FF5D6C90097C9EB /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C1BD1FF5D6C90097C9EB /* Owner.swift */; };
-		EED8C1C41FF5D6C90097C9EB /* QueryCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C1BE1FF5D6C90097C9EB /* QueryCar.swift */; };
-		EED8C1C51FF5D6C90097C9EB /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C1BF1FF5D6C90097C9EB /* Ticket.swift */; };
+		EEB670321FF75C3A00D86AFD /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6702A1FF75C3A00D86AFD /* Car.swift */; };
+		EEB670331FF75C3A00D86AFD /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6702B1FF75C3A00D86AFD /* Info.swift */; };
+		EEB670341FF75C3A00D86AFD /* InOutNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6702C1FF75C3A00D86AFD /* InOutNote.swift */; };
+		EEB670351FF75C3A00D86AFD /* Owne.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6702D1FF75C3A00D86AFD /* Owne.swift */; };
+		EEB670361FF75C3A00D86AFD /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6702E1FF75C3A00D86AFD /* Owner.swift */; };
+		EEB670371FF75C3A00D86AFD /* Pas.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB6702F1FF75C3A00D86AFD /* Pas.swift */; };
+		EEB670381FF75C3A00D86AFD /* QueryCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB670301FF75C3A00D86AFD /* QueryCar.swift */; };
+		EEB670391FF75C3A00D86AFD /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB670311FF75C3A00D86AFD /* Ticket.swift */; };
 		EED8C1CA1FF5D8520097C9EB /* QueryStaff.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C1C61FF5D8520097C9EB /* QueryStaff.swift */; };
 		EED8C1CB1FF5D8520097C9EB /* Staff.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C1C71FF5D8520097C9EB /* Staff.swift */; };
 		EED8C1CC1FF5D8520097C9EB /* StaffInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C1C81FF5D8520097C9EB /* StaffInfo.swift */; };
@@ -89,12 +91,14 @@
 		EE7DEDFA1FDA72350062928E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEA3E6071FF3407900149A55 /* MyInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyInfoViewController.swift; sourceTree = "<group>"; };
 		EEB670261FF6AAAA00D86AFD /* PersonCarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCarTableViewController.swift; sourceTree = "<group>"; };
-		EED8C1BA1FF5D6C90097C9EB /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
-		EED8C1BB1FF5D6C90097C9EB /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
-		EED8C1BC1FF5D6C90097C9EB /* Owne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owne.swift; sourceTree = "<group>"; };
-		EED8C1BD1FF5D6C90097C9EB /* Owner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
-		EED8C1BE1FF5D6C90097C9EB /* QueryCar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryCar.swift; sourceTree = "<group>"; };
-		EED8C1BF1FF5D6C90097C9EB /* Ticket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		EEB6702A1FF75C3A00D86AFD /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		EEB6702B1FF75C3A00D86AFD /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		EEB6702C1FF75C3A00D86AFD /* InOutNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InOutNote.swift; sourceTree = "<group>"; };
+		EEB6702D1FF75C3A00D86AFD /* Owne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owne.swift; sourceTree = "<group>"; };
+		EEB6702E1FF75C3A00D86AFD /* Owner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		EEB6702F1FF75C3A00D86AFD /* Pas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pas.swift; sourceTree = "<group>"; };
+		EEB670301FF75C3A00D86AFD /* QueryCar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryCar.swift; sourceTree = "<group>"; };
+		EEB670311FF75C3A00D86AFD /* Ticket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		EED8C1C61FF5D8520097C9EB /* QueryStaff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryStaff.swift; sourceTree = "<group>"; };
 		EED8C1C71FF5D8520097C9EB /* Staff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
 		EED8C1C81FF5D8520097C9EB /* StaffInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaffInfo.swift; sourceTree = "<group>"; };
@@ -188,17 +192,19 @@
 		EE6BB6D81FDEAD0F0035C030 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EEB6702A1FF75C3A00D86AFD /* Car.swift */,
+				EEB6702B1FF75C3A00D86AFD /* Info.swift */,
+				EEB6702C1FF75C3A00D86AFD /* InOutNote.swift */,
+				EEB6702D1FF75C3A00D86AFD /* Owne.swift */,
+				EEB6702E1FF75C3A00D86AFD /* Owner.swift */,
+				EEB6702F1FF75C3A00D86AFD /* Pas.swift */,
+				EEB670301FF75C3A00D86AFD /* QueryCar.swift */,
+				EEB670311FF75C3A00D86AFD /* Ticket.swift */,
 				EED8C1CE1FF5ED860097C9EB /* QueryPostList.swift */,
 				EED8C1C61FF5D8520097C9EB /* QueryStaff.swift */,
 				EED8C1C71FF5D8520097C9EB /* Staff.swift */,
 				EED8C1C81FF5D8520097C9EB /* StaffInfo.swift */,
 				EED8C1C91FF5D8520097C9EB /* Unit.swift */,
-				EED8C1BA1FF5D6C90097C9EB /* Car.swift */,
-				EED8C1BB1FF5D6C90097C9EB /* Info.swift */,
-				EED8C1BC1FF5D6C90097C9EB /* Owne.swift */,
-				EED8C1BD1FF5D6C90097C9EB /* Owner.swift */,
-				EED8C1BE1FF5D6C90097C9EB /* QueryCar.swift */,
-				EED8C1BF1FF5D6C90097C9EB /* Ticket.swift */,
 				EE6BB6D91FDEAD0F0035C030 /* User.swift */,
 			);
 			path = Models;
@@ -277,7 +283,7 @@
 				TargetAttributes = {
 					EE7DEDEA1FDA72350062928E = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = K2VC334V4X;
+						DevelopmentTeam = 6TJKYE5XV9;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
@@ -381,6 +387,7 @@
 			files = (
 				EED8C1CB1FF5D8520097C9EB /* Staff.swift in Sources */,
 				3251B6621FE364CB00D4AD82 /* ManageTableViewCell.swift in Sources */,
+				EEB670371FF75C3A00D86AFD /* Pas.swift in Sources */,
 				EEB670271FF6AAAA00D86AFD /* PersonCarTableViewController.swift in Sources */,
 				3249ED031FE3CAD100A7E745 /* ManageTableViewController.swift in Sources */,
 				EED8C1CD1FF5D8520097C9EB /* Unit.swift in Sources */,
@@ -389,34 +396,35 @@
 				32F065521FF4E89900922AA9 /* DeleteUserController.swift in Sources */,
 				EE6BB6DA1FDEAD0F0035C030 /* User.swift in Sources */,
 				EE6BB6DE1FDEADBF0035C030 /* MenuTableViewCell.swift in Sources */,
+				EEB670351FF75C3A00D86AFD /* Owne.swift in Sources */,
 				EE6BB6AA1FDAC2FA0035C030 /* LoginViewController.swift in Sources */,
 				32AAED0C1FF732050042B551 /* AddInSchoolController.swift in Sources */,
 				EE7DEDEF1FDA72350062928E /* AppDelegate.swift in Sources */,
 				EED8C1CF1FF5ED860097C9EB /* QueryPostList.swift in Sources */,
-				EED8C1C11FF5D6C90097C9EB /* Info.swift in Sources */,
+				EEB670381FF75C3A00D86AFD /* QueryCar.swift in Sources */,
 				EE6BB6D51FDEAA510035C030 /* SearchMenuViewController.swift in Sources */,
 				EE6BB6E41FE362EA0035C030 /* CarSearchTableViewController.swift in Sources */,
 				EED8C1CC1FF5D8520097C9EB /* StaffInfo.swift in Sources */,
 				EE6BB6EC1FE7EF4F0035C030 /* CarDetailTableViewController.swift in Sources */,
+				EEB670341FF75C3A00D86AFD /* InOutNote.swift in Sources */,
 				EE6BB6E21FE3584A0035C030 /* PersonSearchTableViewController.swift in Sources */,
 				32AAED061FF68E8D0042B551 /* AddRecordingController.swift in Sources */,
-				EED8C1C41FF5D6C90097C9EB /* QueryCar.swift in Sources */,
 				32AAED041FF6313F0042B551 /* AddButtonCell.swift in Sources */,
 				32AAED081FF6938D0042B551 /* RecordingController.swift in Sources */,
 				32E7B4341FF2701400D8AD84 /* AddStaffTableViewController.swift in Sources */,
-				EED8C1C21FF5D6C90097C9EB /* Owne.swift in Sources */,
+				EEB670391FF75C3A00D86AFD /* Ticket.swift in Sources */,
 				EEA3E6081FF3407900149A55 /* MyInfoViewController.swift in Sources */,
-				EED8C1C31FF5D6C90097C9EB /* Owner.swift in Sources */,
-				EED8C1C01FF5D6C90097C9EB /* Car.swift in Sources */,
 				32E92D791FDFCCA10016B181 /* ViewHelper.swift in Sources */,
-				EED8C1C51FF5D6C90097C9EB /* Ticket.swift in Sources */,
 				EED8C1CA1FF5D8520097C9EB /* QueryStaff.swift in Sources */,
 				32DC2F361FECA85F00770C55 /* BasisCell.swift in Sources */,
+				EEB670361FF75C3A00D86AFD /* Owner.swift in Sources */,
 				32AAED021FF625FE0042B551 /* DeleteBlackListController.swift in Sources */,
 				EE6BB6EE1FF2306F0035C030 /* CarDetailTableViewCell.swift in Sources */,
+				EEB670321FF75C3A00D86AFD /* Car.swift in Sources */,
 				3202F08F1FF7368A00606323 /* PersonCarTableViewCell.swift in Sources */,
 				32AAED0A1FF693AB0042B551 /* RecordingCell.swift in Sources */,
 				EED8C1D31FF5EF3E0097C9EB /* PostListTableViewCell.swift in Sources */,
+				EEB670331FF75C3A00D86AFD /* Info.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,10 +564,10 @@
 			baseConfigurationReference = D0C0585E5882544F0D1B8AF6 /* Pods-car_manager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = K2VC334V4X;
+				DEVELOPMENT_TEAM = 6TJKYE5XV9;
 				INFOPLIST_FILE = car_manager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "lqzy.car-manager";
+				PRODUCT_BUNDLE_IDENTIFIER = "muziruo.car-manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -570,10 +578,10 @@
 			baseConfigurationReference = C653B98A830237A3609CE4BA /* Pods-car_manager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = K2VC334V4X;
+				DEVELOPMENT_TEAM = 6TJKYE5XV9;
 				INFOPLIST_FILE = car_manager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "lqzy.car-manager";
+				PRODUCT_BUNDLE_IDENTIFIER = "muziruo.car-manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

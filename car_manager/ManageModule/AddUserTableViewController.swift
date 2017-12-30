@@ -143,8 +143,12 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
         if carnum != "" && cartype != "" && startdate != "" && enddate != "" && fee != "" && owner != "" {
             if isnum {
                 if carnum.characters.count <= 8 {
-                    let starttime = Int(StartDate.timeIntervalSince1970)
-                    let endtime = Int(EndDate.timeIntervalSince1970)
+                    var starttime = Int(StartDate.timeIntervalSince1970)
+                    starttime *= 1000
+                    print(starttime)
+                    var endtime = Int(EndDate.timeIntervalSince1970)
+                    endtime *= 1000
+                    print(endtime)
                     let feenum = Float(fee)!
                     switch cartype {
                     case "校车":
