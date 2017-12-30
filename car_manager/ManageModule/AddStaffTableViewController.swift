@@ -354,10 +354,11 @@ UIPickerViewDelegate,UIPickerViewDataSource{
             let imagename = staffid + ".jpg"
             MultipartFormData.append(imagedata!, withName: imagename)
             
+            
             let parameter = ["folder":"staff","name":imagename]
             
             for (key,value) in parameter {
-                MultipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+                MultipartFormData.append(value.data(using: String.Encoding.unicode)!, withName: key)
             }
             
             //let parameter = ["folder":"staff","name":imagename,"photo":MultipartFormData]

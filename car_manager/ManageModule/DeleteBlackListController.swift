@@ -7,12 +7,32 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import SVProgressHUD
 
 class DeleteBlackListController: UITableViewController {
     
     @IBOutlet var textfield: UITextField!
+    
+    let DeteleUrl = "https://car.wuruoye.com/car/delete_no_car"
+    
     @IBAction func remove(){
+        SVProgressHUD.show()
         
+        let deleteid = textfield.text!
+        let url = URL(string: DeteleUrl)
+        
+        if deleteid != "" {
+            if deleteid.characters.count <= 8 {
+                
+            }else{
+                shownotice(info: "车辆编号最多8位")
+            }
+            
+        }else{
+            shownotice(info: "输入不能为空")
+        }
     }
 
     override func viewDidLoad() {
@@ -31,6 +51,13 @@ class DeleteBlackListController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func shownotice(info:String) {
+        let notice = UIAlertController(title: "提示", message: info, preferredStyle: .alert)
+        let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+        notice.addAction(noticeaction)
+        present(notice, animated: true, completion: nil)
     }
 
     // MARK: - Table view data source
