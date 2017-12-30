@@ -18,6 +18,7 @@ class DeleteBlackListController: UITableViewController {
     let DeteleUrl = "https://car.wuruoye.com/car/delete_no_car"
     
     @IBAction func remove(){
+        view.endEditing(true)
         SVProgressHUD.show()
         
         let deleteid = textfield.text!
@@ -25,12 +26,36 @@ class DeleteBlackListController: UITableViewController {
         
         if deleteid != "" {
             if deleteid.characters.count <= 8 {
+                let parameter = ["car":deleteid]
                 
+                Alamofire.request(url!, method: .post, parameters: parameter, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
+                    switch responsedata.result {
+                    case .success(let data):
+                        SVProgressHUD.dismiss()
+                        let jsondata = JSON(data)
+                        let issuccess = jsondata.dictionaryObject?["result"] as! Bool
+                        if issuccess {
+                            let successdata = jsondata.dictionaryObject?["info"] as! String
+                            self.shownotice(info: successdata)
+                            self.textfield.text = ""
+                        }else{
+                            let errordata = jsondata.dictionaryObject?["info"] as! String
+                            self.shownotice(info: errordata)
+                        }
+                        break
+                    case .failure(let error):
+                        SVProgressHUD.dismiss()
+                        print(error.localizedDescription)
+                        self.shownotice(info: "网络请求出错")
+                        break
+                    }
+                })
             }else{
+                SVProgressHUD.dismiss()
                 shownotice(info: "车辆编号最多8位")
             }
-            
         }else{
+            SVProgressHUD.dismiss()
             shownotice(info: "输入不能为空")
         }
     }
@@ -46,6 +71,7 @@ class DeleteBlackListController: UITableViewController {
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.separatorStyle = .none
         title = "移除黑名单"
+        textfield.keyboardType = .numberPad
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,6 +84,10 @@ class DeleteBlackListController: UITableViewController {
         let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
         notice.addAction(noticeaction)
         present(notice, animated: true, completion: nil)
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     // MARK: - Table view data source
