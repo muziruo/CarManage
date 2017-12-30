@@ -21,6 +21,10 @@ class CarSearchTableViewController: UITableViewController ,UITextFieldDelegate{
     @IBOutlet weak var PassInfo: UILabel!
     @IBOutlet weak var BreakInfo: UILabel!
     
+    @IBOutlet weak var CarModel: UILabel!
+    @IBOutlet weak var CarColor: UILabel!
+    
+    
     var GetCarInfo:QueryCar!
     //是否已经查询到结果
     var IsOrder:Bool = false
@@ -51,25 +55,9 @@ class CarSearchTableViewController: UITableViewController ,UITextFieldDelegate{
                         self.GetCarInfo = cardata
                         self.IsOrder = true
                         self.CarNum.text = cardata.info.car.id
-                        switch cardata.info.car.type {
-                        case "校车":
-                            //学校公车会有所有的信息
-                            self.Owner.text = cardata.info.owne.owner.name
-                            self.CarKind.text = "学校公车"
-                            break
-                        case "教职工车":
-                            //教职工车不收录维护和加油信息
-                            self.Owner.text = cardata.info.owne.owner.name
-                            self.CarKind.text = "教职工车"
-                            break
-                        case "社会车":
-                            //社会车辆不收录维护和加油信息
-                            self.CarKind.text = "无"
-                            self.CarKind.text = "社会车辆"
-                            break
-                        default:
-                            self.CarKind.text = "未知"
-                        }
+                        self.CarKind.text = cardata.info.car.type
+                        self.CarModel.text = cardata.info.car.model
+                        self.CarColor.text = cardata.info.car.color
                         
                         //以下三项是所有车辆都会有，也都应该收录的信息
                         if cardata.info.inOutNote.count == 0 {
@@ -81,7 +69,7 @@ class CarSearchTableViewController: UITableViewController ,UITextFieldDelegate{
                         if cardata.info.ticket.count == 0 {
                             self.PassDocumentInfo.text = "该车辆没有通行证"
                         }else{
-                            let passdocumentstring = cardata.info.pass as! String
+                            let passdocumentstring = String(describing: cardata.info.pass)
                             self.PassDocumentInfo.text = passdocumentstring
                         }
                         if cardata.info.ticket.count == 0 {
@@ -189,31 +177,21 @@ class CarSearchTableViewController: UITableViewController ,UITextFieldDelegate{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "LookForDetail" {
+            let dest = segue.destination as! CarDetailTableViewController
             switch (tableView.indexPathForSelectedRow?.section)! {
             case 2:
-                let dest = segue.destination as! CarDetailTableViewController
-                if let temp = GetCarInfo.info.ticket {
-                    dest.GetInfo = temp as [AnyObject]
-                }else{
-                    dest.GetInfo = []
-                }
-                dest.InfoKind = 0
+                dest.InfoKind = 1
+                break
             case 3:
-                let dest = segue.destination as! CarDetailTableViewController
-                if let temp = GetCarInfo.info.inOutNote {
-                    dest.GetInfo = temp
-                }else{
-                    dest.GetInfo = []
-                }
-                dest.InfoKind = 1
+                dest.InfoKind = 2
+                break
             case 4:
-                let dest = segue.destination as! CarDetailTableViewController
-                if let temp = GetCarInfo.info.inOutNote {
-                    dest.GetInfo = temp
+                if GetCarInfo.info.ticket != nil {
+                    dest.breakinfo = GetCarInfo.info.ticket
                 }else{
-                    dest.GetInfo = []
+                    dest.breakinfo = []
                 }
-                dest.InfoKind = 1
+                dest.InfoKind = 3
             default: break
             }
         }

@@ -1,27 +1,21 @@
 //
-//  CarDetailTableViewController.swift
+//  PersonCarTableViewController.swift
 //  car_manager
 //
-//  Created by 李祎喆 on 2017/12/18.
+//  Created by 李祎喆 on 2017/12/30.
 //  Copyright © 2017年 李祎喆. All rights reserved.
-//  车辆详情页面
+//
 
 import UIKit
 
-class CarDetailTableViewController: UITableViewController {
+class PersonCarTableViewController: UITableViewController {
 
-    var InfoKind:Int!
-    var breakinfo:[Ticket] = []
+    var PersonCar:[Car] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.tableFooterView = UIView(frame: .zero)
-        
-        let emptynotice:UILabel = UILabel()
-        emptynotice.text = "无任何数据"
-        emptynotice.center = tableView.center
-        tableView.addSubview(emptynotice)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -39,66 +33,40 @@ class CarDetailTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
-        /*
-        switch InfoKind {
-        case 0:
-            return 4
-        case 1:
-            return GetInfo.count
-        default:
-            return 0
-        }
-        */
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        switch InfoKind {
-        case 1:
-            return 0
-        case 2:
-            return 0
-        case 3:
-            return breakinfo.count
-        default:
-            return 0
-        }
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 5
+        return PersonCar.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CarDetailCell", for: indexPath) as! CarDetailTableViewCell
-        
-        switch InfoKind {
-        case 1:
-            break
-        case 2:
-            break
-        case 3:
-            if breakinfo[indexPath.row].id != nil {
-                if breakinfo[indexPath.row].car != nil {
-                    cell.InfoLabel.text = "罚单编号:" + String(breakinfo[indexPath.row].id) + "     " + "违章车辆编号:" + breakinfo[indexPath.row].car
-                }else{
-                    cell.InfoLabel.text = "罚单编号:" + String(breakinfo[indexPath.row].id) + "     " + "违章车辆编号:" + "未知车辆编号"
-                }
-            }else{
-                if breakinfo[indexPath.row].car != nil {
-                    cell.InfoLabel.text = "未知罚单编号" + "     " + breakinfo[indexPath.row].car
-                }else{
-                    cell.InfoLabel.text = "未知罚单编号" + "     " + "未知车辆编号"
-                }
-            }
-            if breakinfo[indexPath.row].time != nil {
-                cell.TimeLabel.text = "违章时间:" + String(breakinfo[indexPath.row].time)
-            }else{
-                cell.TimeLabel.text = "违章时间:" + "未知时间"
-            }
-        default:
-            break
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCarCell", for: indexPath) as! PersonCarTableViewCell
+
+        var firsttext = ""
+        if PersonCar[indexPath.row].type != nil {
+            firsttext = firsttext + PersonCar[indexPath.row].id + "   " + PersonCar[indexPath.row].type
+        }else{
+            firsttext = firsttext + PersonCar[indexPath.row].id + "   " + "未知类型"
         }
+        var secondtext = ""
+        if PersonCar[indexPath.row].model != nil {
+            if PersonCar[indexPath.row].color != nil {
+                secondtext = secondtext + PersonCar[indexPath.row].model + "   " + PersonCar[indexPath.row].color
+            }else{
+                secondtext = secondtext + PersonCar[indexPath.row].model + "   " + "未知颜色"
+            }
+        }else{
+            if PersonCar[indexPath.row].color != nil {
+                secondtext = secondtext + "未知车型" + "   " + PersonCar[indexPath.row].color
+            }else{
+                secondtext = secondtext + "未知车型" + "   " + "未知颜色"
+            }
+        }
+        
+        cell.FirstLabel.text = firsttext
+        cell.SecondLabel.text = secondtext
+        
         return cell
     }
 
