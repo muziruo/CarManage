@@ -11,6 +11,7 @@ import SVProgressHUD
 
 class RecordingController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    var location = "余区"
     var current = "添加出校记录"
     @IBOutlet var tableView: UITableView!
     var num = 10
@@ -23,6 +24,7 @@ class RecordingController: UIViewController,UITableViewDelegate,UITableViewDataS
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableFooterView = UIView(frame: .zero)
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +42,10 @@ class RecordingController: UIViewController,UITableViewDelegate,UITableViewDataS
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return num
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 
@@ -66,6 +72,7 @@ class RecordingController: UIViewController,UITableViewDelegate,UITableViewDataS
                 self.num = self.num - 1
                 
                 //发起出校网络请求
+                let gateno = Int(arc4random()%11)+1    //随机生成出校门口号
                 
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }

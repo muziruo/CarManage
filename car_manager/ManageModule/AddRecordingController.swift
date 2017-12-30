@@ -46,9 +46,7 @@ class AddRecordingController: UITableViewController {
 
         // Configure the cell...
         cell.textLabel?.text = recordingType[indexPath.row]
-        if indexPath.row != 0 {
             cell.accessoryType = .disclosureIndicator
-        }
         return cell
     }
     

@@ -514,6 +514,9 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
             }else{
                 cell.textField.placeholder = "请输入"+titles[currentType]![indexPath.row]
                 cell.textField.tag = tagnum
+                if indexPath.row == 0{
+                    cell.textField.keyboardType = .numberPad
+                }
             }
         case "car":
             cell.titleLable.text = titles[currentType]![indexPath.row]
@@ -526,12 +529,24 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
                 cell.textField.inputView = pickerView
                 cell.textField.inputAccessoryView = toolBar
             }else{
+                switch indexPath.row{
+                case 0,4:
+                    cell.textField.keyboardType = .numberPad
+                    break
+                default:
+                    break
+                }
                 cell.textField.placeholder = "请输入"+titles[currentType]![indexPath.row]
                 cell.textField.tag = tagnum
             }
         case "passcard":
             cell.titleLable.text = titles[currentType]![indexPath.row]
             switch indexPath.row{
+            case 0,4:
+                cell.textField.placeholder = "请输入"+titles[currentType]![indexPath.row]
+                cell.textField.keyboardType = .numberPad
+                cell.textField.tag = tagnum
+                break
             case 1:
                 cell.textField.placeholder = "请选择类型"
                 cell.textField.tag = 1
@@ -553,6 +568,7 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
                 cell.textField.inputView = datePickerView
                 cell.textField.inputAccessoryView = toolBar
             default:
+                cell.textField.placeholder = "请输入"+titles[currentType]![indexPath.row]
                 cell.textField.tag = tagnum
                 break
             }
@@ -560,10 +576,14 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
             cell.titleLable.text = titles[currentType]![indexPath.row]
             cell.textField.placeholder = "请输入"+titles[currentType]![indexPath.row]
             cell.textField.tag = tagnum
+            if indexPath.row != 1{
+                cell.textField.keyboardType = .numberPad
+            }
             break
         case "blacklist":
             cell.titleLable.text = titles[currentType]![indexPath.row]
             cell.textField.placeholder = "请输入"+titles[currentType]![indexPath.row]
+            cell.textField.keyboardType = .numberPad
             cell.textField.tag = tagnum
             break
         default:
