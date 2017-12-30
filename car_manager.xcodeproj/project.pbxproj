@@ -32,6 +32,8 @@
 		EE7DEDF61FDA72350062928E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE7DEDF51FDA72350062928E /* Assets.xcassets */; };
 		EE7DEDF91FDA72350062928E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE7DEDF71FDA72350062928E /* LaunchScreen.storyboard */; };
 		EEA3E6081FF3407900149A55 /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA3E6071FF3407900149A55 /* MyInfoViewController.swift */; };
+		EEB670271FF6AAAA00D86AFD /* PersonCarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB670261FF6AAAA00D86AFD /* PersonCarTableViewController.swift */; };
+		EEB670291FF6AADE00D86AFD /* PersonCarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB670281FF6AADE00D86AFD /* PersonCarTableViewCell.swift */; };
 		EED8C1C01FF5D6C90097C9EB /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C1BA1FF5D6C90097C9EB /* Car.swift */; };
 		EED8C1C11FF5D6C90097C9EB /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C1BB1FF5D6C90097C9EB /* Info.swift */; };
 		EED8C1C21FF5D6C90097C9EB /* Owne.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C1BC1FF5D6C90097C9EB /* Owne.swift */; };
@@ -77,6 +79,8 @@
 		EE7DEDF81FDA72350062928E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE7DEDFA1FDA72350062928E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEA3E6071FF3407900149A55 /* MyInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyInfoViewController.swift; sourceTree = "<group>"; };
+		EEB670261FF6AAAA00D86AFD /* PersonCarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCarTableViewController.swift; sourceTree = "<group>"; };
+		EEB670281FF6AADE00D86AFD /* PersonCarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCarTableViewCell.swift; sourceTree = "<group>"; };
 		EED8C1BA1FF5D6C90097C9EB /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		EED8C1BB1FF5D6C90097C9EB /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		EED8C1BC1FF5D6C90097C9EB /* Owne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owne.swift; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 			children = (
 				EE6BB6D41FDEAA510035C030 /* SearchMenuViewController.swift */,
 				EE6BB6E11FE3584A0035C030 /* PersonSearchTableViewController.swift */,
+				EEB670281FF6AADE00D86AFD /* PersonCarTableViewCell.swift */,
+				EEB670261FF6AAAA00D86AFD /* PersonCarTableViewController.swift */,
 				EE6BB6EB1FE7EF4F0035C030 /* CarDetailTableViewController.swift */,
 				EE6BB6ED1FF2306F0035C030 /* CarDetailTableViewCell.swift */,
 				EE6BB6E31FE362EA0035C030 /* CarSearchTableViewController.swift */,
@@ -363,6 +369,7 @@
 			files = (
 				EED8C1CB1FF5D8520097C9EB /* Staff.swift in Sources */,
 				3251B6621FE364CB00D4AD82 /* ManageTableViewCell.swift in Sources */,
+				EEB670271FF6AAAA00D86AFD /* PersonCarTableViewController.swift in Sources */,
 				3249ED031FE3CAD100A7E745 /* ManageTableViewController.swift in Sources */,
 				EED8C1CD1FF5D8520097C9EB /* Unit.swift in Sources */,
 				32DC2F341FECA60A00770C55 /* AddUserTableViewController.swift in Sources */,
@@ -371,6 +378,7 @@
 				EE6BB6DA1FDEAD0F0035C030 /* User.swift in Sources */,
 				EE6BB6DE1FDEADBF0035C030 /* MenuTableViewCell.swift in Sources */,
 				EE6BB6AA1FDAC2FA0035C030 /* LoginViewController.swift in Sources */,
+				EEB670291FF6AADE00D86AFD /* PersonCarTableViewCell.swift in Sources */,
 				EE7DEDEF1FDA72350062928E /* AppDelegate.swift in Sources */,
 				EED8C1CF1FF5ED860097C9EB /* QueryPostList.swift in Sources */,
 				EED8C1C11FF5D6C90097C9EB /* Info.swift in Sources */,

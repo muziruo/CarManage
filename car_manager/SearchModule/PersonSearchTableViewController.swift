@@ -18,9 +18,10 @@ class PersonSearchTableViewController: UITableViewController ,UITextFieldDelegat
     @IBOutlet weak var PersonCompany: UILabel!
     @IBOutlet weak var Info: UILabel!
     @IBOutlet weak var InputNum: UITextField!
+    @IBOutlet weak var PhoneNum: UILabel!
     
     let SearchUrl = "https://car.wuruoye.com/user/query_staff_detail"
-    
+    var PersonCar:[Car] = []
     //进行查询操作
     @IBAction func SearchActivity(_ sender: UIButton) {
         view.endEditing(true)
@@ -47,10 +48,13 @@ class PersonSearchTableViewController: UITableViewController ,UITextFieldDelegat
                         self.PersonNum.text = querystaff.info.staff.id
                         self.PersonName.text = querystaff.info.staff.name
                         self.PersonCompany.text = querystaff.info.unit.name
+                        self.PhoneNum.text = querystaff.info.staff.phone
                         if querystaff.info.car.count == 0 {
                             self.Info.text = "该人员无车辆"
                         }else{
                             self.Info.text = querystaff.info.car[0].id
+                            print(querystaff.info.car)
+                            self.PersonCar = querystaff.info.car
                         }
                     }else{
                         SVProgressHUD.dismiss()
@@ -91,6 +95,13 @@ class PersonSearchTableViewController: UITableViewController ,UITextFieldDelegat
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 2:
+            performSegue(withIdentifier: "GoToPersonCarDetail", sender: nil)
+            break
+        default:
+            break
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
@@ -120,6 +131,13 @@ class PersonSearchTableViewController: UITableViewController ,UITextFieldDelegat
         view.endEditing(true)
     }
 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GoToPersonCarDetail" {
+            let dest = segue.destination as! PersonCarTableViewController
+            dest.PersonCar = self.PersonCar
+        }
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
