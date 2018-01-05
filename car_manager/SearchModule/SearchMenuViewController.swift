@@ -7,6 +7,7 @@
 //  查询菜单
 
 import UIKit
+import SVProgressHUD
 
 class SearchMenuViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSource{
 
@@ -17,6 +18,8 @@ class SearchMenuViewController: UIViewController ,UITableViewDelegate ,UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        SVProgressHUD.dismiss()
+        
         SearchTableView.tableFooterView = UIView(frame: .zero)
         // Do any additional setup after loading the view.
     }

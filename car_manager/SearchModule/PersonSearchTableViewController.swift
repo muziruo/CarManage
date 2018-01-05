@@ -82,6 +82,8 @@ class PersonSearchTableViewController: UITableViewController ,UITextFieldDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        SVProgressHUD.dismiss()
+        
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
         PersonNum.text = "无"

@@ -45,22 +45,22 @@ class PersonCarTableViewController: UITableViewController {
 
         var firsttext = ""
         if PersonCar[indexPath.row].type != nil {
-            firsttext = firsttext + PersonCar[indexPath.row].id + "   " + PersonCar[indexPath.row].type
+            firsttext = firsttext + "编号：" + PersonCar[indexPath.row].id + "   " + "类型：" + PersonCar[indexPath.row].type
         }else{
-            firsttext = firsttext + PersonCar[indexPath.row].id + "   " + "未知类型"
+            firsttext = firsttext + "编号：" + PersonCar[indexPath.row].id + "   " + "类型：" + "未知类型"
         }
         var secondtext = ""
         if PersonCar[indexPath.row].model != nil {
             if PersonCar[indexPath.row].color != nil {
-                secondtext = secondtext + PersonCar[indexPath.row].model + "   " + PersonCar[indexPath.row].color
+                secondtext = secondtext + "类型：" + PersonCar[indexPath.row].model + "   " + "颜色：" + PersonCar[indexPath.row].color
             }else{
-                secondtext = secondtext + PersonCar[indexPath.row].model + "   " + "未知颜色"
+                secondtext = secondtext + "类型：" + PersonCar[indexPath.row].model + "   " + "颜色：" + "未知颜色"
             }
         }else{
             if PersonCar[indexPath.row].color != nil {
-                secondtext = secondtext + "未知车型" + "   " + PersonCar[indexPath.row].color
+                secondtext = secondtext + "类型：" + "未知车型" + "   " + "颜色：" + PersonCar[indexPath.row].color
             }else{
-                secondtext = secondtext + "未知车型" + "   " + "未知颜色"
+                secondtext = secondtext + "类型：" + "未知车型" + "   " + "颜色：" + "未知颜色"
             }
         }
         

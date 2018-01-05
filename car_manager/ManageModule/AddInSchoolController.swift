@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import SVProgressHUD
 
 class AddInSchoolController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource{
     
@@ -14,6 +17,8 @@ class AddInSchoolController: UIViewController,UIPickerViewDelegate,UIPickerViewD
     @IBOutlet var carIdTextfield: UITextField!
     @IBOutlet var textfield: UITextField!
     var pickerView = UIPickerView()
+    
+    let InCarUrl = "https://car.wuruoye.com/car/in_car"
     
     var currentLocation = "余区"
     let location = ["余区","南湖","鉴湖","西院","东院"]
@@ -23,9 +28,11 @@ class AddInSchoolController: UIViewController,UIPickerViewDelegate,UIPickerViewD
                       "西院":["珞狮路门","工大路门",],
                       "东院":["珞狮路门","桂珞路门"]]
     var gateRow = 0
+    let locations:[String:String] = ["余区-友谊大道门":"1","余区-和平大道门":"2","南湖-东门":"3","南湖-文治街门":"4","南湖-雄楚大道门":"5","鉴湖-雄楚大道门":"6","鉴湖-工大路门":"7","西院-珞狮路门":"8","西院-工大路门":"9","东院-珞狮路门":"10","东院-桂珞路门":"11"]
     
     @IBAction func inSchool(){
         
+        SVProgressHUD.show()
         if carIdTextfield.text!.characters.count == 0 {
             let alertController = UIAlertController(title: "提示", message: "车牌号信息不能为空", preferredStyle: .alert)
             let action = UIAlertAction(title: "确定", style: .default, handler: nil)
@@ -42,14 +49,46 @@ class AddInSchoolController: UIViewController,UIPickerViewDelegate,UIPickerViewD
             alertController.addAction(action)
             present(alertController, animated: true, completion: nil)
         }else{
-            var car = carIdTextfield.text
-            var gate = textfield.text
-            //发起网络请求
+            let car = carIdTextfield.text!
+            let gate = textfield.text!
+            let gatetype = locations[gate]!
+            print(car)
+            print(gatetype)
             
-            let alertController = UIAlertController(title: "提示", message: "添加成功", preferredStyle: .alert)
-            let action = UIAlertAction(title: "确定", style: .default, handler: nil)
-            alertController.addAction(action)
-            present(alertController, animated: true, completion: nil)
+            //发起网络请求
+            let  url = URL(string: InCarUrl)
+            let parameter = ["car":car,"gate":gatetype]
+            
+            Alamofire.request(url!, method: .post, parameters: parameter, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
+                switch responsedata.result {
+                case .success(let data):
+                    SVProgressHUD.dismiss()
+                    let jsondata = JSON(data)
+                    let issuccess = jsondata.dictionaryObject?["result"] as! Bool
+                    if issuccess {
+                        let successdata = jsondata.dictionaryObject?["info"] as! String
+                        let notice = UIAlertController(title: "提示", message: successdata, preferredStyle: .alert)
+                        let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                        notice.addAction(noticeaction)
+                        self.present(notice, animated: true, completion: nil)
+                    }else{
+                        let errordata = jsondata.dictionaryObject?["info"] as! String
+                        let notice = UIAlertController(title: "提示", message: errordata, preferredStyle: .alert)
+                        let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                        notice.addAction(noticeaction)
+                        self.present(notice, animated: true, completion: nil)
+                    }
+                    break
+                case .failure(let error):
+                    SVProgressHUD.dismiss()
+                    print(error.localizedDescription)
+                    let notice = UIAlertController(title: "提示", message: "网络请求出错", preferredStyle: .alert)
+                    let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
+                    notice.addAction(noticeaction)
+                    self.present(notice, animated: true, completion: nil)
+                    break
+                }
+            })
         }
         
     }

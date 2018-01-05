@@ -106,8 +106,10 @@ class CarSearchTableViewController: UITableViewController ,UITextFieldDelegate{
                         if cardata.info.ticket.count == 0 {
                             self.BreakInfo.text = "该车辆没有违章记录"
                         }else{
-                            let breakstring = String(cardata.info.ticket[0].id)
-                            self.BreakInfo.text = breakstring
+                            if cardata.info.ticket[0].time != nil {
+                                let timestring = self.changetimedetail(time: cardata.info.ticket[0].time)
+                                self.BreakInfo.text = timestring
+                            }
                         }
                         SVProgressHUD.dismiss()
                         
@@ -135,6 +137,8 @@ class CarSearchTableViewController: UITableViewController ,UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        SVProgressHUD.dismiss()
         
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none

@@ -21,12 +21,15 @@ class MyInfoViewController: UIViewController ,UITableViewDataSource ,UITableView
     @IBOutlet weak var FunctionTable: UITableView!
     
     let functionlist = [["开发者网站"],["使用反馈"],["电话本"]]
-    let ImageUrl = "https://car.wuruoye.com/user/photo/unit/"
+    let ImageUrl = "https://car.wuruoye.com/user/photo/staff/"
     let SearchUrl = "https://car.wuruoye.com/user/query_staff_detail"
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
+        SVProgressHUD.dismiss()
+        
         LogoutButton.layer.borderColor = UIColor.red.cgColor
         LogoutButton.layer.borderWidth = 1.5
         
@@ -70,6 +73,7 @@ class MyInfoViewController: UIViewController ,UITableViewDataSource ,UITableView
     
     
     func searchuser() {
+        SVProgressHUD.show()
         let userinfo = UserDefaults.standard
         let userid = userinfo.value(forKey: "userid") as! String
         
@@ -83,9 +87,22 @@ class MyInfoViewController: UIViewController ,UITableViewDataSource ,UITableView
                 if issuccess {
                     SVProgressHUD.dismiss()
                     let querystaff = QueryStaff.init(fromDictionary: jsondata.dictionaryObject!)
-                    self.UserName.text = querystaff.info.staff.name + " "
-                    self.UserNum.text = querystaff.info.staff.id
-                    self.UserPost.text = querystaff.info.unit.name
+                    if querystaff.info.staff.name != nil {
+                        let namestring = querystaff.info.staff.name
+                        self.UserName.text = namestring
+                    }else{
+                        self.UserName.text = "未知姓名"
+                    }
+                    if querystaff.info.staff.id != nil {
+                        self.UserNum.text = querystaff.info.staff.id
+                    }else{
+                        self.UserNum.text = "未知编号"
+                    }
+                    if querystaff.info.unit.name != nil {
+                        self.UserPost.text = querystaff.info.unit.name
+                    }else{
+                        self.UserPost.text = "未知单位"
+                    }
                 }else{
                     SVProgressHUD.dismiss()
                     let errordata = jsondata.dictionaryObject?["info"] as! String

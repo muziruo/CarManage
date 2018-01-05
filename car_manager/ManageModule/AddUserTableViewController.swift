@@ -176,6 +176,12 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
                             let issuccess = jsondata.dictionaryObject?["result"] as! Bool
                             if issuccess {
                                 let successdata = jsondata.dictionaryObject?["info"] as! String
+                                carnumtextfield.text = ""
+                                cartypetextfield.text = ""
+                                startdatetextfield.text = ""
+                                enddatetextfield.text = ""
+                                feetextfield.text = ""
+                                ownertextfield.text = ""
                                 let notice = UIAlertController(title: "提示", message: successdata, preferredStyle: .alert)
                                 let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
                                 notice.addAction(noticeaction)
@@ -228,7 +234,7 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
         let carcolortextfield = view.viewWithTag(104) as! UITextField
         let carseatstextfield = view.viewWithTag(105) as! UITextField
         let carnum = carnumtextfield.text!
-        var cartype = "0"
+        var cartype = "1"
         switch cartypetextfield.text! {
         case "小型车":
             cartype = "1"
@@ -256,6 +262,11 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
                     let issuccess = jsondata.dictionaryObject?["result"] as! Bool
                     if issuccess {
                         SVProgressHUD.dismiss()
+                        cartypetextfield.text = ""
+                        carnumtextfield.text = ""
+                        carmodeltextfield.text = ""
+                        carcolortextfield.text = ""
+                        carseatstextfield.text = ""
                         let successdata = jsondata.dictionaryObject?["info"] as! String
                         let notice = UIAlertController(title: "提示", message: successdata, preferredStyle: .alert)
                         let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
@@ -293,9 +304,17 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
         let userpassword = userpasswordtextfield.text!
         let usertype = usertypetextfield.text!
         
+        var usertypenum = "2"
+        
+        if usertype == "管理员" {
+            usertypenum = "1"
+        }else{
+            usertypenum = "2"
+        }
+        
         if usernum != "" && userpassword != "" && usertype != "" {
             let url = URL(string: AddUserUrl)
-            let parmeters = ["id":usernum,"password":userpassword,"type":usertype]
+            let parmeters = ["id":usernum,"password":userpassword,"type":usertypenum]
             
             Alamofire.request(url!, method: .post, parameters: parmeters, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
                 switch responsedata.result {
@@ -304,6 +323,9 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
                     let issuccess = jsondata.dictionaryObject?["result"] as! Bool
                     if issuccess {
                         SVProgressHUD.dismiss()
+                        usernumtextfield.text = ""
+                        userpasswordtextfield.text = ""
+                        usertypetextfield.text = ""
                         let successdata = jsondata.dictionaryObject?["info"] as! String
                         let notice = UIAlertController(title: "提示", message: successdata, preferredStyle: .alert)
                         let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
@@ -354,6 +376,9 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
                         let issuccess = jsondata.dictionaryObject?["result"] as! Bool
                         if issuccess {
                             SVProgressHUD.dismiss()
+                            postnumtextfield.text = ""
+                            postnametextfield.text = ""
+                            postphonetextfield.text = ""
                             let successdata = jsondata.dictionaryObject?["info"] as! String
                             let notice = UIAlertController(title: "提示", message: successdata, preferredStyle: .alert)
                             let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)
@@ -400,6 +425,7 @@ class AddUserTableViewController: UITableViewController,UIPickerViewDelegate,UIP
                         let issuccess = jsondata.dictionaryObject?["result"] as! Bool
                         if issuccess {
                             SVProgressHUD.dismiss()
+                            carnumtextfield.text = ""
                             let successdata = jsondata.dictionaryObject?["info"] as! String
                             let notice = UIAlertController(title: "提示", message: successdata, preferredStyle: .alert)
                             let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)

@@ -7,6 +7,7 @@
 //  车辆详情页面
 
 import UIKit
+import SVProgressHUD
 
 class CarDetailTableViewController: UITableViewController {
 
@@ -19,6 +20,8 @@ class CarDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        SVProgressHUD.dismiss()
+        
         tableView.tableFooterView = UIView(frame: .zero)
         
         let emptynotice:UILabel = UILabel()
@@ -136,7 +139,8 @@ class CarDetailTableViewController: UITableViewController {
                 }
             }
             if breakinfo[indexPath.row].time != nil {
-                cell.TimeLabel.text = "违章时间:" + String(breakinfo[indexPath.row].time)
+                let timestring = changetime(time: breakinfo[indexPath.row].time)
+                cell.TimeLabel.text = "违章时间:" + timestring
             }else{
                 cell.TimeLabel.text = "违章时间:" + "未知时间"
             }

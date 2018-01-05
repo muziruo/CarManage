@@ -21,6 +21,8 @@ class PostListTableViewController: UITableViewController {
 
         navigationItem.title = "单位信息"
         
+    tableView.tableFooterView = UIView(frame: .zero)
+        
         SVProgressHUD.show()
         let url = URL(string: SearchUrl)
         Alamofire.request(url!, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (responsedata) in
@@ -31,8 +33,6 @@ class PostListTableViewController: UITableViewController {
                 let jsonarray = jsondata.arrayObject
                 for item in jsonarray! {
                     let listitem = QueryPostList.init(fromDictionary: item as! [String : Any])
-                    print("单个解析")
-                    print(listitem)
                     self.GetList.append(listitem)
                 }
                 self.tableView.reloadData()

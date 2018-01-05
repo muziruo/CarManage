@@ -141,6 +141,7 @@ class DeleteUserController: UITableViewController {
             Alamofire.request(url!, method: .post, parameters: parameter, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
                 switch responsedata.result {
                 case .success(let data):
+                    SVProgressHUD.dismiss()
                     let jsondata = JSON(data)
                     let issuccess = jsondata.dictionaryObject?["result"] as! Bool
                     if issuccess {
@@ -158,6 +159,7 @@ class DeleteUserController: UITableViewController {
                     }
                     break
                 case .failure(let error):
+                    SVProgressHUD.dismiss()
                     print(error.localizedDescription)
                     let notice = UIAlertController(title: "提示", message: "网络请求出错", preferredStyle: .alert)
                     let noticeaction = UIAlertAction(title: "确定", style: .default, handler: nil)

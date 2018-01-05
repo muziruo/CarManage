@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class CarPassDetailViewController: UIViewController {
 
@@ -24,6 +25,8 @@ class CarPassDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        SVProgressHUD.dismiss()
+        
         navigationItem.title = "通行证信息"
         
         if PassCard != nil {

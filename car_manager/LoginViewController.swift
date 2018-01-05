@@ -21,13 +21,11 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
     
     //登录操作
     @IBAction func LoginActivity(_ sender: UIButton) {
-        //调试用，正式版请删除
-        let nameinput:String = "20170001"
-        let passwordinput:String = "342188"
-        /*
+        
+        
         let nameinput:String = UserName.text!
         let passwordinput:String = UserPassword.text!
-        */
+ 
         
         if nameinput == "" || passwordinput == "" {
             let notice = UIAlertController(title: "警告", message: "账号或密码不能为空!", preferredStyle: .alert)
@@ -50,7 +48,12 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
                     if issuccess {
                         let user = UserDefaults.standard
                         user.set(nameinput, forKey: "userid")
-                        print(jsondata.dictionaryObject?["info"] ?? "无信息")
+                        if jsondata.dictionaryObject?["info"] != nil {
+                            let usertype = jsondata.dictionaryObject?["info"] as! Int
+                            user.set(usertype, forKey: "usertype")
+                        }else{
+                            user.set(2, forKey: "usertype")
+                        }
                         self.performSegue(withIdentifier: "LoginSuccess", sender: nil)
                         //GetType(id: nameinput)
                     }else{

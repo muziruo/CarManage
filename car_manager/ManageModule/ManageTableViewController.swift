@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ManageTableViewController: UITableViewController {
     
-    var functions = [["添加教职工","添加车辆","添加用户","添加单位","添加通行证","添加黑名单"],["删除教职工","删除用户","移除黑名单"]]
+    var functions = [["添加教职工","添加车辆","添加用户","添加单位","添加通行证","添加黑名单"],["删除用户","移除黑名单"]]
     let Kinds = ["staff","car","user","post","passcard","blacklist"]
-    let delete = ["deleteStaff","deleteUser","deleteBlackList"]
+    let delete = ["deleteUser","deleteBlackList"]
     var type = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        SVProgressHUD.dismiss()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -28,7 +31,9 @@ class ManageTableViewController: UITableViewController {
 //        if type == 1{
 //            let view
 //        }
-
+        let user = UserDefaults.standard
+        
+        type = user.value(forKey: "usertype") as! Int
         
         if type == 2 {
             let whiteview = UIView()
@@ -50,7 +55,6 @@ class ManageTableViewController: UITableViewController {
             whiteview.addSubview(noticelabel)
         }
 
-        
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -114,10 +118,10 @@ class ManageTableViewController: UITableViewController {
             }
         }else{
             switch indexPath.row{
-            case 0,1:
+            case 0:
                 performSegue(withIdentifier: "deleteSegue", sender: nil)
                 break
-            case 2:
+            case 1:
                 performSegue(withIdentifier: "deleteBlackListSegue", sender: nil)
                 break
             default:

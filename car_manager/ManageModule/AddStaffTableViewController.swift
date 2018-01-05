@@ -34,7 +34,7 @@ UIPickerViewDelegate,UIPickerViewDataSource{
     var pickerView = UIPickerView()
     
     let carinfo = ["车牌号","类型","车辆型号","颜色","座位数"]
-    let cartype = ["校车","教职工车","社会车"]
+    let cartype = ["小型车","大型车"]
     var isselect:Bool = false
     
     let AddStaffUrl = "https://car.wuruoye.com/user/add_staff"
@@ -139,79 +139,100 @@ UIPickerViewDelegate,UIPickerViewDataSource{
         let staffname = nameTextfiled.text!
         let staffpost = partTextfield.text!
         let staffnum = idTextfield.text!
+        let staffphone = phoneTextfield.text!
         if haveCarSwitch.isOn {
             let carid = carIdTextfield.text!
             let cartype = carTypeTextfield.text!
             let carmodel = carModelTextfield.text!
             let carcolor = carColorTextfield.text!
             let carseat = carSeatTextfield.text!
-            if staffnum != "" && staffname != "" && staffpost != "" && carid != "" && cartype != "" && carmodel != "" && carcolor != "" && carseat != "" {
+            if staffnum != "" && staffname != "" && staffpost != "" && carid != "" && cartype != "" && carmodel != "" && carcolor != "" && carseat != "" && staffphone != "" {
                 if isselect {
                     if carid.characters.count <= 8 {
-                        let imagesuccess:Bool = self.uploadimage()
-                        if imagesuccess {
-                            var staffuploadsuccess = false
-                            staffuploadsuccess = addstaffinfo(name: staffname, id: staffnum, post: staffpost, phone: "15908665907")
+                        if staffphone.characters.count == 11 {
+                            self.uploadimage(more: true)
                             /*
-                            let url = URL(string: AddStaffUrl)
-                            let parameter = ["id":staffnum,"name":staffname,"unit":staffpost,"phone":"15908665907"]
-                            var errordata = ""
-                            
-                            Alamofire.request(url!, method: .post, parameters: parameter, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
-                                switch responsedata.result {
-                                case .success(let data):
-                                    let jsondata = JSON(data)
-                                    let issuccess = jsondata.dictionaryObject?["result"] as! Bool
-                                    if issuccess {
-                                        staffuploadsuccess = true
-                                    }else{
-                                        staffuploadsuccess = false
-                                        errordata = jsondata.dictionaryObject?["info"] as! String
-                                    }
-                                    break
-                                case .failure(let error):
-                                    print(error.localizedDescription)
-                                    staffuploadsuccess = false
-                                    errordata = "上传职工信息网络请求出错"
-                                    break
-                                }
-                            })
-                            */
-                            
-                            if staffuploadsuccess {
-                                addcarinfo(id: carid, type: cartype, model: carmodel, color: carcolor, seat: carseat)
+                            if imagesuccess {
+                                var staffuploadsuccess = false
+                                staffuploadsuccess = addstaffinfo(name: staffname, id: staffnum, post: staffpost, phone: staffphone)
                                 /*
-                                let carurl = URL(string: AddCarUrl)
-                                let carparameter = ["id":carid,"type":cartype,"model":carmodel,"color":carcolor,"seat":carseat]
+                                let url = URL(string: AddStaffUrl)
+                                let parameter = ["id":staffnum,"name":staffname,"unit":staffpost,"phone":"15908665907"]
+                                var errordata = ""
                                 
-                                Alamofire.request(carurl!, method: .post, parameters: carparameter, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
+                                Alamofire.request(url!, method: .post, parameters: parameter, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
                                     switch responsedata.result {
                                     case .success(let data):
                                         let jsondata = JSON(data)
                                         let issuccess = jsondata.dictionaryObject?["result"] as! Bool
                                         if issuccess {
-                                            SVProgressHUD.dismiss()
-                                            self.shownotice(info: "上传成功")
+                                            staffuploadsuccess = true
                                         }else{
-                                            SVProgressHUD.dismiss()
-                                            let errordata = jsondata.dictionaryObject?["info"] as! String
-                                            self.shownotice(info: errordata)
+                                            staffuploadsuccess = false
+                                            errordata = jsondata.dictionaryObject?["info"] as! String
                                         }
                                         break
                                     case .failure(let error):
-                                        SVProgressHUD.dismiss()
                                         print(error.localizedDescription)
-                                        self.shownotice(info: "网络请求失败,图片和教职工信息已添加，请额外进行车辆添加")
+                                        staffuploadsuccess = false
+                                        errordata = "上传职工信息网络请求出错"
                                         break
                                     }
                                 })
                                 */
+                                
+                                if staffuploadsuccess {
+                                    addcarinfo(id: carid, type: cartype, model: carmodel, color: carcolor, seat: carseat)
+                                    phoneTextfield.text = ""
+                                    idTextfield.text = ""
+                                    nameTextfiled.text = ""
+                                    partTextfield.text = ""
+                                    carIdTextfield.text = ""
+                                    carSeatTextfield.text = ""
+                                    carColorTextfield.text = ""
+                                    carModelTextfield.text = ""
+                                    carTypeTextfield.text = ""
+                                    /*
+                                    let carurl = URL(string: AddCarUrl)
+                                    let carparameter = ["id":carid,"type":cartype,"model":carmodel,"color":carcolor,"seat":carseat]
+                                    
+                                    Alamofire.request(carurl!, method: .post, parameters: carparameter, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
+                                        switch responsedata.result {
+                                        case .success(let data):
+                                            let jsondata = JSON(data)
+                                            let issuccess = jsondata.dictionaryObject?["result"] as! Bool
+                                            if issuccess {
+                                                SVProgressHUD.dismiss()
+                                                self.shownotice(info: "上传成功")
+                                            }else{
+                                                SVProgressHUD.dismiss()
+                                                let errordata = jsondata.dictionaryObject?["info"] as! String
+                                                self.shownotice(info: errordata)
+                                            }
+                                            break
+                                        case .failure(let error):
+                                            SVProgressHUD.dismiss()
+                                            print(error.localizedDescription)
+                                            self.shownotice(info: "网络请求失败,图片和教职工信息已添加，请额外进行车辆添加")
+                                            break
+                                        }
+                                    })
+                                    */
+                                }else{
+                                    phoneTextfield.text = ""
+                                    idTextfield.text = ""
+                                    nameTextfiled.text = ""
+                                    partTextfield.text = ""
+                                    SVProgressHUD.dismiss()
+                                }
                             }else{
                                 SVProgressHUD.dismiss()
+                                shownotice(info: "图片上传失败")
                             }
+                            */
                         }else{
                             SVProgressHUD.dismiss()
-                            shownotice(info: "图片上传失败")
+                            shownotice(info: "请输入正确格式的电话号码")
                         }
                     }else{
                         SVProgressHUD.dismiss()
@@ -226,18 +247,20 @@ UIPickerViewDelegate,UIPickerViewDataSource{
                 shownotice(info: "输入不能为空")
             }
         }else{
-            if staffnum != "" && staffname != "" && staffpost != "" {
+            if staffnum != "" && staffname != "" && staffpost != "" && staffphone != "" {
                 if isselect {
-
-                    let imagesuccess:Bool = self.uploadimage()
+                    self.uploadimage(more: false)
+                    //let imagesuccess:Bool = self.uploadimage()
+                    /*
                     if imagesuccess {
-                        let staffsuccess = addstaffinfo(name: staffname, id: staffnum, post: staffpost, phone: "15908665907")
+                        let staffsuccess = addstaffinfo(name: staffname, id: staffnum, post: staffpost, phone: staffphone)
                         if staffsuccess {
                             SVProgressHUD.dismiss()
                             shownotice(info: "上传完成")
                         }else{
                             SVProgressHUD.dismiss()
                         }
+                        
                         /*
                         let url = URL(string: AddStaffUrl)
                         let parameter = ["id":staffnum,"name":staffname,"unit":staffpost,"phone":"15908665907"]
@@ -271,7 +294,7 @@ UIPickerViewDelegate,UIPickerViewDataSource{
                         SVProgressHUD.dismiss()
                         shownotice(info: "图片上传失败")
                     }
-                    
+                    */
                 }else{
                     SVProgressHUD.dismiss()
                     shownotice(info: "请选择图片")
@@ -284,10 +307,15 @@ UIPickerViewDelegate,UIPickerViewDataSource{
         }
     }
     
-    func addstaffinfo(name:String,id:String,post:String,phone:String) -> Bool {
+    func addstaffinfo(more:Bool) {
+        let staffname = nameTextfiled.text!
+        let staffpost = partTextfield.text!
+        let staffnum = idTextfield.text!
+        let staffphone = phoneTextfield.text!
+        
         var success = false
         let url = URL(string: AddStaffUrl)
-        let parameter = ["id":id,"name":name,"unit":post,"phone":phone]
+        let parameter = ["id":staffnum,"name":staffname,"unit":staffpost,"phone":staffphone]
         
         Alamofire.request(url!, method: .post, parameters: parameter, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
             switch responsedata.result {
@@ -296,26 +324,51 @@ UIPickerViewDelegate,UIPickerViewDataSource{
                 let issuccess = jsondata.dictionaryObject?["result"] as! Bool
                 if issuccess {
                     success = true
+                    if more {
+                        self.addcarinfo()
+                    }else{
+                        SVProgressHUD.dismiss()
+                        self.shownotice(info: "图片，教职工信息上传成功")
+                    }
                 }else{
+                    SVProgressHUD.dismiss()
                     success = false
                     let errordata = jsondata.dictionaryObject?["info"] as! String
                     self.shownotice(info: errordata)
                 }
                 break
             case .failure(let error):
+                SVProgressHUD.dismiss()
                 print(error.localizedDescription)
                 success = false
-                let errordata = "上传职工信息网络请求出错"
+                let errordata = "，图片上传成功，上传职工信息网络请求出错"
                 self.shownotice(info: errordata)
                 break
             }
         })
-        return success
     }
     
-    func addcarinfo(id:String,type:String,model:String,color:String,seat:String) {
+    func addcarinfo() {
+        let carid = carIdTextfield.text!
+        let cartype = carTypeTextfield.text!
+        let carmodel = carModelTextfield.text!
+        let carcolor = carColorTextfield.text!
+        let carseat = carSeatTextfield.text!
         let carurl = URL(string: AddCarUrl)
-        let carparameter = ["id":id,"type":type,"model":model,"color":color,"seat":seat]
+        
+        var cartypenum = "1"
+        switch cartype {
+        case "小型车":
+            cartypenum = "1"
+            break
+        case "大型车":
+            cartypenum = "2"
+            break
+        default:
+            break
+        }
+        
+        let carparameter = ["id":carid,"type":cartypenum,"model":carmodel,"color":carcolor,"seat":carseat]
         
         Alamofire.request(carurl!, method: .post, parameters: carparameter, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: { (responsedata) in
             switch responsedata.result {
@@ -324,7 +377,7 @@ UIPickerViewDelegate,UIPickerViewDataSource{
                 let issuccess = jsondata.dictionaryObject?["result"] as! Bool
                 if issuccess {
                     SVProgressHUD.dismiss()
-                    self.shownotice(info: "上传成功")
+                    self.shownotice(info: "图片，教职工，车辆信息上传成功")
                 }else{
                     SVProgressHUD.dismiss()
                     var errordata = jsondata.dictionaryObject?["info"] as! String
@@ -348,27 +401,29 @@ UIPickerViewDelegate,UIPickerViewDataSource{
         self.present(notice, animated: true, completion: nil)
     }
     
-    func uploadimage() -> Bool {
-        var success = false
-        
+    func uploadimage(more:Bool){
         
         Alamofire.upload(multipartFormData: { (MultipartFormData) in
             let userimage = self.photoView.image!
             let imagedata = UIImageJPEGRepresentation(userimage, 0.8)
+            
             let staffid = self.idTextfield.text!
             let imagename = staffid + ".jpg"
             print(imagename)
-            MultipartFormData.append(imagedata!, withName: imagename)
             
-            
+            //MultipartFormData.append(imagedata!, withName: "photo", mimeType: "image/jpg")
+            MultipartFormData.append(imagedata!, withName: "photo", fileName: imagename, mimeType: "image/jpg")
             
             let parameter = ["folder":"staff","name":imagename]
             
             for (key,value) in parameter {
+                //测试输出项
                 print(key)
                 print(value)
-                MultipartFormData.append(value.data(using: String.Encoding.unicode)!, withName: key)
+                MultipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
             }
+
+            print(MultipartFormData)
             
             //let parameter = ["folder":"staff","name":imagename,"photo":MultipartFormData]
         }, to: AddImageUrl) { (encodingresult) in
@@ -382,23 +437,30 @@ UIPickerViewDelegate,UIPickerViewDataSource{
                         let issuccess = jsondata.dictionaryObject?["result"] as! Bool
                         let info = jsondata.dictionaryObject?["info"] as! String
                         print(info)
-                        success = issuccess
+                        if issuccess {
+                            self.addstaffinfo(more: more)
+                        }else{
+                            self.shownotice(info: info)
+                        }
                         break
                     case .failure(let error):
+                        SVProgressHUD.dismiss()
                         print("错误信息:\(error.localizedDescription)")
-                        success = false
+                        self.shownotice(info: "图片上传失败")
                         break
                     }
                 })
                 break
             case .failure(let error):
+                SVProgressHUD.dismiss()
+                print(error)
                 print(error.localizedDescription)
                 self.shownotice(info: "图片解析出错")
-                success = false
                 break
             }
         }
         
+ 
         /*
         let userimage = self.photoView.image!
         let imagedata = UIImageJPEGRepresentation(userimage, 0.8)
@@ -417,6 +479,7 @@ UIPickerViewDelegate,UIPickerViewDataSource{
         Alamofire.request(AddImageUrl, method: .post, parameters: parameter, encoding: URLEncoding.default, headers: nil).responseJSON { (responsedata) in
             switch responsedata.result {
             case .success(let data):
+                print(data)
                 let jsondata = JSON(data)
                 let issuccess = jsondata.dictionaryObject?["result"] as! Bool
                 if issuccess {
@@ -428,14 +491,17 @@ UIPickerViewDelegate,UIPickerViewDataSource{
                 }
                 break
             case .failure(let error):
+                print("1:")
+                print(responsedata.data)
+                print("2:")
+                print(responsedata.value)
+                print("错误：\(error)")
                 print("错误信息:\(error.localizedDescription)")
                 success = false
                 break
             }
         }
         */
-        
-        return success
     }
 
     
