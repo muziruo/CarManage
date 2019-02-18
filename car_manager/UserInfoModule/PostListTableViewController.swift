@@ -24,11 +24,15 @@ class PostListTableViewController: UITableViewController {
     tableView.tableFooterView = UIView(frame: .zero)
         
         SVProgressHUD.show()
+        //设置网络请求的url
         let url = URL(string: SearchUrl)
+        //使用Alamofire进行网络请求
         Alamofire.request(url!, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (responsedata) in
             switch responsedata.result {
+                //请求成功
             case .success(let data):
                 SVProgressHUD.dismiss()
+                //解析得到的数据
                 let jsondata = JSON(data)
                 let jsonarray = jsondata.arrayObject
                 for item in jsonarray! {
@@ -37,6 +41,7 @@ class PostListTableViewController: UITableViewController {
                 }
                 self.tableView.reloadData()
                 break
+                //请求失败
             case .failure(let error):
                 SVProgressHUD.dismiss()
                 print(error.localizedDescription)

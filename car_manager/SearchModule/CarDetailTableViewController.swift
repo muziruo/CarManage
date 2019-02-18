@@ -15,7 +15,7 @@ class CarDetailTableViewController: UITableViewController {
     var breakinfo:[Ticket] = []
     var inoutinfo:[InOutNote] = []
     
-    let location:[String] = ["余区-友谊大道门","余区-和平大道门","南湖-东门","南湖-文治街门","南湖雄楚大道门","鉴湖-雄楚大道门","鉴湖-工大路门","西院-珞狮路门","西院-工大路门","东院-珞狮路门","东院-桂珞路门"]
+    let location:[String] = ["未知地点","余区-友谊大道门","余区-和平大道门","南湖-东门","南湖-文治街门","南湖雄楚大道门","鉴湖-雄楚大道门","鉴湖-工大路门","西院-珞狮路门","西院-工大路门","东院-珞狮路门","东院-桂珞路门"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,7 +107,12 @@ class CarDetailTableViewController: UITableViewController {
                     if inoutinfo[indexPath.row].outGate > 11 || inoutinfo[indexPath.row].outGate < 1{
                         cell.InfoLabel.text = "出：" + outtime + "," + "未知地点"
                     }else{
-                        cell.InfoLabel.text = "出：" + outtime + "," + location[inoutinfo[indexPath.row].outGate]
+                        if inoutinfo[indexPath.row].outGate > 11 || inoutinfo[indexPath.row].outGate < 1{
+                            
+                            cell.InfoLabel.text = "出：" + outtime + "," + "未知地点"
+                        }else{
+                            cell.InfoLabel.text = "出：" + outtime + "," + location[inoutinfo[indexPath.row].outGate]
+                        }
                     }
                 }else{
                     cell.InfoLabel.text = "出：" + outtime + "," + "未知地点"

@@ -411,28 +411,27 @@ UIPickerViewDelegate,UIPickerViewDataSource{
             let imagename = staffid + ".jpg"
             print(imagename)
             
-            //MultipartFormData.append(imagedata!, withName: "photo", mimeType: "image/jpg")
+            //将图片数据进行转化并且加上属性
             MultipartFormData.append(imagedata!, withName: "photo", fileName: imagename, mimeType: "image/jpg")
-            
+            //添加其他数据
             let parameter = ["folder":"staff","name":imagename]
             
             for (key,value) in parameter {
-                //测试输出项
-                print(key)
-                print(value)
+                //将其他数据进行转化
                 MultipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
             }
-
-            print(MultipartFormData)
             
-            //let parameter = ["folder":"staff","name":imagename,"photo":MultipartFormData]
+            //数据转化成功后进行网络请求
         }, to: AddImageUrl) { (encodingresult) in
             switch encodingresult {
+                //转化成功，进行网络请求
             case .success(let upload, _ , _ ):
                 upload.responseJSON(completionHandler: { (responsedata) in
                     print(responsedata)
                     switch responsedata.result {
+                        //网络请求成功
                     case .success(let data):
+                        //json解析
                         let jsondata = JSON(data)
                         let issuccess = jsondata.dictionaryObject?["result"] as! Bool
                         let info = jsondata.dictionaryObject?["info"] as! String
@@ -443,6 +442,7 @@ UIPickerViewDelegate,UIPickerViewDataSource{
                             self.shownotice(info: info)
                         }
                         break
+                        //网络请求失败
                     case .failure(let error):
                         SVProgressHUD.dismiss()
                         print("错误信息:\(error.localizedDescription)")
@@ -451,10 +451,12 @@ UIPickerViewDelegate,UIPickerViewDataSource{
                     }
                 })
                 break
+                //转化失败
             case .failure(let error):
                 SVProgressHUD.dismiss()
                 print(error)
                 print(error.localizedDescription)
+                //显示错误信息
                 self.shownotice(info: "图片解析出错")
                 break
             }

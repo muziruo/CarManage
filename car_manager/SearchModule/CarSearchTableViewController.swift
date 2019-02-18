@@ -71,6 +71,13 @@ class CarSearchTableViewController: UITableViewController ,UITextFieldDelegate{
                         }else{
                             self.CarColor.text = "未知"
                         }
+                        if cardata.info.owne != nil {
+                            if cardata.info.owne.owner != nil {
+                                if cardata.info.owne.owner.name != nil {
+                                    self.Owner.text = cardata.info.owne.owner.name
+                                }
+                            }
+                        }
                         
                         //以下三项是所有车辆都会有，也都应该收录的信息
                         if cardata.info.inOutNote.count == 0 {

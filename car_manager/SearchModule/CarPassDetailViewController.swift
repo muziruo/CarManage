@@ -66,9 +66,9 @@ class CarPassDetailViewController: UIViewController {
             }
             if PassCard.type != nil {
                 switch PassCard.type {
-                case 1:
-                    CarType.text = "小型车"
                 case 2:
+                    CarType.text = "小型车"
+                case 1:
                     CarType.text = "大型车"
                 default:
                     CarType.text = "未知类型"
